@@ -1,0 +1,25 @@
+.hero {
+  background: url('/images/hero.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.overlay {
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+.title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0.5rem 0;
+}
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+.ratingBox {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+}

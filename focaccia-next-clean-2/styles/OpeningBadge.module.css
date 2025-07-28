@@ -1,0 +1,10 @@
+.open {
+  color: #2ecc71;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.closed {
+  color: #e74c3c;
+  font-weight: 700;
+  font-size: 1.2rem;
+}

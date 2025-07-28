@@ -1,0 +1,13 @@
+.rating {
+  background: rgba(0,0,0,.6);
+  padding: .35rem .6rem;
+  border-radius: .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .9rem;
+}
+.label { opacity: .8; }
+.score { font-weight: 700; }
+.stars { color: gold; margin-left: .25rem; }
+.count { opacity: .6; font-size: .8rem; }

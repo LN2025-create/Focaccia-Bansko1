@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
@@ -41,17 +42,35 @@ export default function Location() {
               </div>
               <a className="button buttonPrimary" href={site.mapsUrl} target="_blank" rel="noreferrer">{c.directions}</a>
             </div>
-            <div className={styles.mapWrap}>
-              <iframe
-                title="Focaccia Bansko map"
-                src={site.mapsEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+
+            <div className={styles.mapColumn}>
+              <figure className={styles.planWrap}>
+                <Image
+                  src="/images/focaccia-location-map.png"
+                  alt={c.planAlt}
+                  width={1197}
+                  height={1086}
+                  className={styles.planImage}
+                  priority
+                />
+                <figcaption>
+                  <strong>{c.planTitle}</strong>
+                  <span>{c.planText}</span>
+                </figcaption>
+              </figure>
+
+              <div className={styles.mapWrap}>
+                <iframe
+                  title="Focaccia Bansko map"
+                  src={site.mapsEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -25,3 +25,11 @@ The API key must have Places API (New) enabled. The server route requests only `
 - Instagram: @focaccia_bansko_panini
 - Email: focacciaexpert@abv.bg
 - Opening hours: 10:00–22:00
+
+
+## Brand assets
+
+- Logo version 1 is used as the main visual on the home page.
+- Logo version 2 is used in the header and footer.
+- The location page includes the supplied landmark diagram and an interactive Google map.
+- The menu page includes the 2026 menu in Bulgarian and English, with a compressed PDF download.

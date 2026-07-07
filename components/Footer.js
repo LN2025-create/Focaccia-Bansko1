@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { site } from '../lib/content';
 import styles from '../styles/Footer.module.css';
@@ -9,7 +10,13 @@ export default function Footer({ lang, text, href }) {
     <footer className={styles.footer}>
       <div className={styles.grid}>
         <div className={styles.about}>
-          <div className={styles.logo}>Focaccia <span>Bansko</span></div>
+          <Image
+            src="/images/focaccia-logo-v2.png"
+            alt="Focaccia - Panini eccellenti"
+            width={2439}
+            height={940}
+            className={styles.logoImage}
+          />
           <p>{text.footer.description}</p>
         </div>
         <div>

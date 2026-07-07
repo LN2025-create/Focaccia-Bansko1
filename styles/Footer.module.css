@@ -1,7 +1,6 @@
 .footer { margin-top: auto; padding: 68px 0 24px; border-top: 1px solid var(--line); background: #120f0c; color: var(--muted); }
 .grid { width: min(1180px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 1.4fr .7fr 1fr; gap: 70px; }
-.logo { font-family: Georgia, serif; color: var(--fg); font-size: 1.65rem; font-weight: 800; }
-.logo span { color: var(--green-light); }
+.logoImage { display: block; width: min(260px, 100%); height: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,.25)); }
 .about p { max-width: 390px; margin: 16px 0 0; }
 .footer h2 { margin: 0 0 16px; color: var(--fg); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
 .links { display: flex; flex-direction: column; gap: 9px; }

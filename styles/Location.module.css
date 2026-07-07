@@ -1,8 +1,13 @@
-.grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 20px; align-items: stretch; }
+.grid { display: grid; grid-template-columns: .68fr 1.32fr; gap: 20px; align-items: start; }
 .details { padding: 38px; border-radius: 26px; border: 1px solid var(--line); background: var(--surface); }
 .detail { padding: 0 0 24px; margin-bottom: 24px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
 .detail span { color: var(--green-light); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
 .detail strong, .detail a { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500; }
 .detail a:hover { color: var(--green-light); }
-.mapWrap { min-height: 560px; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: var(--surface); }
+.mapColumn { display: grid; gap: 20px; }
+.planWrap { margin: 0; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: #f0efef; }
+.planImage { display: block; width: 100%; height: auto; }
+.planWrap figcaption { display: flex; flex-direction: column; gap: 5px; padding: 18px 22px; color: var(--muted); background: var(--surface); border-top: 1px solid var(--line); }
+.planWrap figcaption strong { color: var(--fg); font-family: Georgia, serif; font-size: 1.2rem; font-weight: 500; }
+.mapWrap { min-height: 390px; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: var(--surface); }
 @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .mapWrap { min-height: 430px; } .details { padding: 30px 24px; } }

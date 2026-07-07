@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -14,16 +15,18 @@ export default function Header({ lang, text, changeLanguage, href }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
-
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link href={href('/')} className={styles.brand} aria-label="Focaccia Bansko – Home">
-          <span className={styles.brandMark} aria-hidden="true">F</span>
-          <span className={styles.brandText}>
-            <strong>Focaccia</strong>
-            <small>Bansko</small>
-          </span>
+        <Link href={href('/')} className={styles.brand} aria-label="Focaccia Bansko - Home">
+          <Image
+            src="/images/focaccia-logo-v2.png"
+            alt="Focaccia - Panini eccellenti"
+            width={2439}
+            height={940}
+            priority
+            className={styles.brandLogo}
+          />
         </Link>
 
         <button

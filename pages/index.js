@@ -41,11 +41,7 @@ export default function Home() {
             </div>
             <div className={styles.heroVisual}>
               <div className={styles.imageFrame}>
-                <Image src="/images/focaccia-hero.svg" alt="Freshly baked focaccia with rosemary and tomatoes" fill priority sizes="(max-width: 920px) 100vw, 46vw" />
-                <div className={styles.imageLabel}>
-                  <span>Focaccia</span>
-                  <strong>Baked in Bansko</strong>
-                </div>
+                <Image src="/images/focaccia-logo-v1.png" alt="Focaccia - Panini eccellenti" fill priority sizes="(max-width: 920px) 100vw, 46vw" />
               </div>
             </div>
           </div>

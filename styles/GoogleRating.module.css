@@ -1,0 +1,6 @@
+.rating { width: fit-content; display: flex; align-items: center; gap: 8px; margin-top: 28px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(0,0,0,.16); color: var(--muted); font-size: .8rem; }
+.google { color: var(--fg); font-weight: 800; }
+.rating strong { color: var(--fg); font-size: .95rem; }
+.stars { color: var(--gold); letter-spacing: .07em; }
+.count { opacity: .8; }
+@media (max-width: 480px) { .count { display: none; } }

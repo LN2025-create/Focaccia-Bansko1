@@ -1,0 +1,4 @@
+.badge { width: fit-content; display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border-radius: 999px; border: 1px solid currentColor; font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 5px color-mix(in srgb, currentColor 15%, transparent); }
+.open { color: #7ee29c; background: rgba(50, 136, 76, .12); }
+.closed { color: #ef8d83; background: rgba(201, 101, 93, .12); }

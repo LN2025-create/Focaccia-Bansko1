@@ -1,0 +1,13 @@
+.grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; align-items: stretch; }
+.list { border: 1px solid var(--line); border-radius: 26px; overflow: hidden; background: rgba(255,255,255,.015); }
+.row { min-height: 94px; padding: 24px 28px; display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); }
+.row:last-child { border-bottom: 0; }
+.row span { color: var(--green-light); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.row a, .row strong { font-family: Georgia, serif; font-size: clamp(1.1rem, 2.4vw, 1.55rem); font-weight: 500; overflow-wrap: anywhere; }
+.row a:hover { color: var(--green-light); }
+.card { padding: 42px; border-radius: 26px; background: linear-gradient(145deg, #293729, #1b261c); border: 1px solid rgba(119,193,143,.18); display: flex; flex-direction: column; justify-content: center; }
+.cardLogo { width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center; background: var(--fg); color: var(--bg); font-family: Georgia, serif; font-size: 2.6rem; font-weight: 800; }
+.card h2 { margin: 32px 0 8px; font-family: Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.7rem); line-height: 1; font-weight: 500; }
+.card p { color: #d4decf; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+@media (max-width: 820px) { .grid { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; gap: 8px; } .card { padding: 34px 24px; } }

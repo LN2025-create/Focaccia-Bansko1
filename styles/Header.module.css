@@ -1,0 +1,28 @@
+.header { position: fixed; inset: 0 0 auto; z-index: 50; padding: 16px 0; background: linear-gradient(to bottom, rgba(23,19,15,.92), rgba(23,19,15,.62)); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.06); }
+.inner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-width: 170px; }
+.brandMark { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--green), #285b3a); font-family: Georgia, serif; font-size: 1.55rem; font-weight: 800; box-shadow: 0 10px 30px rgba(76,154,103,.22); }
+.brandText { display: flex; flex-direction: column; line-height: 1; }
+.brandText strong { font-family: Georgia, serif; font-size: 1.25rem; letter-spacing: .02em; }
+.brandText small { margin-top: 5px; color: var(--muted); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; }
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav > a { position: relative; color: rgba(255,250,241,.82); font-size: .92rem; font-weight: 700; }
+.nav > a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--green-light); transition: right .2s ease; }
+.nav > a:hover::after, .nav > a.active::after { right: 0; }
+.nav > a.active { color: var(--fg); }
+.language { margin-left: 8px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; display: flex; align-items: center; gap: 5px; color: var(--muted); font-size: .75rem; }
+.language button { border: 0; padding: 0; background: none; color: inherit; cursor: pointer; font-weight: 800; }
+.language button.languageActive { color: var(--fg); }
+.menuButton { display: none; width: 44px; height: 44px; padding: 10px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.04); }
+.menuButton span { display: block; height: 2px; margin: 4px 0; border-radius: 2px; background: var(--fg); }
+
+@media (max-width: 820px) {
+  .header { padding: 12px 0; }
+  .inner { width: calc(100% - 28px); }
+  .menuButton { display: block; }
+  .nav { position: absolute; top: calc(100% + 1px); left: 14px; right: 14px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 16px; background: rgba(31,25,20,.98); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+  .navOpen { display: flex; }
+  .nav > a { padding: 13px 10px; }
+  .nav > a::after { display: none; }
+  .language { align-self: flex-start; margin: 10px 0 0 8px; }
+}

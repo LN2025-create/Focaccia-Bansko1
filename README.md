@@ -33,3 +33,7 @@ The API key must have Places API (New) enabled. The server route requests only `
 - Logo version 2 is used in the header and footer.
 - The location page includes the supplied landmark diagram and an interactive Google map.
 - The menu page includes the 2026 menu in Bulgarian and English, with a compressed PDF download.
+## Visual theme
+
+The site uses a warm Italian-inspired palette: cream, olive green, terracotta, graphite and muted gold.
+

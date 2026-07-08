@@ -1,6 +1,6 @@
-.rating { width: fit-content; display: flex; align-items: center; gap: 8px; margin-top: 28px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(0,0,0,.16); color: var(--muted); font-size: .8rem; }
-.google { color: var(--fg); font-weight: 800; }
-.rating strong { color: var(--fg); font-size: .95rem; }
+.rating { width: fit-content; display: flex; align-items: center; gap: 8px; margin-top: 28px; padding: 10px 14px; border: 1px solid rgba(244,235,221,.18); border-radius: 14px; background: rgba(0,0,0,.18); color: rgba(244,235,221,.70); font-size: .8rem; }
+.google { color: var(--cream); font-weight: 800; }
+.rating strong { color: var(--cream); font-size: .95rem; }
 .stars { color: var(--gold); letter-spacing: .07em; }
-.count { opacity: .8; }
+.count { opacity: .85; }
 @media (max-width: 480px) { .count { display: none; } }

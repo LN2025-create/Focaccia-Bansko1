@@ -1,30 +1,33 @@
 .heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; margin-bottom: 34px; }
-.sectionHeading h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1; font-weight: 500; letter-spacing: -.035em; }
+.sectionHeading h2 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1; font-weight: 500; letter-spacing: -.035em; }
 .sectionHeading > p { max-width: 390px; margin: 0; color: var(--muted); text-align: right; }
 .sandwichGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.sandwichCard { min-height: 225px; padding: 30px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)); transition: transform .2s ease, border-color .2s ease, background-color .2s ease; }
-.sandwichCard:hover { transform: translateY(-3px); border-color: rgba(119,193,143,.42); background: linear-gradient(145deg, rgba(119,193,143,.08), rgba(255,255,255,.014)); }
+.sandwichCard { min-height: 225px; padding: 30px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.36)); box-shadow: 0 14px 34px rgba(72,54,35,.07); transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease; }
+.sandwichCard:hover { transform: translateY(-3px); border-color: rgba(94,111,58,.38); background: linear-gradient(145deg, rgba(255,249,239,1), rgba(94,111,58,.08)); box-shadow: 0 20px 42px rgba(72,54,35,.12); }
 .cardTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
-.cardTop h3 { margin: 0; font-family: Georgia, serif; font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.45rem); line-height: 1.05; }
-.weight { display: inline-block; margin-top: 7px; color: var(--green-light); font-weight: 800; font-size: .88rem; letter-spacing: .05em; }
-.price { flex: 0 0 auto; color: var(--gold); font-size: 1.35rem; white-space: nowrap; }
+.cardTop h3 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.45rem); line-height: 1.05; }
+.weight { display: inline-block; margin-top: 7px; color: var(--olive); font-weight: 850; font-size: .88rem; letter-spacing: .05em; }
+.price { flex: 0 0 auto; color: var(--terracotta); font-size: 1.35rem; white-space: nowrap; }
 .sandwichCard p { margin: 26px 0 0; color: var(--muted); }
 .spicy { font-family: sans-serif; font-size: .6em; vertical-align: .2em; }
-.foodNote { margin: 26px 0 0; padding: 18px 22px; border-left: 3px solid var(--green-light); background: rgba(255,255,255,.025); color: var(--muted); border-radius: 0 14px 14px 0; }
+.foodNote { margin: 26px 0 0; padding: 18px 22px; border-left: 3px solid var(--terracotta); background: rgba(158,63,50,.06); color: var(--muted); border-radius: 0 14px 14px 0; }
 .drinksSection { background: var(--bg-soft); border-top: 1px solid var(--line); }
 .drinkGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
-.drinkGroup { padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.025); }
-.drinkGroup h3 { margin: 0 0 18px; color: var(--green-light); font-family: Georgia, serif; font-size: 1.8rem; font-weight: 500; }
+.drinkGroup { padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,249,239,.82); box-shadow: 0 12px 30px rgba(72,54,35,.06); }
+.drinkGroup h3 { margin: 0 0 18px; color: var(--olive); font-family: Georgia, serif; font-size: 1.8rem; font-weight: 500; }
 .drinkRows { display: grid; }
 .drinkRow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
 .drinkRow > div { min-width: 0; }
-.drinkRow strong { display: block; line-height: 1.25; }
+.drinkRow strong { display: block; line-height: 1.25; color: var(--graphite); }
 .drinkRow span { display: block; margin-top: 3px; color: var(--muted); font-size: .88rem; }
-.drinkRow b { color: var(--gold); white-space: nowrap; }
-.cta { margin-top: 72px; padding: 42px; border-radius: 26px; display: flex; justify-content: space-between; align-items: center; gap: 40px; background: var(--surface); border: 1px solid var(--line); }
-.cta h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 500; }
-.cta p { margin: 10px 0 0; color: var(--muted); }
+.drinkRow b { color: var(--terracotta); white-space: nowrap; }
+.cta { margin-top: 72px; padding: 42px; border-radius: 26px; display: flex; justify-content: space-between; align-items: center; gap: 40px; color: var(--cream); background: radial-gradient(circle at 90% 0%, rgba(158,63,50,.20), transparent 35%), linear-gradient(120deg, #485936, #33412e); border: 1px solid rgba(198,164,106,.24); box-shadow: var(--shadow); }
+.cta h2 { margin: 0; color: var(--cream); font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 500; }
+.cta p { margin: 10px 0 0; color: rgba(244,235,221,.78); }
+.cta :global(.buttonPrimary) { background: var(--cream); color: var(--olive-dark); }
+.cta :global(.buttonSecondary) { background: transparent; border-color: rgba(244,235,221,.35); color: var(--cream); }
+.cta :global(.buttonSecondary:hover) { background: rgba(244,235,221,.10); }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
 @media (max-width: 840px) {
   .sectionHeading { align-items: flex-start; flex-direction: column; gap: 14px; }

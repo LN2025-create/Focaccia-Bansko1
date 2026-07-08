@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>{lang === 'en' ? 'Focaccia Bansko | Fresh focaccia & panini' : 'Focaccia Bansko | Прясна фокача и панини'}</title>
         <meta name="description" content={c.intro} />
-        <meta name="theme-color" content="#17130f" />
+        <meta name="theme-color" content="#20201e" />
         <meta property="og:title" content="Focaccia Bansko" />
         <meta property="og:description" content={c.intro} />
         <meta property="og:type" content="restaurant" />

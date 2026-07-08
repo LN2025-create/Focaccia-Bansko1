@@ -1,13 +1,13 @@
 .grid { display: grid; grid-template-columns: .68fr 1.32fr; gap: 20px; align-items: start; }
-.details { padding: 38px; border-radius: 26px; border: 1px solid var(--line); background: var(--surface); }
+.details { padding: 38px; border-radius: 26px; border: 1px solid var(--line); background: linear-gradient(145deg, var(--paper), rgba(232,216,194,.48)); box-shadow: 0 14px 38px rgba(72,54,35,.08); }
 .detail { padding: 0 0 24px; margin-bottom: 24px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
-.detail span { color: var(--green-light); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
-.detail strong, .detail a { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500; }
-.detail a:hover { color: var(--green-light); }
+.detail span { color: var(--olive); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.detail strong, .detail a { color: var(--graphite); font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500; }
+.detail a:hover { color: var(--terracotta); }
 .mapColumn { display: grid; gap: 20px; }
-.planWrap { margin: 0; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: #f0efef; }
+.planWrap { margin: 0; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: #f0efef; box-shadow: 0 14px 38px rgba(72,54,35,.08); }
 .planImage { display: block; width: 100%; height: auto; }
-.planWrap figcaption { display: flex; flex-direction: column; gap: 5px; padding: 18px 22px; color: var(--muted); background: var(--surface); border-top: 1px solid var(--line); }
-.planWrap figcaption strong { color: var(--fg); font-family: Georgia, serif; font-size: 1.2rem; font-weight: 500; }
-.mapWrap { min-height: 390px; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: var(--surface); }
+.planWrap figcaption { display: flex; flex-direction: column; gap: 5px; padding: 18px 22px; color: var(--muted); background: var(--paper); border-top: 1px solid var(--line); }
+.planWrap figcaption strong { color: var(--graphite); font-family: Georgia, serif; font-size: 1.2rem; font-weight: 500; }
+.mapWrap { min-height: 390px; overflow: hidden; border-radius: 26px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 14px 38px rgba(72,54,35,.08); }
 @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .mapWrap { min-height: 430px; } .details { padding: 30px 24px; } }

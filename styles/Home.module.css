@@ -4,7 +4,7 @@
 .heroInner { position: relative; z-index: 1; width: min(1180px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 72px; }
 .heroCopy { padding: 52px 0 82px; }
 .eyebrow { margin: 28px 0 10px; color: #aab77c; font-size: .78rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-.hero h1 { max-width: 700px; margin: 0; color: var(--cream); font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.7rem, 7vw, 7.1rem); font-weight: 500; line-height: .9; letter-spacing: -.06em; }
+.hero h1 { max-width: 760px; margin: 0; color: var(--cream); font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.2rem, 6.5vw, 6.2rem); font-weight: 500; line-height: .92; letter-spacing: -.055em; }
 .hero h1 em { display: block; color: #d47965; font-style: italic; font-weight: 400; }
 .intro { max-width: 690px; margin: 30px 0 0; color: rgba(244,235,221,.78); font-size: clamp(.98rem, 1.55vw, 1.12rem); line-height: 1.62; }
 .intro p { margin: 0 0 14px; }
@@ -15,9 +15,9 @@
 .hero :global(.buttonSecondary) { background: rgba(244,235,221,.05); border-color: rgba(244,235,221,.32); color: var(--cream); }
 .hero :global(.buttonSecondary:hover) { background: rgba(244,235,221,.11); border-color: rgba(244,235,221,.55); }
 .heroVisual { position: relative; }
-.imageFrame { position: relative; aspect-ratio: 1 / 1; border-radius: 42px; overflow: hidden; border: 1px solid rgba(244,235,221,.14); box-shadow: 0 30px 90px rgba(0,0,0,.34); background: radial-gradient(circle at 52% 44%, rgba(244,235,221,.10), transparent 54%), linear-gradient(145deg, #39472f, #20201e); }
+.imageFrame { position: relative; aspect-ratio: 1 / 1; border-radius: 42px; overflow: hidden; border: 1px solid rgba(244,235,221,.14); box-shadow: 0 30px 90px rgba(0,0,0,.34); background: linear-gradient(rgba(16,18,16,.42), rgba(16,18,16,.42)), url('/images/hero-sandwich-collage.jpg') center/cover no-repeat, linear-gradient(145deg, #39472f, #20201e); }
 .imageFrame::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, transparent 54%, rgba(0,0,0,.22)); pointer-events: none; }
-.imageFrame img { width: 100%; height: 100%; object-fit: contain; padding: 22px; }
+.imageFrame img { width: 100%; height: 100%; object-fit: contain; padding: 28px; filter: drop-shadow(0 16px 24px rgba(0,0,0,.28)); }
 .imageLabel { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 26px; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; color: white; }
 .imageLabel span { font-family: Georgia, serif; font-size: 2rem; }
 .imageLabel strong { max-width: 100px; text-align: right; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
@@ -30,7 +30,7 @@
 .sectionHeading h2 { max-width: 680px; margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(2.4rem, 5vw, 4.6rem); font-weight: 500; line-height: 1.02; letter-spacing: -.04em; }
 .sectionHeading p { margin: 0; color: var(--muted); font-size: 1.05rem; }
 .featureGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 54px; }
-.featureCard { min-height: 310px; padding: 34px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,249,239,.96), rgba(232,216,194,.42)); box-shadow: 0 16px 42px rgba(72,54,35,.08); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.featureCard { min-height: 310px; padding: 34px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,249,239,.96), rgba(232,216,194,.42)); box-shadow: 0 16px 42px rgba(72,54,35,.08); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; backdrop-filter: blur(2px); }
 .featureCard:hover { transform: translateY(-4px); border-color: rgba(94,111,58,.34); box-shadow: 0 22px 48px rgba(72,54,35,.13); }
 .icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: rgba(94,111,58,.12); color: var(--olive); }
 .featureCard h3 { margin: 56px 0 12px; color: var(--graphite); font-family: Georgia, serif; font-size: 1.55rem; }

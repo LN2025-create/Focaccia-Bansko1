@@ -7,5 +7,8 @@ export default function FeatureIcon({ name }) {
   if (name === 'glass') {
     return <svg {...common}><path d="M7 3h10l-1 7a4 4 0 0 1-8 0L7 3Z"/><path d="M12 14v7"/><path d="M9 21h6"/></svg>;
   }
+  if (name === 'coffee') {
+    return <svg {...common}><path d="M5 8h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8Z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3c0 1 1 1 1 2s-1 1-1 2"/><path d="M12 3c0 1 1 1 1 2s-1 1-1 2"/></svg>;
+  }
   return <svg {...common}><path d="M5 8h14v11H5z"/><path d="M7 8V5h10v3"/><path d="M8 12h8"/><path d="M9 15h6"/></svg>;
 }

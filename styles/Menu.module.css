@@ -2,14 +2,18 @@
 .sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; margin-bottom: 34px; }
 .sectionHeading h2 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1; font-weight: 500; letter-spacing: -.035em; }
 .sectionHeading > p { max-width: 390px; margin: 0; color: var(--muted); text-align: right; }
-.sandwichGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.sandwichCard { min-height: 225px; padding: 30px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.36)); box-shadow: 0 14px 34px rgba(72,54,35,.07); transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease; }
-.sandwichCard:hover { transform: translateY(-3px); border-color: rgba(94,111,58,.38); background: linear-gradient(145deg, rgba(255,249,239,1), rgba(94,111,58,.08)); box-shadow: 0 20px 42px rgba(72,54,35,.12); }
-.cardTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
-.cardTop h3 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.45rem); line-height: 1.05; }
-.weight { display: inline-block; margin-top: 7px; color: var(--olive); font-weight: 850; font-size: .88rem; letter-spacing: .05em; }
-.price { flex: 0 0 auto; color: var(--terracotta); font-size: 1.35rem; white-space: nowrap; }
-.sandwichCard p { margin: 26px 0 0; color: var(--muted); }
+.sandwichGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.sandwichCard { overflow: hidden; display: flex; min-height: 100%; flex-direction: column; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, rgba(255,249,239,.99), rgba(232,216,194,.34)); box-shadow: 0 14px 34px rgba(72,54,35,.07); transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease; }
+.sandwichCard:hover { transform: translateY(-4px); border-color: rgba(94,111,58,.40); background: linear-gradient(145deg, rgba(255,249,239,1), rgba(94,111,58,.08)); box-shadow: 0 22px 46px rgba(72,54,35,.13); }
+.sandwichImage { position: relative; aspect-ratio: 4 / 3; padding: 18px; background: radial-gradient(circle at 50% 46%, rgba(255,255,255,.95), rgba(244,235,221,.62) 58%, rgba(224,207,182,.50)); border-bottom: 1px solid var(--line); }
+.sandwichImage img { object-fit: contain; padding: 18px; filter: drop-shadow(0 14px 15px rgba(72,54,35,.18)); transition: transform .25s ease; }
+.sandwichCard:hover .sandwichImage img { transform: scale(1.035); }
+.sandwichBody { display: flex; flex: 1; flex-direction: column; padding: 25px 24px 27px; }
+.cardTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.cardTop h3 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-weight: 500; font-size: clamp(1.55rem, 2.2vw, 2.05rem); line-height: 1.05; }
+.weight { display: inline-block; margin-top: 7px; color: var(--olive); font-weight: 850; font-size: .84rem; letter-spacing: .05em; }
+.price { flex: 0 0 auto; color: var(--terracotta); font-size: 1.2rem; white-space: nowrap; }
+.sandwichCard p { margin: 22px 0 0; color: var(--muted); font-size: .97rem; line-height: 1.55; }
 .spicy { font-family: sans-serif; font-size: .6em; vertical-align: .2em; }
 .foodNote { margin: 26px 0 0; padding: 18px 22px; border-left: 3px solid var(--terracotta); background: rgba(158,63,50,.06); color: var(--muted); border-radius: 0 14px 14px 0; }
 .drinksSection { background: var(--bg-soft); border-top: 1px solid var(--line); }
@@ -32,12 +36,14 @@
 @media (max-width: 840px) {
   .sectionHeading { align-items: flex-start; flex-direction: column; gap: 14px; }
   .sectionHeading > p { text-align: left; }
-  .sandwichGrid, .drinkGrid { grid-template-columns: 1fr; }
+  .sandwichGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .drinkGrid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .heroActions { display: grid; }
-  .sandwichCard, .drinkGroup { padding: 24px 20px; }
-  .sandwichCard { min-height: auto; }
+  .sandwichGrid { grid-template-columns: 1fr; }
+  .drinkGroup { padding: 24px 20px; }
+  .sandwichBody { padding: 22px 20px 24px; }
   .cardTop { gap: 12px; }
   .price { font-size: 1.15rem; }
   .cta { align-items: flex-start; flex-direction: column; padding: 32px 24px; }

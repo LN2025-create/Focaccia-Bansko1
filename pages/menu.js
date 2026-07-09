@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
@@ -48,14 +49,24 @@ export default function Menu() {
             <div className={styles.sandwichGrid}>
               {sandwiches.map((item) => (
                 <article className={styles.sandwichCard} key={item.name}>
-                  <div className={styles.cardTop}>
-                    <div>
-                      <h3>{item.name}{item.spicy ? <span className={styles.spicy} title={c.spicy}> 🌶</span> : null}</h3>
-                      <span className={styles.weight}>{item.weight}</span>
-                    </div>
-                    <strong className={styles.price}>{item.price}</strong>
+                  <div className={styles.sandwichImage}>
+                    <Image
+                      src={item.image}
+                      alt={`${item.name} - Focaccia Bansko`}
+                      fill
+                      sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                    />
                   </div>
-                  <p>{item[lang]}</p>
+                  <div className={styles.sandwichBody}>
+                    <div className={styles.cardTop}>
+                      <div>
+                        <h3>{item.name}{item.spicy ? <span className={styles.spicy} title={c.spicy}> 🌶</span> : null}</h3>
+                        <span className={styles.weight}>{item.weight}</span>
+                      </div>
+                      <strong className={styles.price}>{item.price}</strong>
+                    </div>
+                    <p>{item[lang]}</p>
+                  </div>
                 </article>
               ))}
             </div>

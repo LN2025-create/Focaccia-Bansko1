@@ -12,15 +12,17 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
   const { lang, text, changeLanguage, href } = useLanguage();
   const c = text.home;
+  const introParagraphs = Array.isArray(c.intro) ? c.intro : [c.intro];
+  const metaDescription = introParagraphs.join(' ');
 
   return (
     <>
       <Head>
         <title>{lang === 'en' ? 'Focaccia Bansko | Fresh focaccia & panini' : 'Focaccia Bansko | Прясна фокача и панини'}</title>
-        <meta name="description" content={c.intro} />
+        <meta name="description" content={metaDescription} />
         <meta name="theme-color" content="#20201e" />
         <meta property="og:title" content="Focaccia Bansko" />
-        <meta property="og:description" content={c.intro} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="restaurant" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
@@ -32,7 +34,7 @@ export default function Home() {
               <OpeningBadge text={text.open} />
               <p className={styles.eyebrow}>{c.eyebrow}</p>
               <h1>{c.title} <em>{c.titleAccent}</em></h1>
-              <p className={styles.intro}>{c.intro}</p>
+              <div className={styles.intro}>{introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
               <div className={styles.actions}>
                 <Link href={href('/menu')} className="button buttonPrimary">{c.menuCta}</Link>
                 <a href={site.mapsUrl} target="_blank" rel="noreferrer" className="button buttonSecondary">{c.directionsCta}</a>

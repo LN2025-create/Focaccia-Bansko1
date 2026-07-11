@@ -17,6 +17,7 @@ export default function TasteStory({ slug }) {
   const c = article[lang];
   const region = lang === 'en' ? article.regionEn : article.region;
   const related = tasteArticles.filter((item) => item.category === article.category && item.slug !== article.slug).slice(0, 3);
+  const longTitle = c.title.length > 42;
   const labels = lang === 'en' ? {
     journey: 'The Journey of Taste', facts: 'Key facts', market: 'Market position', sources: 'Verified sources',
     menu: 'Explore the menu', back: 'Back to The Journey of Taste', related: 'Continue the journey', read: 'Read the story',
@@ -35,12 +36,15 @@ export default function TasteStory({ slug }) {
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
         <article className={styles.article}>
           <header className={styles.hero}>
-            <Image src={article.image} alt={c.title} fill priority sizes="100vw" className={styles.heroImage} />
-            <div className={styles.heroShade} />
-            <div className={styles.heroCopy}>
-              <p>{labels.journey} · {region}</p>
-              <h1>{c.title}</h1>
-              <span>{c.subtitle}</span>
+            <div className={styles.heroInner}>
+              <div className={styles.coverFrame}>
+                <Image src={article.image} alt={c.title} fill priority sizes="(max-width: 820px) 100vw, 1120px" className={styles.heroImage} />
+              </div>
+              <div className={styles.heroCopy}>
+                <p>{labels.journey} · {region}</p>
+                <h1 className={longTitle ? styles.longTitle : undefined}>{c.title}</h1>
+                <span>{c.subtitle}</span>
+              </div>
             </div>
           </header>
 

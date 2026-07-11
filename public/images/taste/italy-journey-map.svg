@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 720" role="img" aria-labelledby="title desc">
+  <title id="title">Stylised map of Italy</title>
+  <desc id="desc">A clean decorative outline of Italy, Sardinia and Sicily.</desc>
+  <defs>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6f8051"/>
+      <stop offset="1" stop-color="#455833"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M196 50
+      C226 39 264 49 285 71
+      C301 89 294 113 296 139
+      C298 166 318 187 338 210
+      C356 231 352 251 335 268
+      C318 284 314 303 326 329
+      C341 360 351 389 348 416
+      C345 443 361 465 386 481
+      C411 497 438 500 465 488
+      L490 509
+      C470 532 443 551 410 559
+      C383 565 357 557 334 544
+      L308 526
+      C301 542 304 561 317 582
+      L344 623
+      L326 655
+      L293 640
+      C266 627 245 607 225 586
+      C204 565 184 546 168 520
+      C151 493 137 463 127 434
+      C116 404 114 378 122 345
+      C129 317 122 294 112 268
+      C100 238 108 210 123 184
+      C140 155 151 130 155 102
+      C159 75 174 59 196 50 Z"
+      fill="url(#land)" stroke="#e8d9bd" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M111 453
+      C94 465 85 486 84 513
+      C83 543 95 568 113 581
+      C130 569 141 546 142 517
+      C143 487 131 464 111 453 Z"
+      fill="#b89b62" stroke="#e8d9bd" stroke-width="4"/>
+    <path d="M314 651
+      C347 638 387 639 427 651
+      C447 657 462 667 472 679
+      C451 696 423 705 389 706
+      C353 706 326 696 306 681
+      C307 670 309 660 314 651 Z"
+      fill="#a84537" stroke="#e8d9bd" stroke-width="4"/>
+  </g>
+</svg>

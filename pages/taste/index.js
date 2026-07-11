@@ -8,18 +8,18 @@ import { tasteArticles, tasteCategories } from '../../lib/tasteArticles';
 import styles from '../../styles/Taste.module.css';
 
 const mapPoints = [
-  { slug: 'igor-gorgonzola', label: 'Novara', x: 46, y: 17 },
-  { slug: 'agriform-provolone', label: 'Verona', x: 57, y: 24 },
-  { slug: 'coati-napoli', label: 'Valpolicella', x: 52, y: 21 },
-  { slug: 'caffe-corsini', label: 'Arezzo', x: 54, y: 42 },
-  { slug: 'sabelli-burrata', label: 'Ascoli', x: 66, y: 48 },
-  { slug: 'trevalli-tartufo', label: 'Macerata', x: 64, y: 43 },
-  { slug: 'casa-modena', label: 'Modena', x: 50, y: 33 },
-  { slug: 'parmigiano-reggiano', label: 'Emilia', x: 47, y: 36 },
-  { slug: 'caputo', label: 'Napoli', x: 65, y: 68 },
-  { slug: 'ignalat-stracciatella', label: 'Puglia', x: 80, y: 69 },
-  { slug: 'mazza', label: 'Brescia', x: 48, y: 22 },
-  { slug: 'mangiafuoco', label: 'Mantova', x: 49, y: 28 },
+  { slug: 'igor-gorgonzola', label: 'Novara', x: 42, y: 13 },
+  { slug: 'mazza', label: 'Brescia', x: 47, y: 18 },
+  { slug: 'coati-napoli', label: 'Valpolicella', x: 50, y: 19 },
+  { slug: 'agriform-provolone', label: 'Verona', x: 54, y: 22 },
+  { slug: 'mangiafuoco', label: 'Mantova', x: 48, y: 25 },
+  { slug: 'casa-modena', label: 'Modena', x: 47, y: 31 },
+  { slug: 'parmigiano-reggiano', label: 'Emilia-Romagna', x: 45, y: 34 },
+  { slug: 'caffe-corsini', label: 'Arezzo', x: 51, y: 41 },
+  { slug: 'trevalli-tartufo', label: 'Macerata', x: 61, y: 43 },
+  { slug: 'sabelli-burrata', label: 'Ascoli Piceno', x: 64, y: 47 },
+  { slug: 'caputo', label: 'Napoli', x: 62, y: 67 },
+  { slug: 'ignalat-stracciatella', label: 'Puglia', x: 78, y: 69 },
 ];
 
 export default function TasteLanding() {
@@ -71,18 +71,24 @@ export default function TasteLanding() {
                 <h2>{labels.mapTitle}</h2>
                 <p>{labels.mapText}</p>
                 <div className={styles.mapLegend}>
-                  {mapPoints.map((point) => {
+                  {mapPoints.map((point, index) => {
                     const article = tasteArticles.find((item) => item.slug === point.slug);
                     if (!article) return null;
-                    return <Link key={point.slug} href={href(`/taste/${point.slug}`)}><span />{article[lang].title.split(' — ')[0]}</Link>;
+                    return (
+                      <Link key={point.slug} href={href(`/taste/${point.slug}`)}>
+                        <span>{index + 1}</span>
+                        <b>{article[lang].title.split(' — ')[0]}</b>
+                        <small>{point.label}</small>
+                      </Link>
+                    );
                   })}
                 </div>
               </div>
               <div className={styles.mapVisual}>
-                <Image src="/images/taste/italy-journey-map.png" alt={labels.mapTitle} fill sizes="(max-width: 850px) 100vw, 45vw" />
-                {mapPoints.map((point) => (
+                <Image src="/images/taste/italy-journey-map.svg" alt={labels.mapTitle} fill sizes="(max-width: 850px) 100vw, 45vw" />
+                {mapPoints.map((point, index) => (
                   <Link key={point.slug} href={href(`/taste/${point.slug}`)} className={styles.mapPoint} style={{ left: `${point.x}%`, top: `${point.y}%` }} aria-label={point.label}>
-                    <span /> <b>{point.label}</b>
+                    <span>{index + 1}</span>
                   </Link>
                 ))}
               </div>

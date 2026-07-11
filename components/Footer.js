@@ -24,6 +24,7 @@ export default function Footer({ lang, text, href }) {
           <nav className={styles.links}>
             <Link href={href('/')}>{text.nav.home}</Link>
             <Link href={href('/menu')}>{text.nav.menu}</Link>
+            <Link href={href('/taste')}>{text.nav.taste}</Link>
             <Link href={href('/location')}>{text.nav.location}</Link>
             <Link href={href('/contacts')}>{text.nav.contacts}</Link>
           </nav>

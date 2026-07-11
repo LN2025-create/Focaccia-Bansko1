@@ -7,6 +7,7 @@ import styles from '../styles/Header.module.css';
 const routes = [
   ['/', 'home'],
   ['/menu', 'menu'],
+  ['/taste', 'taste'],
   ['/location', 'location'],
   ['/contacts', 'contacts'],
 ];
@@ -47,7 +48,7 @@ export default function Header({ lang, text, changeLanguage, href }) {
             <Link
               key={path}
               href={href(path)}
-              className={router.pathname === path ? styles.active : ''}
+              className={(path === '/' ? router.pathname === '/' : router.pathname.startsWith(path)) ? styles.active : ''}
               onClick={() => setOpen(false)}
             >
               {text.nav[key]}

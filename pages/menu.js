@@ -31,7 +31,6 @@ export default function Menu() {
             <div className={styles.heroActions}>
               <a href="#sandwiches" className="button buttonPrimary">{c.sandwichesLink}</a>
               <a href="#drinks" className="button buttonSecondary">{c.drinksLink}</a>
-              <a href="/menu-focaccia-2026.pdf" target="_blank" rel="noreferrer" className="button buttonSecondary">{c.pdf}</a>
             </div>
           </div>
         </section>

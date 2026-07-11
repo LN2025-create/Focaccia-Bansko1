@@ -10,8 +10,38 @@
 .featuredCopy h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.3rem, 4.5vw, 4.3rem); line-height: 1; font-weight: 500; letter-spacing: -.04em; }
 .featuredCopy > p:not(:global(.sectionEyebrow)) { margin: 24px 0 0; color: var(--muted); font-size: 1.05rem; }
 .featuredCopy span { margin-top: 36px; color: var(--terracotta); font-weight: 900; }
-.nextPanel { margin-top: 42px; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; padding: 48px; border-radius: 28px; background: linear-gradient(135deg, rgba(94,111,58,.11), rgba(158,63,50,.07)); border: 1px solid var(--line); }
-.nextPanel h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 500; }
-.nextPanel > p { margin: 0; color: var(--muted); font-size: 1.04rem; }
-@media (max-width: 820px) { .featuredCard { grid-template-columns: 1fr; } .featuredImage { min-height: 360px; } .nextPanel { grid-template-columns: 1fr; gap: 20px; padding: 34px 26px; } }
-@media (max-width: 560px) { .landingHero { padding: 136px 0 62px; } .featuredImage { min-height: 260px; } .featuredCopy { padding: 34px 24px; } }
+.mapSection { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: center; margin-top: 72px; padding: clamp(34px, 6vw, 64px); border-radius: 34px; background: var(--graphite); color: var(--cream); box-shadow: var(--shadow); }
+.mapCopy h2, .storiesHeading h2, .ending h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 1; font-weight: 500; letter-spacing: -.04em; }
+.mapCopy > p:not(:global(.sectionEyebrow)) { max-width: 560px; color: rgba(244,235,221,.76); }
+.mapCopy :global(.sectionEyebrow) { color: #d2c58e; }
+.mapLegend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; margin-top: 28px; }
+.mapLegend a { color: rgba(244,235,221,.82); font-size: .86rem; }
+.mapLegend span { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--terracotta); }
+.mapVisual { position: relative; min-height: 600px; }
+.mapVisual > img { object-fit: contain; }
+.mapPoint { position: absolute; z-index: 2; display: flex; align-items: center; gap: 5px; transform: translate(-50%, -50%); color: var(--cream); font-size: .68rem; text-shadow: 0 2px 5px rgba(0,0,0,.8); }
+.mapPoint > span { width: 14px; height: 14px; border: 3px solid var(--cream); border-radius: 50%; background: var(--terracotta); box-shadow: 0 0 0 5px rgba(212,121,101,.18); transition: transform .2s ease; }
+.mapPoint:hover > span { transform: scale(1.35); }
+.storiesHeading { max-width: 820px; margin: 100px 0 0; }
+.storiesHeading > p:not(:global(.sectionEyebrow)) { color: var(--muted); font-size: 1.08rem; }
+.category { margin-top: 64px; }
+.category > h3 { margin: 0 0 22px; color: var(--olive-dark); font-family: Georgia, serif; font-size: 2rem; font-weight: 500; }
+.storyGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.storyCard { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--paper); box-shadow: 0 12px 34px rgba(72,54,35,.08); transition: transform .2s ease, box-shadow .2s ease; }
+.storyCard:hover { transform: translateY(-5px); box-shadow: 0 22px 52px rgba(72,54,35,.16); }
+.storyImage { position: relative; aspect-ratio: 16/10; background: var(--graphite); }
+.storyImage img { object-fit: cover; }
+.storyBody { padding: 24px; }
+.storyBody > span { color: var(--olive); font-size: .72rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.storyBody h4 { margin: 13px 0 0; color: var(--graphite); font-family: Georgia, serif; font-size: 1.48rem; line-height: 1.08; }
+.storyBody p { min-height: 50px; margin: 12px 0 0; color: var(--muted); font-size: .91rem; }
+.storyBody b { display: block; margin-top: 20px; color: var(--terracotta); font-size: .86rem; }
+.ending { margin-top: 92px; display: flex; align-items: center; justify-content: space-between; gap: 50px; padding: clamp(38px, 6vw, 64px); border-radius: 32px; color: var(--cream); background: radial-gradient(circle at 90% 0%, rgba(158,63,50,.26), transparent 38%), linear-gradient(120deg, #465635, #2d3929); box-shadow: var(--shadow); }
+.ending h2 { color: var(--cream); }
+.ending p:not(:global(.sectionEyebrow)) { max-width: 650px; color: rgba(244,235,221,.78); }
+.ending :global(.sectionEyebrow) { color: #d4bf8f; }
+.ending :global(.buttonPrimary) { flex: 0 0 auto; background: var(--cream); color: var(--olive-dark); }
+@media (max-width: 1050px) { .storyGrid { grid-template-columns: repeat(2, 1fr); } .mapSection { grid-template-columns: 1fr; } .mapVisual { min-height: 680px; } }
+@media (max-width: 820px) { .featuredCard { grid-template-columns: 1fr; } .featuredImage { min-height: 360px; } .ending { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 680px) { .storyGrid { grid-template-columns: 1fr; } .mapVisual { min-height: 510px; } .mapLegend { grid-template-columns: 1fr; } .mapPoint b { display: none; } }
+@media (max-width: 560px) { .landingHero { padding: 136px 0 62px; } .featuredImage { min-height: 260px; } .featuredCopy { padding: 34px 24px; } .mapSection { padding: 34px 22px; } .mapVisual { min-height: 430px; } .ending { padding: 34px 24px; } }

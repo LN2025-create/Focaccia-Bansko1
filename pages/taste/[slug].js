@@ -120,10 +120,6 @@ export default function TasteStory({ slug }) {
             </section>
 
             <section className={styles.regionSection}>
-              <div className={styles.regionMapMini}>
-                <Image src="/images/taste/italy-silhouette.svg" alt="" fill sizes="300px" />
-                <span style={{ left: `${tasteRegions[meta.regionId].x}%`, top: `${tasteRegions[meta.regionId].y}%` }} />
-              </div>
               <div>
                 <p className="sectionEyebrow">{labels.region}</p>
                 <h2>{region?.name} · {region?.city}</h2>

@@ -81,3 +81,10 @@ All meaningful project changes must be recorded here. Completed work must not be
 - Replacing the logos.
 - Changing the main colour palette.
 - Updating the address, phone, email, Instagram or opening hours to the values already listed in `PROJECT_HISTORY.md`.
+
+## Version 1.1.1 — Layout hotfix
+
+- Fixed overlapping producer headings and text on desktop article pages.
+- Removed the small Italy map from individual product articles.
+- Kept region information as a clean text section inside each article.
+- The interactive Italy map remains only at the bottom of the main “Пътят на вкуса” page.

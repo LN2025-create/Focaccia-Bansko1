@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "status": "ready_for_review",
-    "scope": "Product-led Journey of Taste articles, bottom interactive Italy region map, home-page card refinements and Mazza image crop."
+    "scope": "Hotfix for product-article desktop overlap and correction of Italy-map placement."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -108,7 +108,7 @@
     }
   },
   "activeTasks": [
-    "Review the delivered Version 1.1 in the live browser after deployment.",
+    "Review Version 1.1.1 after deployment on desktop and mobile.",
     "Future optional content pass: replace remaining temporary producer images with official logo, product and production imagery when clear usage rights are available."
   ],
   "doNotRepeatAsNewTasks": [

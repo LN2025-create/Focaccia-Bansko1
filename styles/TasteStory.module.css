@@ -15,8 +15,10 @@
 .inlineLink { flex: 0 0 auto; color: var(--terracotta); font-weight: 900; }
 .body > blockquote { max-width: 850px; margin: 76px auto 0; color: var(--olive-dark); font-family: Georgia, serif; font-size: clamp(1.65rem, 3.4vw, 3rem); line-height: 1.25; text-align: center; text-wrap: balance; }
 .split, .producerSection { display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); gap: 70px; margin-top: 94px; padding: 54px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.split > div, .producerSection > div { min-width: 0; }
 .producerSection { margin-top: 0; border-top: 0; }
-.split h2, .producerSection h2, .why h2, .regionSection h2, .culinaryGrid h2, .cta h2, .related h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.15rem, 4.7vw, 4.2rem); line-height: 1.04; font-weight: 500; letter-spacing: -.035em; text-wrap: balance; }
+.split h2, .producerSection h2, .why h2, .regionSection h2, .culinaryGrid h2, .cta h2, .related h2 { margin: 0; max-width: 100%; font-family: Georgia, serif; font-size: clamp(2.15rem, 4.7vw, 4.2rem); line-height: 1.04; font-weight: 500; letter-spacing: -.035em; text-wrap: balance; overflow-wrap: anywhere; }
+.producerSection h2 { font-size: clamp(2.15rem, 3.7vw, 3.7rem); }
 .split p, .producerSection p, .why p:not(:global(.sectionEyebrow)), .market p:not(:global(.sectionEyebrow)), .regionSection p:not(:global(.sectionEyebrow)), .culinaryGrid p, .ctaCopy p:not(:global(.sectionEyebrow)) { color: var(--muted); font-size: 1.06rem; line-height: 1.78; }
 .split > div:last-child p:first-child, .producerSection > div:last-child p:first-child { margin-top: 0; }
 .why { margin-top: 86px; padding: clamp(36px, 6vw, 64px); border-radius: 30px; background: linear-gradient(135deg, rgba(94,111,58,.14), rgba(158,63,50,.08)); border: 1px solid var(--line); }
@@ -31,10 +33,10 @@
 .market { background: var(--graphite); color: var(--cream); }
 .market :global(.sectionEyebrow) { color: #d2c58e; }
 .market p:not(:global(.sectionEyebrow)) { color: rgba(244,235,221,.78); }
-.regionSection { display: grid; grid-template-columns: 320px minmax(0,1fr); gap: 54px; align-items: center; margin-top: 86px; padding: clamp(34px, 5vw, 54px); border: 1px solid var(--line); border-radius: 30px; background: linear-gradient(145deg, rgba(255,249,239,.95), rgba(232,216,194,.48)); }
-.regionMapMini { position: relative; min-height: 380px; overflow: hidden; border-radius: 24px; background: linear-gradient(145deg, #2b3027, #1d201b); }
-.regionMapMini img { object-fit: contain; padding: 24px; }
-.regionMapMini > span { position: absolute; width: 19px; height: 19px; transform: translate(-50%, -50%); border: 3px solid var(--cream); border-radius: 50%; background: var(--terracotta); box-shadow: 0 0 0 8px rgba(212,121,101,.18), 0 6px 20px rgba(0,0,0,.35); }
+.regionSection { margin-top: 86px; padding: clamp(38px, 6vw, 64px); border: 1px solid var(--line); border-radius: 30px; background: linear-gradient(145deg, rgba(255,249,239,.95), rgba(232,216,194,.48)); }
+.regionSection > div { max-width: 780px; }
+.regionSection h2 { margin-top: 6px; }
+.regionSection p:not(:global(.sectionEyebrow)) { margin-bottom: 0; }
 .culinaryGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 82px; }
 .culinaryGrid > div { min-height: 320px; padding: clamp(32px, 5vw, 48px); border: 1px solid var(--line); border-radius: 28px; background: var(--paper); box-shadow: 0 12px 32px rgba(72,54,35,.07); }
 .culinaryGrid > div:nth-child(2) { color: var(--cream); background: radial-gradient(circle at 92% 8%, rgba(158,63,50,.22), transparent 32%), linear-gradient(135deg, #465635, #2d3929); border-color: rgba(198,164,106,.24); }
@@ -64,8 +66,7 @@
 .back { display: inline-block; margin-top: 46px; color: var(--olive-dark); font-weight: 850; }
 
 @media (max-width: 880px) {
-  .split, .producerSection, .factsWrap, .regionSection, .cta { grid-template-columns: 1fr; gap: 30px; }
-  .regionMapMini { min-height: 450px; }
+  .split, .producerSection, .factsWrap, .cta { grid-template-columns: 1fr; gap: 30px; }
   .culinaryGrid { grid-template-columns: 1fr; }
   .ctaImage { min-height: 360px; }
   .relatedGrid { grid-template-columns: 1fr; }
@@ -84,7 +85,6 @@
   .facts, .market { padding: 26px 21px; }
   .factRow { grid-template-columns: 1fr; gap: 5px; }
   .regionSection { padding: 26px 20px; }
-  .regionMapMini { min-height: 360px; }
   .culinaryGrid > div { min-height: 0; padding: 30px 22px; }
   .ctaImage { min-height: 280px; }
   .ctaCopy { padding: 32px 22px; }

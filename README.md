@@ -1,6 +1,8 @@
 # Focaccia Bansko
 
-Next.js website for Focaccia Bansko.
+> **Before editing:** read [`PROJECT_STATE.json`](./PROJECT_STATE.json), [`PROJECT_HISTORY.md`](./PROJECT_HISTORY.md) and [`CHANGELOG.md`](./CHANGELOG.md). The active application is the Next.js project in the repository root. An obsolete nested project copy was removed on 2026-07-13 so only one application remains.
+
+Next.js website for Focaccia Bansko. Current repository release: **1.1.0**.
 
 ## Local development
 
@@ -32,8 +34,16 @@ The API key must have Places API (New) enabled. The server route requests only `
 - Logo version 1 is used as the main visual on the home page.
 - Logo version 2 is used in the header and footer.
 - The location page includes the supplied landmark diagram and an interactive Google map.
-- The menu page includes the 2026 menu in Bulgarian and English, with a compressed PDF download.
+- The menu page presents the current menu in Bulgarian and English as a web experience. The visible PDF-menu feature must not be reintroduced unless explicitly requested.
 ## Visual theme
 
 The site uses a warm Italian-inspired palette: cream, olive green, terracotta, graphite and muted gold.
 
+
+## Version 1.1 structure
+
+- The main focaccia story remains the first item in “Пътят на вкуса”.
+- Product stories are product-led and arranged vertically.
+- The interactive Italy map is at the bottom and filters stories by the selected region.
+- Market-position copy is shown only when a supported exact claim exists.
+- Home-page feature cards use the “Салумерия” title and the 01 / 02 / 03 strip ends with “Кафе, вино и кроасан”.

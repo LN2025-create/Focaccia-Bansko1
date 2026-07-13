@@ -50,9 +50,13 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.quickFacts}>
-            <div><span>01</span><strong>{c.fresh}</strong></div>
-            <div><span>02</span><strong>{c.italian}</strong></div>
-            <div><span>03</span><strong>{c.location}</strong></div>
+            {c.quickFacts.map((fact, index) => (
+              <div key={fact.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <div className={styles.quickFactIcon}><FeatureIcon name={fact.icon} /></div>
+                <p><strong>{fact.title}</strong><small>{fact.text}</small></p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -65,10 +69,13 @@ export default function Home() {
             </div>
             <div className={styles.featureGrid}>
               {c.cards.map((card) => (
-                <article className={styles.featureCard} key={card.title}>
+                <article className={`${styles.featureCard} ${styles[`feature_${card.icon}`] || ''}`} key={card.title}>
+                  <div className={styles.cardDecor} aria-hidden="true"><FeatureIcon name={card.icon} /></div>
                   <div className={styles.icon}><FeatureIcon name={card.icon} /></div>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
+                  <div className={styles.featureCopy}>
+                    <h3>{card.title}</h3>
+                    <p>{card.text}</p>
+                  </div>
                 </article>
               ))}
             </div>

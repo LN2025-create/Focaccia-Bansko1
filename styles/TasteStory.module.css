@@ -2,22 +2,27 @@
 .hero { padding: 142px 0 58px; background: linear-gradient(145deg, #20201e, #2d3028); color: var(--cream); }
 .heroInner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .coverFrame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(244,235,221,.14); border-radius: 30px; background: #191a17; box-shadow: 0 30px 80px rgba(0,0,0,.28); }
-.heroImage { object-fit: contain; }
+.heroImage { object-fit: cover; }
+.heroImage.mazzaHeroImage { object-fit: cover; object-position: center; transform: scale(1.02); }
 .heroCopy { max-width: 980px; padding: 52px 0 6px; }
 .heroCopy > p { margin: 0 0 18px; color: #d3c695; font-size: .76rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-.heroCopy h1 { margin: 0; color: var(--cream); font-family: Georgia, serif; font-size: clamp(2.75rem, 5.5vw, 5.6rem); font-weight: 500; line-height: 1.01; letter-spacing: -.045em; text-wrap: balance; overflow-wrap: anywhere; }
-.heroCopy h1.longTitle { font-size: clamp(2.45rem, 4.8vw, 4.85rem); }
-.heroCopy span { display: block; max-width: 760px; margin-top: 20px; color: rgba(244,235,221,.82); font-size: clamp(1.02rem, 1.8vw, 1.28rem); line-height: 1.55; }
-.body { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 84px 0 118px; }
-.body > blockquote { max-width: 850px; margin: 0 auto; color: var(--olive-dark); font-family: Georgia, serif; font-size: clamp(1.65rem, 3.4vw, 3rem); line-height: 1.25; text-align: center; text-wrap: balance; }
-.intro { max-width: 760px; margin: 56px auto 0; }
-.intro p, .split p, .why p:not(:global(.sectionEyebrow)), .market p:not(:global(.sectionEyebrow)) { color: var(--muted); font-size: 1.06rem; line-height: 1.78; }
-.split { display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); gap: 70px; margin-top: 94px; padding: 54px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.split h2, .why h2, .cta h2, .related h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.15rem, 4.7vw, 4.2rem); line-height: 1.04; font-weight: 500; letter-spacing: -.035em; text-wrap: balance; }
-.split > div:last-child p:first-child { margin-top: 0; }
+.heroCopy h1 { margin: 0; color: var(--cream); font-family: Georgia, serif; font-size: clamp(3rem, 6.2vw, 6rem); font-weight: 500; line-height: .99; letter-spacing: -.05em; text-wrap: balance; overflow-wrap: anywhere; }
+.heroCopy h1.longTitle { font-size: clamp(2.55rem, 5vw, 4.9rem); }
+.heroCopy span { display: block; max-width: 760px; margin-top: 20px; color: rgba(244,235,221,.84); font-size: clamp(1.04rem, 1.8vw, 1.3rem); line-height: 1.55; }
+.body { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 118px; }
+.availability { display: flex; align-items: center; justify-content: space-between; gap: 34px; padding: 28px 32px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(135deg, rgba(94,111,58,.12), rgba(198,164,106,.08)); }
+.availability h2 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.1; font-weight: 500; }
+.inlineLink { flex: 0 0 auto; color: var(--terracotta); font-weight: 900; }
+.body > blockquote { max-width: 850px; margin: 76px auto 0; color: var(--olive-dark); font-family: Georgia, serif; font-size: clamp(1.65rem, 3.4vw, 3rem); line-height: 1.25; text-align: center; text-wrap: balance; }
+.split, .producerSection { display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); gap: 70px; margin-top: 94px; padding: 54px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.producerSection { margin-top: 0; border-top: 0; }
+.split h2, .producerSection h2, .why h2, .regionSection h2, .culinaryGrid h2, .cta h2, .related h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.15rem, 4.7vw, 4.2rem); line-height: 1.04; font-weight: 500; letter-spacing: -.035em; text-wrap: balance; }
+.split p, .producerSection p, .why p:not(:global(.sectionEyebrow)), .market p:not(:global(.sectionEyebrow)), .regionSection p:not(:global(.sectionEyebrow)), .culinaryGrid p, .ctaCopy p:not(:global(.sectionEyebrow)) { color: var(--muted); font-size: 1.06rem; line-height: 1.78; }
+.split > div:last-child p:first-child, .producerSection > div:last-child p:first-child { margin-top: 0; }
 .why { margin-top: 86px; padding: clamp(36px, 6vw, 64px); border-radius: 30px; background: linear-gradient(135deg, rgba(94,111,58,.14), rgba(158,63,50,.08)); border: 1px solid var(--line); }
 .why p:not(:global(.sectionEyebrow)) { max-width: 780px; margin-bottom: 0; }
 .factsWrap { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: 24px; margin-top: 82px; }
+.factsOnly { grid-template-columns: 1fr; }
 .facts, .market { padding: 36px; border-radius: 24px; border: 1px solid var(--line); background: var(--paper); }
 .factRow { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .factRow:last-child { border-bottom: 0; }
@@ -26,10 +31,24 @@
 .market { background: var(--graphite); color: var(--cream); }
 .market :global(.sectionEyebrow) { color: #d2c58e; }
 .market p:not(:global(.sectionEyebrow)) { color: rgba(244,235,221,.78); }
-.cta { margin-top: 84px; display: flex; align-items: center; justify-content: space-between; gap: 42px; padding: clamp(36px, 6vw, 60px); border-radius: 30px; color: var(--cream); background: radial-gradient(circle at 88% 0%, rgba(158,63,50,.28), transparent 38%), linear-gradient(120deg, #465635, #2d3929); box-shadow: var(--shadow); }
+.regionSection { display: grid; grid-template-columns: 320px minmax(0,1fr); gap: 54px; align-items: center; margin-top: 86px; padding: clamp(34px, 5vw, 54px); border: 1px solid var(--line); border-radius: 30px; background: linear-gradient(145deg, rgba(255,249,239,.95), rgba(232,216,194,.48)); }
+.regionMapMini { position: relative; min-height: 380px; overflow: hidden; border-radius: 24px; background: linear-gradient(145deg, #2b3027, #1d201b); }
+.regionMapMini img { object-fit: contain; padding: 24px; }
+.regionMapMini > span { position: absolute; width: 19px; height: 19px; transform: translate(-50%, -50%); border: 3px solid var(--cream); border-radius: 50%; background: var(--terracotta); box-shadow: 0 0 0 8px rgba(212,121,101,.18), 0 6px 20px rgba(0,0,0,.35); }
+.culinaryGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 82px; }
+.culinaryGrid > div { min-height: 320px; padding: clamp(32px, 5vw, 48px); border: 1px solid var(--line); border-radius: 28px; background: var(--paper); box-shadow: 0 12px 32px rgba(72,54,35,.07); }
+.culinaryGrid > div:nth-child(2) { color: var(--cream); background: radial-gradient(circle at 92% 8%, rgba(158,63,50,.22), transparent 32%), linear-gradient(135deg, #465635, #2d3929); border-color: rgba(198,164,106,.24); }
+.culinaryGrid > div:nth-child(2) h2 { color: var(--cream); }
+.culinaryGrid > div:nth-child(2) p { color: rgba(244,235,221,.78); }
+.culinaryGrid > div:nth-child(2) :global(.sectionEyebrow) { color: #d4bf8f; }
+.cta { margin-top: 84px; display: grid; grid-template-columns: minmax(320px,.9fr) minmax(0,1.1fr); overflow: hidden; border-radius: 30px; color: var(--cream); background: radial-gradient(circle at 88% 0%, rgba(158,63,50,.28), transparent 38%), linear-gradient(120deg, #465635, #2d3929); box-shadow: var(--shadow); }
+.ctaImage { position: relative; min-height: 430px; background: #1c2019; }
+.ctaImage img { object-fit: cover; }
+.ctaCopy { display: flex; flex-direction: column; justify-content: center; padding: clamp(36px, 6vw, 60px); }
 .cta h2 { max-width: 680px; color: var(--cream); }
+.ctaCopy p:not(:global(.sectionEyebrow)) { color: rgba(244,235,221,.78); }
 .cta :global(.sectionEyebrow) { color: #d4bf8f; }
-.cta :global(.buttonPrimary) { flex: 0 0 auto; background: var(--cream); color: var(--olive-dark); }
+.cta :global(.buttonPrimary) { align-self: flex-start; margin-top: 18px; background: var(--cream); color: var(--olive-dark); }
 .sources { margin-top: 56px; padding-top: 30px; border-top: 1px solid var(--line); }
 .sources > div { display: flex; flex-wrap: wrap; gap: 10px; }
 .sources a { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--olive-dark); font-size: .84rem; font-weight: 750; background: var(--paper); }
@@ -43,23 +62,34 @@
 .relatedCard strong { margin-top: 18px; font-family: Georgia, serif; font-size: 1.23rem; line-height: 1.12; color: var(--graphite); }
 .relatedCard span { padding-bottom: 20px; margin-top: 10px; color: var(--terracotta); font-weight: 800; font-size: .84rem; }
 .back { display: inline-block; margin-top: 46px; color: var(--olive-dark); font-weight: 850; }
-@media (max-width: 820px) {
-  .hero { padding-top: 122px; }
-  .coverFrame { border-radius: 24px; }
-  .heroCopy { padding-top: 38px; }
-  .split, .factsWrap { grid-template-columns: 1fr; gap: 30px; }
-  .cta { align-items: flex-start; flex-direction: column; }
+
+@media (max-width: 880px) {
+  .split, .producerSection, .factsWrap, .regionSection, .cta { grid-template-columns: 1fr; gap: 30px; }
+  .regionMapMini { min-height: 450px; }
+  .culinaryGrid { grid-template-columns: 1fr; }
+  .ctaImage { min-height: 360px; }
   .relatedGrid { grid-template-columns: 1fr; }
 }
-@media (max-width: 560px) {
+@media (max-width: 620px) {
   .hero { padding: 112px 0 42px; }
   .heroInner, .body { width: calc(100% - 28px); }
-  .coverFrame { aspect-ratio: 16 / 10; border-radius: 20px; }
+  .coverFrame { aspect-ratio: 5 / 4; border-radius: 20px; }
   .heroCopy { padding-top: 30px; }
-  .heroCopy h1, .heroCopy h1.longTitle { font-size: clamp(2.15rem, 10vw, 3.3rem); }
-  .body { padding-top: 60px; }
-  .split, .why, .factsWrap, .cta, .related { margin-top: 64px; }
+  .heroCopy h1, .heroCopy h1.longTitle { font-size: clamp(2.3rem, 12vw, 3.6rem); }
+  .body { padding-top: 44px; }
+  .availability { align-items: flex-start; flex-direction: column; padding: 24px 22px; }
+  .body > blockquote { margin-top: 58px; }
+  .split, .producerSection, .why, .factsWrap, .regionSection, .culinaryGrid, .cta, .related { margin-top: 64px; }
+  .split, .producerSection { padding: 42px 0; }
   .facts, .market { padding: 26px 21px; }
   .factRow { grid-template-columns: 1fr; gap: 5px; }
-  .cta { padding: 32px 22px; }
+  .regionSection { padding: 26px 20px; }
+  .regionMapMini { min-height: 360px; }
+  .culinaryGrid > div { min-height: 0; padding: 30px 22px; }
+  .ctaImage { min-height: 280px; }
+  .ctaCopy { padding: 32px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .relatedCard { transition: none; }
+  .relatedCard:hover { transform: none; }
 }

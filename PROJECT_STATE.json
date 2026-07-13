@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-07-13",
+  "project": {
+    "name": "Focaccia Bansko",
+    "domain": "focaccia.bg",
+    "repositoryAppRoot": ".",
+    "framework": "Next.js",
+    "languages": [
+      "bg",
+      "en"
+    ]
+  },
+  "sourceOfTruth": {
+    "policy": "Use only the latest archive downloaded directly from the active GitHub repository.",
+    "activeDirectory": "repository root",
+    "legacyDirectories": [
+      {
+        "path": "focaccia-next-clean-2",
+        "status": "removed on 2026-07-13",
+        "instruction": "If this duplicate directory reappears in a future archive, do not edit, deploy or merge from it."
+      }
+    ],
+    "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
+  },
+  "currentRelease": {
+    "version": "1.1.0",
+    "status": "ready_for_review",
+    "scope": "Product-led Journey of Taste articles, bottom interactive Italy region map, home-page card refinements and Mazza image crop."
+  },
+  "business": {
+    "address": "ул. „Пирин“ 93, 2770 Банско",
+    "phone": "+359 897 822 441",
+    "email": "focacciaexpert@abv.bg",
+    "instagram": "@focaccia_bansko_panini",
+    "openingHours": "10:00–22:00 daily"
+  },
+  "stableDecisions": {
+    "menu": "Web menu in Bulgarian and English; do not reintroduce a visible PDF-menu feature unless explicitly requested.",
+    "negroni": "100 ml — €6.00",
+    "palette": [
+      "cream",
+      "olive green",
+      "terracotta",
+      "graphite",
+      "muted gold"
+    ],
+    "logoUsage": {
+      "version1": "home-page main visual",
+      "version2": "header and footer"
+    },
+    "tasteJourney": {
+      "mainArticle": "The main focaccia article remains unchanged.",
+      "landingOrder": "Main focaccia story first, followed by product stories in a single vertical sequence.",
+      "articleFocus": "The product leads every product article; producer and region provide context.",
+      "subtitlePattern": "Use product-appropriate variants of the agreed format, e.g. “Произведена в Марке от Sabelli”.",
+      "mapPosition": "The Italy map is at the bottom of the Journey of Taste landing page.",
+      "mapBehaviour": "Only regions connected to used products are marked; selecting one shows only that region’s product stories.",
+      "marketShareRule": "Show market share only when a reliable exact claim is supported. Do not mention missing market-share data."
+    }
+  },
+  "implemented": {
+    "corePages": [
+      "home",
+      "menu",
+      "taste",
+      "location",
+      "contacts",
+      "404"
+    ],
+    "tasteJourney": {
+      "landingPage": true,
+      "mainFocacciaArticle": true,
+      "sharedArticleTemplate": true,
+      "italyMapAssets": true,
+      "videos": [
+        "public/videos/dough-breathing.mp4",
+        "public/videos/olive-oil.mp4",
+        "public/videos/focaccia-crumb.mp4"
+      ],
+      "articles": [
+        "caputo",
+        "mazza",
+        "sabelli-burrata",
+        "ignalat-stracciatella",
+        "fior-di-latte",
+        "igor-gorgonzola",
+        "trevalli-tartufo",
+        "parmigiano-reggiano",
+        "agriform-provolone",
+        "casa-modena",
+        "coati-napoli",
+        "mangiafuoco",
+        "peroni",
+        "caffe-corsini"
+      ],
+      "productLedTemplate": true,
+      "verticalStoryList": true,
+      "interactiveRegionFilter": true,
+      "accurateItalySilhouette": true,
+      "marketShareVisibilityRule": true
+    },
+    "homeRefinements": {
+      "salumeriaCard": true,
+      "decoratedFeatureCards": true,
+      "quickFactsThirdItem": "Кафе, вино и кроасан",
+      "mazzaCloseImage": true
+    }
+  },
+  "activeTasks": [
+    "Review the delivered Version 1.1 in the live browser after deployment.",
+    "Future optional content pass: replace remaining temporary producer images with official logo, product and production imagery when clear usage rights are available."
+  ],
+  "doNotRepeatAsNewTasks": [
+    "Remove the visible PDF menu",
+    "Add Negroni",
+    "Replace the logos",
+    "Change the Italian colour palette",
+    "Update the business details already stored here",
+    "Build Journey of Taste from zero",
+    "Create the existing producer articles from zero"
+  ],
+  "qualityGate": [
+    "Update PROJECT_STATE.json",
+    "Update CHANGELOG.md",
+    "Check all BG and EN routes",
+    "Check desktop, tablet and mobile layouts",
+    "Check images, videos and links",
+    "Run npm ci",
+    "Run npm run lint",
+    "Run npm run build",
+    "Create a clean ZIP without __MACOSX, .DS_Store, node_modules or .next"
+  ],
+  "qualityGateStatus": {
+    "projectStateUpdated": true,
+    "changelogUpdated": true,
+    "bgEnRoutesChecked": true,
+    "npmCi": true,
+    "lint": true,
+    "productionBuild": true,
+    "generatedRoutes": 22,
+    "cleanZipRequired": true
+  }
+}

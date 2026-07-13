@@ -1,39 +1,40 @@
+import { useMemo, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../../components/Layout';
 import { useLanguage } from '../../hooks/useLanguage';
 import { tasteCopy } from '../../lib/tasteData';
-import { tasteArticles, tasteCategories } from '../../lib/tasteArticles';
+import { tasteArticles } from '../../lib/tasteArticles';
+import { getTasteProductMeta, tasteRegions } from '../../lib/tasteProductMeta';
 import styles from '../../styles/Taste.module.css';
-
-const mapPoints = [
-  { slug: 'igor-gorgonzola', label: 'Novara', x: 42, y: 13 },
-  { slug: 'mazza', label: 'Brescia', x: 47, y: 18 },
-  { slug: 'coati-napoli', label: 'Valpolicella', x: 50, y: 19 },
-  { slug: 'agriform-provolone', label: 'Verona', x: 54, y: 22 },
-  { slug: 'mangiafuoco', label: 'Mantova', x: 48, y: 25 },
-  { slug: 'casa-modena', label: 'Modena', x: 47, y: 31 },
-  { slug: 'parmigiano-reggiano', label: 'Emilia-Romagna', x: 45, y: 34 },
-  { slug: 'caffe-corsini', label: 'Arezzo', x: 51, y: 41 },
-  { slug: 'trevalli-tartufo', label: 'Macerata', x: 61, y: 43 },
-  { slug: 'sabelli-burrata', label: 'Ascoli Piceno', x: 64, y: 47 },
-  { slug: 'caputo', label: 'Napoli', x: 62, y: 67 },
-  { slug: 'ignalat-stracciatella', label: 'Puglia', x: 78, y: 69 },
-];
 
 export default function TasteLanding() {
   const { lang, text, changeLanguage, href } = useLanguage();
   const c = tasteCopy[lang].landing;
+  const [selectedRegion, setSelectedRegion] = useState(null);
+
   const labels = lang === 'en' ? {
-    mapEyebrow: 'From Italy to Bansko', mapTitle: 'Follow the regions behind the flavour', mapText: 'Select a point or explore the stories below.',
-    all: 'All stories', read: 'Read the story', region: 'Origin', ending: 'The journey ends in Bansko',
+    all: 'All product stories', read: 'Read the story', productIn: 'At Focaccia Bansko',
+    mapEyebrow: 'The regions we work with', mapTitle: 'Explore our Italy',
+    mapText: 'Only the Italian regions connected to products we use are marked. Select a region to see its product stories.',
+    choose: 'Choose a region', showAll: 'Clear selection', from: 'Products from', ending: 'The journey ends in Bansko',
     endingText: 'Ingredients from different Italian regions meet in one focaccia, prepared and baked on site every day.',
   } : {
-    mapEyebrow: 'От Италия до Банско', mapTitle: 'Проследете регионите зад вкуса', mapText: 'Изберете точка или разгледайте историите по-долу.',
-    all: 'Всички истории', read: 'Прочетете историята', region: 'Произход', ending: 'Пътят завършва в Банско',
+    all: 'Всички продуктови истории', read: 'Прочетете историята', productIn: 'Във Focaccia Bansko',
+    mapEyebrow: 'Регионите, с които работим', mapTitle: 'Разгледайте нашата Италия',
+    mapText: 'Отбелязани са само италианските региони, свързани с продуктите, които използваме. Изберете регион, за да видите неговите истории.',
+    choose: 'Изберете регион', showAll: 'Изчисти избора', from: 'Продукти от', ending: 'Пътят завършва в Банско',
     endingText: 'Съставки от различни италиански региони се срещат в една фокача, приготвена и изпечена на място всеки ден.',
   };
+
+  const regionEntries = useMemo(() => Object.entries(tasteRegions).filter(([regionId]) =>
+    tasteArticles.some((article) => getTasteProductMeta(article.slug)?.regionId === regionId)
+  ), []);
+
+  const selectedArticles = selectedRegion
+    ? tasteArticles.filter((article) => getTasteProductMeta(article.slug)?.regionId === selectedRegion)
+    : [];
 
   return (
     <>
@@ -65,67 +66,123 @@ export default function TasteLanding() {
               </div>
             </Link>
 
-            <section className={styles.mapSection}>
-              <div className={styles.mapCopy}>
-                <p className="sectionEyebrow">{labels.mapEyebrow}</p>
-                <h2>{labels.mapTitle}</h2>
-                <p>{labels.mapText}</p>
-                <div className={styles.mapLegend}>
-                  {mapPoints.map((point, index) => {
-                    const article = tasteArticles.find((item) => item.slug === point.slug);
-                    if (!article) return null;
-                    return (
-                      <Link key={point.slug} href={href(`/taste/${point.slug}`)}>
-                        <span>{index + 1}</span>
-                        <b>{article[lang].title.split(' — ')[0]}</b>
-                        <small>{point.label}</small>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-              <div className={styles.mapVisual}>
-                <Image src="/images/taste/italy-journey-map.svg" alt={labels.mapTitle} fill sizes="(max-width: 850px) 100vw, 45vw" />
-                {mapPoints.map((point, index) => (
-                  <Link key={point.slug} href={href(`/taste/${point.slug}`)} className={styles.mapPoint} style={{ left: `${point.x}%`, top: `${point.y}%` }} aria-label={point.label}>
-                    <span>{index + 1}</span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-
             <div className={styles.storiesHeading}>
               <p className="sectionEyebrow">{labels.all}</p>
               <h2>{c.journeyTitle}</h2>
               <p>{c.journeyText}</p>
             </div>
 
-            {Object.entries(tasteCategories).map(([category, categoryLabel]) => {
-              const items = tasteArticles.filter((item) => item.category === category);
-              return (
-                <section className={styles.category} key={category}>
-                  <h3>{categoryLabel[lang]}</h3>
-                  <div className={styles.storyGrid}>
-                    {items.map((article) => {
-                      const a = article[lang];
-                      return (
-                        <Link href={href(`/taste/${article.slug}`)} className={styles.storyCard} key={article.slug}>
-                          <div className={styles.storyImage}>
-                            <Image src={article.image} alt={a.title} fill sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 33vw" />
-                          </div>
-                          <div className={styles.storyBody}>
-                            <span>{labels.region}: {lang === 'en' ? article.regionEn : article.region}</span>
-                            <h4>{a.title}</h4>
-                            <p>{a.subtitle}</p>
-                            <b>{labels.read} →</b>
-                          </div>
-                        </Link>
-                      );
-                    })}
+            <div className={styles.storyList}>
+              {tasteArticles.map((article, index) => {
+                const meta = getTasteProductMeta(article.slug);
+                const a = meta?.[lang];
+                if (!meta || !a) return null;
+                const region = tasteRegions[meta.regionId]?.[lang];
+                return (
+                  <Link
+                    href={href(`/taste/${article.slug}`)}
+                    className={`${styles.productStory} ${index % 2 ? styles.productStoryReverse : ''}`}
+                    key={article.slug}
+                  >
+                    <div className={styles.productStoryImage}>
+                      <Image
+                        src={meta.heroImage || article.image}
+                        alt={a.title}
+                        fill
+                        sizes="(max-width: 800px) 100vw, 48vw"
+                        className={article.slug === 'mazza' ? styles.mazzaImage : undefined}
+                      />
+                    </div>
+                    <div className={styles.productStoryCopy}>
+                      <p className={styles.productKicker}>{region?.name} · {meta.producer}</p>
+                      <h3>{a.title}</h3>
+                      <p className={styles.productSubtitle}>{a.subtitle}</p>
+                      <div className={styles.menuUse}>
+                        <span>{labels.productIn}</span>
+                        <strong>{a.cardNote}</strong>
+                      </div>
+                      <b>{labels.read} →</b>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <section className={styles.mapSection}>
+              <div className={styles.mapIntro}>
+                <p className="sectionEyebrow">{labels.mapEyebrow}</p>
+                <h2>{labels.mapTitle}</h2>
+                <p>{labels.mapText}</p>
+              </div>
+
+              <div className={styles.mapLayout}>
+                <div className={styles.mapVisual} aria-label={labels.mapTitle}>
+                  <Image src="/images/taste/italy-silhouette.svg" alt="" fill sizes="(max-width: 820px) 100vw, 42vw" />
+                  {regionEntries.map(([regionId, region]) => {
+                    const active = selectedRegion === regionId;
+                    return (
+                      <button
+                        type="button"
+                        key={regionId}
+                        className={`${styles.regionPoint} ${active ? styles.regionPointActive : ''}`}
+                        style={{ left: `${region.x}%`, top: `${region.y}%` }}
+                        onClick={() => setSelectedRegion(regionId)}
+                        aria-pressed={active}
+                        aria-label={region[lang].name}
+                      >
+                        <span />
+                        <b>{region[lang].name}</b>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className={styles.regionPanel}>
+                  <p>{labels.choose}</p>
+                  <div className={styles.regionButtons}>
+                    {regionEntries.map(([regionId, region]) => (
+                      <button
+                        type="button"
+                        key={regionId}
+                        className={selectedRegion === regionId ? styles.regionButtonActive : undefined}
+                        onClick={() => setSelectedRegion(regionId)}
+                      >
+                        {region[lang].name}
+                      </button>
+                    ))}
                   </div>
-                </section>
-              );
-            })}
+
+                  {selectedRegion && (
+                    <button type="button" className={styles.clearRegion} onClick={() => setSelectedRegion(null)}>
+                      {labels.showAll}
+                    </button>
+                  )}
+
+                  <div className={styles.regionResults} aria-live="polite">
+                    {!selectedRegion ? (
+                      <p className={styles.regionPrompt}>{labels.mapText}</p>
+                    ) : (
+                      <>
+                        <h3>{labels.from} {tasteRegions[selectedRegion][lang].name}</h3>
+                        <p>{tasteRegions[selectedRegion][lang].text}</p>
+                        <div className={styles.filteredStories}>
+                          {selectedArticles.map((article) => {
+                            const meta = getTasteProductMeta(article.slug);
+                            const a = meta[lang];
+                            return (
+                              <Link href={href(`/taste/${article.slug}`)} key={article.slug}>
+                                <div><Image src={meta.heroImage || article.image} alt={a.title} fill sizes="110px" /></div>
+                                <span><strong>{a.title}</strong><small>{a.cardNote}</small></span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </section>
 
             <section className={styles.ending}>
               <div>

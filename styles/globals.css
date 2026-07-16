@@ -43,7 +43,7 @@ img { max-width: 100%; display: block; }
 .pageHero::before { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: rgba(158,63,50,.10); filter: blur(80px); left: -150px; bottom: -200px; pointer-events: none; }
 .pageHero::after { content: ""; position: absolute; width: 430px; height: 430px; border-radius: 50%; background: rgba(94,111,58,.13); filter: blur(80px); right: -130px; top: -190px; pointer-events: none; }
 .pageHero > * { position: relative; z-index: 1; }
-.pageHero h1 { margin: 0; max-width: 800px; font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(2.7rem, 7vw, 5.6rem); line-height: .98; letter-spacing: -.045em; color: var(--graphite); }
+.pageHero h1 { margin: 0; max-width: 800px; font-family: Georgia, "Times New Roman", serif; font-weight: 500; font-size: clamp(2.55rem, 5.6vw, 4.7rem); line-height: .98; letter-spacing: -.045em; color: var(--graphite); }
 .pageHero p:not(.sectionEyebrow) { max-width: 680px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); }
 
 .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 22px; border: 1px solid transparent; border-radius: 999px; font-weight: 850; transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease; }
@@ -55,7 +55,7 @@ img { max-width: 100%; display: block; }
 
 .notFound { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 20px 80px; }
 .notFound span { color: var(--olive); font-weight: 900; letter-spacing: .2em; }
-.notFound h1 { font-family: Georgia, serif; font-size: clamp(2.2rem, 7vw, 4.6rem); margin: 12px 0 32px; }
+.notFound h1 { font-family: Georgia, serif; font-size: clamp(2.1rem, 5.5vw, 3.8rem); margin: 12px 0 32px; }
 
 ::selection { background: var(--olive); color: var(--paper); }
 

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
 import Layout from '../components/Layout';
 import OpeningBadge from '../components/OpeningBadge';
 import GoogleRating from '../components/GoogleRating';
@@ -36,9 +35,11 @@ export default function Home() {
               <h1><span>{c.title}</span><em>{c.titleAccent}</em></h1>
             </div>
             <div className={styles.heroVisual}>
-              <div className={styles.imageFrame}>
-                <Image src="/images/focaccia-logo-v1.png" alt="Focaccia - Panini eccellenti" fill priority sizes="(max-width: 920px) 100vw, 100vw" />
-              </div>
+              <div
+                className={styles.imageFrame}
+                role="img"
+                aria-label={lang === 'en' ? 'A selection of Focaccia Bansko sandwiches' : 'Селекция от сандвичите на Focaccia Bansko'}
+              />
             </div>
             <div className={styles.heroDetails}>
               <div className={styles.intro}>{introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>

@@ -147,3 +147,7 @@ Before delivering any update:
 ## 7. Accuracy rule
 
 Never claim that a task is complete unless it exists in the current files and has been checked. When the repository, the changelog and a conversation conflict, the actual current repository plus the owner’s latest explicit instruction take priority.
+
+## 2026-07-15 — Version 1.1.2 refinement
+
+The site typography was recalibrated after live visual review: headings are smaller, word splitting is disabled and the two home hero lines retain equal sizing. The repeated hero logo was removed in favour of a product-led sandwich collage. A close-up mozzarella image replaced the supermarket package screenshot. Persistent Facebook, Instagram and TikTok controls were added to every page. The Journey of Taste map now uses the vintage Italy artwork created by the owner while retaining accessible region filtering.

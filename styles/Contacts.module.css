@@ -7,7 +7,7 @@
 .row a:hover { color: var(--terracotta); }
 .card { padding: 42px; border-radius: 26px; color: var(--cream); background: radial-gradient(circle at 90% 5%, rgba(158,63,50,.24), transparent 36%), linear-gradient(145deg, #485936, #2f3c2b); border: 1px solid rgba(198,164,106,.24); display: flex; flex-direction: column; justify-content: center; box-shadow: var(--shadow); }
 .cardLogo { width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center; background: var(--cream); color: var(--terracotta); font-family: Georgia, serif; font-size: 2.6rem; font-weight: 800; }
-.card h2 { margin: 32px 0 8px; color: var(--cream); font-family: Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.7rem); line-height: 1; font-weight: 500; }
+.card h2 { margin: 32px 0 8px; color: var(--cream); font-family: Georgia, serif; font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1; font-weight: 500; }
 .card p { color: rgba(244,235,221,.78); }
 .card :global(.buttonPrimary) { background: var(--cream); color: var(--olive-dark); }
 .card :global(.buttonSecondary) { background: transparent; border-color: rgba(244,235,221,.35); color: var(--cream); }

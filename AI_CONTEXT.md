@@ -27,3 +27,13 @@ This repository contains its own continuity record so work does not depend only 
 - The Italy map stays at the bottom and filters stories by region.
 - Do not render “no market-share data” messages. Omit the market section when no reliable exact claim is supported.
 - Home quick fact 03 is “Кафе, вино и кроасан”.
+
+## Version 1.1.2 locked decisions
+
+- Home hero lines have equal font size, are smaller than before and must not leave “Банско” alone.
+- Internal article headings are intentionally smaller than page titles and may not split words.
+- Product article producer blocks show the role as a small eyebrow and only the producer name as the large heading.
+- The home hero uses the clean sandwich collage without a repeated giant logo.
+- Mozzarella uses the close-up product photo, not the supermarket package screenshot.
+- Facebook, Instagram and TikTok links remain available through the small left social rail on every page.
+- The Journey of Taste map uses the user-designed vintage Italy artwork with interactive numbered region controls.

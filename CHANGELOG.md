@@ -1,5 +1,45 @@
 # Changelog
 
+## [1.1.2] — 2026-07-15
+
+### Typography and layout
+
+- Reduced oversized headings across the home page, Journey of Taste and product articles.
+- Kept the two home hero lines at the same font size while making the overall hero more compact.
+- Prevented Bulgarian and English headings from breaking in the middle of words or leaving isolated letters and syllables.
+- Simplified producer section headings so the small label says “Производителят” and the large title contains only the producer name.
+- Reduced the header logo size and improved the visual hierarchy between headings and body text.
+
+### Home hero
+
+- Removed the oversized repeated logo from the hero artwork.
+- Added a clean, product-led sandwich collage without promotional overlay text.
+
+### Product imagery
+
+- Replaced the supermarket-style mozzarella package image with a close-up mozzarella photograph.
+- Kept the close product crop for Mazza olive oil.
+
+### Social links
+
+- Added persistent small Facebook, Instagram and TikTok buttons on the left side of every page.
+- Added accessible labels, new-tab behaviour and reduced-motion support.
+
+### Italy map
+
+- Adopted the user-designed vintage Italy artwork as the visual base of the map.
+- Preserved clickable numbered markers and region buttons for filtering product stories.
+- Kept the map at the bottom of the Journey of Taste page and marked only regions connected to products used by Focaccia Bansko.
+
+### Validation
+
+- Visually checked the home hero at desktop width and the complete home page at mobile width.
+- Visually checked the Caputo producer block, the new mozzarella hero and the vintage Italy map.
+- `npm ci` completed successfully with no reported vulnerabilities.
+- `npm run lint` completed successfully.
+- `npm run build` completed successfully and generated all 22 routes.
+- Local image and video references were checked before packaging.
+
 All meaningful project changes must be recorded here. Completed work must not be repeated in future task lists.
 
 ## [1.1.0] — 2026-07-13

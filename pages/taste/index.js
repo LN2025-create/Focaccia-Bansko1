@@ -117,8 +117,8 @@ export default function TasteLanding() {
 
               <div className={styles.mapLayout}>
                 <div className={styles.mapVisual} aria-label={labels.mapTitle}>
-                  <Image src="/images/taste/italy-silhouette.svg" alt="" fill sizes="(max-width: 820px) 100vw, 42vw" />
-                  {regionEntries.map(([regionId, region]) => {
+                  <Image src="/images/taste/italy-vintage-map.png" alt="" fill sizes="(max-width: 820px) 100vw, 42vw" />
+                  {regionEntries.map(([regionId, region], index) => {
                     const active = selectedRegion === regionId;
                     return (
                       <button
@@ -130,8 +130,7 @@ export default function TasteLanding() {
                         aria-pressed={active}
                         aria-label={region[lang].name}
                       >
-                        <span />
-                        <b>{region[lang].name}</b>
+                        <span aria-hidden="true">{index + 1}</span>
                       </button>
                     );
                   })}

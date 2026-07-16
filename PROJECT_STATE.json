@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-07-13",
+  "lastUpdated": "2026-07-15",
   "project": {
     "name": "Focaccia Bansko",
     "domain": "focaccia.bg",
@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "status": "ready_for_review",
-    "scope": "Hotfix for product-article desktop overlap and correction of Italy-map placement."
+    "scope": "Typography refinement, clean home hero, premium mozzarella image, persistent social links and vintage interactive Italy map."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -56,8 +56,10 @@
       "subtitlePattern": "Use product-appropriate variants of the agreed format, e.g. “Произведена в Марке от Sabelli”.",
       "mapPosition": "The Italy map is at the bottom of the Journey of Taste landing page.",
       "mapBehaviour": "Only regions connected to used products are marked; selecting one shows only that region’s product stories.",
-      "marketShareRule": "Show market share only when a reliable exact claim is supported. Do not mention missing market-share data."
-    }
+      "marketShareRule": "Show market share only when a reliable exact claim is supported. Do not mention missing market-share data.",
+      "mapStyle": "Use the user-designed vintage Italy artwork as the decorative map base, with accessible numbered region controls layered above it."
+    },
+    "typography": "Use responsive clamp-based sizes, do not split words, and avoid isolated letters or syllables. Home hero lines use the same size."
   },
   "implemented": {
     "corePages": [
@@ -98,18 +100,28 @@
       "verticalStoryList": true,
       "interactiveRegionFilter": true,
       "accurateItalySilhouette": true,
-      "marketShareVisibilityRule": true
+      "marketShareVisibilityRule": true,
+      "vintageInteractiveMap": true,
+      "premiumMozzarellaImage": true
     },
     "homeRefinements": {
       "salumeriaCard": true,
       "decoratedFeatureCards": true,
       "quickFactsThirdItem": "Кафе, вино и кроасан",
-      "mazzaCloseImage": true
+      "mazzaCloseImage": true,
+      "compactEqualSizeHeroLines": true,
+      "cleanSandwichHeroWithoutRepeatedLogo": true,
+      "smallerHeaderLogo": true
+    },
+    "socialLinks": {
+      "persistentLeftRail": true,
+      "facebook": "https://www.facebook.com/profile.php?id=61565865192556",
+      "instagram": "https://www.instagram.com/focaccia_bansko_panini",
+      "tiktok": "https://www.tiktok.com/@focaccia.bansko"
     }
   },
   "activeTasks": [
-    "Review Version 1.1.1 after deployment on desktop and mobile.",
-    "Future optional content pass: replace remaining temporary producer images with official logo, product and production imagery when clear usage rights are available."
+    "Review Version 1.1.2 after deployment on desktop and mobile."
   ],
   "doNotRepeatAsNewTasks": [
     "Remove the visible PDF menu",
@@ -139,6 +151,15 @@
     "lint": true,
     "productionBuild": true,
     "generatedRoutes": 22,
-    "cleanZipRequired": true
+    "cleanZipRequired": true,
+    "visualChecks": true,
+    "visualChecksSummary": [
+      "Home hero at desktop width",
+      "Complete home page at mobile width",
+      "Caputo producer section at desktop width",
+      "Mozzarella article hero at desktop width",
+      "Vintage Italy map and region controls at desktop width"
+    ],
+    "localAssetReferencesChecked": true
   }
 }

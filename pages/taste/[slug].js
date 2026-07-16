@@ -24,6 +24,7 @@ export default function TasteStory({ slug }) {
     .filter((item) => getTasteProductMeta(item.slug)?.regionId === meta.regionId && item.slug !== article.slug)
     .slice(0, 3);
   const longTitle = m.title.length > 28;
+  const producerHeading = m.producerTitle.replace(/^(Производителят|The producer)\s*:\s*/i, '');
 
   const labels = lang === 'en' ? {
     journey: 'The Journey of Taste', product: 'The product', producer: 'The producer', facts: 'Key facts',
@@ -91,7 +92,7 @@ export default function TasteStory({ slug }) {
             <section className={styles.producerSection}>
               <div>
                 <p className="sectionEyebrow">{labels.producer}</p>
-                <h2>{m.producerTitle}</h2>
+                <h2>{producerHeading}</h2>
               </div>
               <div><Paragraphs items={c.intro} /></div>
             </section>

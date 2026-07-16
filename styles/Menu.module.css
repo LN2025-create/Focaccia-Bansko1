@@ -1,6 +1,6 @@
 .heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; margin-bottom: 34px; }
-.sectionHeading h2 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1; font-weight: 500; letter-spacing: -.035em; }
+.sectionHeading h2 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(2.2rem, 4.2vw, 3.8rem); line-height: 1; font-weight: 500; letter-spacing: -.035em; }
 .sectionHeading > p { max-width: 390px; margin: 0; color: var(--muted); text-align: right; }
 .sandwichGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
 .sandwichCard { overflow: hidden; display: flex; min-height: 100%; flex-direction: column; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, rgba(255,249,239,.99), rgba(232,216,194,.34)); box-shadow: 0 14px 34px rgba(72,54,35,.07); transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease; }

@@ -1,7 +1,7 @@
 .header { position: fixed; inset: 0 0 auto; z-index: 50; padding: 10px 0; background: linear-gradient(to bottom, rgba(32,32,30,.98), rgba(32,32,30,.88)); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(198,164,106,.18); }
 .inner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; min-width: 185px; }
-.brandLogo { display: block; width: 180px; height: auto; filter: drop-shadow(0 8px 20px rgba(0,0,0,.26)); }
+.brand { display: inline-flex; align-items: center; min-width: 164px; }
+.brandLogo { display: block; width: 160px; height: auto; filter: drop-shadow(0 8px 20px rgba(0,0,0,.26)); }
 .nav { display: flex; align-items: center; gap: 22px; }
 .nav > a { position: relative; color: rgba(244,235,221,.84); font-size: .88rem; font-weight: 700; white-space: nowrap; }
 .nav > a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--olive-light); transition: right .2s ease; }
@@ -17,7 +17,7 @@
   .header { padding: 8px 0; }
   .inner { width: calc(100% - 28px); }
   .brand { min-width: 0; }
-  .brandLogo { width: 150px; }
+  .brandLogo { width: 138px; }
   .menuButton { display: block; }
   .nav { position: absolute; top: calc(100% + 1px); left: 14px; right: 14px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 16px; background: rgba(32,32,30,.99); border: 1px solid rgba(244,235,221,.16); border-radius: 20px; box-shadow: 0 24px 70px rgba(0,0,0,.35); }
   .navOpen { display: flex; }

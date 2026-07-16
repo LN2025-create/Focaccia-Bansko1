@@ -6,20 +6,20 @@
 .heroImage.mazzaHeroImage { object-fit: cover; object-position: center; transform: scale(1.02); }
 .heroCopy { max-width: 980px; padding: 52px 0 6px; }
 .heroCopy > p { margin: 0 0 18px; color: #d3c695; font-size: .76rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-.heroCopy h1 { margin: 0; color: var(--cream); font-family: Georgia, serif; font-size: clamp(3rem, 6.2vw, 6rem); font-weight: 500; line-height: .99; letter-spacing: -.05em; text-wrap: balance; overflow-wrap: anywhere; }
-.heroCopy h1.longTitle { font-size: clamp(2.55rem, 5vw, 4.9rem); }
+.heroCopy h1 { margin: 0; color: var(--cream); font-family: Georgia, serif; font-size: clamp(2.65rem, 4.7vw, 4.5rem); font-weight: 500; line-height: .99; letter-spacing: -.05em; text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: none; }
+.heroCopy h1.longTitle { font-size: clamp(2.3rem, 4vw, 3.9rem); }
 .heroCopy span { display: block; max-width: 760px; margin-top: 20px; color: rgba(244,235,221,.84); font-size: clamp(1.04rem, 1.8vw, 1.3rem); line-height: 1.55; }
 .body { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 118px; }
 .availability { display: flex; align-items: center; justify-content: space-between; gap: 34px; padding: 28px 32px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(135deg, rgba(94,111,58,.12), rgba(198,164,106,.08)); }
 .availability h2 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.1; font-weight: 500; }
 .inlineLink { flex: 0 0 auto; color: var(--terracotta); font-weight: 900; }
 .body > blockquote { max-width: 850px; margin: 76px auto 0; color: var(--olive-dark); font-family: Georgia, serif; font-size: clamp(1.65rem, 3.4vw, 3rem); line-height: 1.25; text-align: center; text-wrap: balance; }
-.split, .producerSection { display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); gap: 70px; margin-top: 94px; padding: 54px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.split, .producerSection { display: grid; grid-template-columns: minmax(260px,.82fr) minmax(0,1.18fr); gap: 64px; margin-top: 94px; padding: 54px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .split > div, .producerSection > div { min-width: 0; }
 .producerSection { margin-top: 0; border-top: 0; }
-.split h2, .producerSection h2, .why h2, .regionSection h2, .culinaryGrid h2, .cta h2, .related h2 { margin: 0; max-width: 100%; font-family: Georgia, serif; font-size: clamp(2.15rem, 4.7vw, 4.2rem); line-height: 1.04; font-weight: 500; letter-spacing: -.035em; text-wrap: balance; overflow-wrap: anywhere; }
-.producerSection h2 { font-size: clamp(2.15rem, 3.7vw, 3.7rem); }
-.split p, .producerSection p, .why p:not(:global(.sectionEyebrow)), .market p:not(:global(.sectionEyebrow)), .regionSection p:not(:global(.sectionEyebrow)), .culinaryGrid p, .ctaCopy p:not(:global(.sectionEyebrow)) { color: var(--muted); font-size: 1.06rem; line-height: 1.78; }
+.split h2, .producerSection h2, .why h2, .regionSection h2, .culinaryGrid h2, .cta h2, .related h2 { margin: 0; max-width: 100%; font-family: Georgia, serif; font-size: clamp(1.85rem, 3.15vw, 2.8rem); line-height: 1.04; font-weight: 500; letter-spacing: -.035em; text-wrap: balance; overflow-wrap: normal; word-break: normal; hyphens: none; }
+.producerSection h2 { font-size: clamp(1.8rem, 2.85vw, 2.55rem); }
+.split p, .producerSection p, .why p:not(:global(.sectionEyebrow)), .market p:not(:global(.sectionEyebrow)), .regionSection p:not(:global(.sectionEyebrow)), .culinaryGrid p, .ctaCopy p:not(:global(.sectionEyebrow)) { color: var(--muted); font-size: 1.02rem; line-height: 1.72; }
 .split > div:last-child p:first-child, .producerSection > div:last-child p:first-child { margin-top: 0; }
 .why { margin-top: 86px; padding: clamp(36px, 6vw, 64px); border-radius: 30px; background: linear-gradient(135deg, rgba(94,111,58,.14), rgba(158,63,50,.08)); border: 1px solid var(--line); }
 .why p:not(:global(.sectionEyebrow)) { max-width: 780px; margin-bottom: 0; }
@@ -29,7 +29,7 @@
 .factRow { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .factRow:last-child { border-bottom: 0; }
 .factRow span { color: var(--muted); }
-.factRow strong { color: var(--graphite); overflow-wrap: anywhere; }
+.factRow strong { color: var(--graphite); overflow-wrap: normal; word-break: normal; hyphens: none; }
 .market { background: var(--graphite); color: var(--cream); }
 .market :global(.sectionEyebrow) { color: #d2c58e; }
 .market p:not(:global(.sectionEyebrow)) { color: rgba(244,235,221,.78); }
@@ -76,12 +76,13 @@
   .heroInner, .body { width: calc(100% - 28px); }
   .coverFrame { aspect-ratio: 5 / 4; border-radius: 20px; }
   .heroCopy { padding-top: 30px; }
-  .heroCopy h1, .heroCopy h1.longTitle { font-size: clamp(2.3rem, 12vw, 3.6rem); }
+  .heroCopy h1, .heroCopy h1.longTitle { font-size: clamp(2.15rem, 10.5vw, 3.2rem); }
   .body { padding-top: 44px; }
   .availability { align-items: flex-start; flex-direction: column; padding: 24px 22px; }
   .body > blockquote { margin-top: 58px; }
   .split, .producerSection, .why, .factsWrap, .regionSection, .culinaryGrid, .cta, .related { margin-top: 64px; }
   .split, .producerSection { padding: 42px 0; }
+  .split h2, .producerSection h2, .why h2, .regionSection h2, .culinaryGrid h2, .cta h2, .related h2 { font-size: clamp(1.72rem, 8vw, 2.35rem); }
   .facts, .market { padding: 26px 21px; }
   .factRow { grid-template-columns: 1fr; gap: 5px; }
   .regionSection { padding: 26px 20px; }

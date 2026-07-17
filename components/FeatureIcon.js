@@ -3,7 +3,7 @@ export default function FeatureIcon({ name }) {
 
 
   if (name === 'oven') {
-    return <svg {...common}><path d="M4 9h16v10H4z"/><path d="M6 9V5h12v4"/><path d="M8 14c.8-1.8 2-2.8 4-3.4 2 .6 3.2 1.6 4 3.4"/><path d="M8 19v2M16 19v2"/></svg>;
+    return <svg {...common}><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M6 6V4h12v2"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="16" cy="12" r="1"/><path d="M6 15c3-2 9-2 12 0"/></svg>;
   }
 
   if (name === 'sandwich') {

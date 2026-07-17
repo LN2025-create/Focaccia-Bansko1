@@ -36,4 +36,14 @@ This repository contains its own continuity record so work does not depend only 
 - The home hero uses the clean sandwich collage without a repeated giant logo.
 - Mozzarella uses the close-up product photo, not the supermarket package screenshot.
 - Facebook, Instagram and TikTok links remain available through the small left social rail on every page.
-- The Journey of Taste map uses the user-designed vintage Italy artwork with interactive numbered region controls.
+- The Version 1.1.2 vintage numbered map decision was superseded by Version 1.1.3; do not restore it.
+
+## Version 1.1.3 locked decisions
+
+- Never restore the rejected cut-out sandwich collage.
+- Home copy must say that the focaccia is baked for the sandwiches; do not imply bread or plain focaccia is sold.
+- Product stories use close product photography and a split image/copy hero.
+- The interactive Italy map uses a clean outline and highlighted regions, without numbered markers.
+- Social buttons are coloured and remain on the left; the separate larger Google review button stays on the right.
+- Google review URL: `https://g.page/r/CW54B7v5AtugEAE/review`.
+- Wine menu includes Fiano, Primitivo and Bollé bottle entries and photos at the confirmed prices.

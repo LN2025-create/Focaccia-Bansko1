@@ -151,3 +151,12 @@ Never claim that a task is complete unless it exists in the current files and ha
 ## 2026-07-15 — Version 1.1.2 refinement
 
 The site typography was recalibrated after live visual review: headings are smaller, word splitting is disabled and the two home hero lines retain equal sizing. The repeated hero logo was removed in favour of a product-led sandwich collage. A close-up mozzarella image replaced the supermarket package screenshot. Persistent Facebook, Instagram and TikTok controls were added to every page. The Journey of Taste map now uses the vintage Italy artwork created by the owner while retaining accessible region filtering.
+
+## 2026-07-16 — Version 1.1.3
+
+- Replaced the rejected cut-out sandwich collage with one real food photograph.
+- Corrected all home messaging so it states that the focaccia is baked for the sandwiches; the business is not presented as selling bread or plain focaccia.
+- Adopted close product imagery and a split product-led hero as the standard for product stories.
+- Simplified the interactive Italy map to a clean outline with active regions and no numbers.
+- Separated the coloured social buttons on the left from a larger Google review call-to-action on the right.
+- Expanded the wine menu with wines by the glass and three photographed bottles.

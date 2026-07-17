@@ -86,19 +86,43 @@ export default function Menu() {
 
             <div className={styles.drinkGrid}>
               {drinkGroups.map((group) => (
-                <article className={styles.drinkGroup} key={group.enTitle}>
+                <article className={`${styles.drinkGroup} ${group.featured ? styles.wineGroup : ''}`} key={group.enTitle}>
                   <h3>{lang === 'en' ? group.enTitle : group.bgTitle}</h3>
-                  <div className={styles.drinkRows}>
-                    {group.items.map((item, index) => (
-                      <div className={styles.drinkRow} key={`${localName(item, lang)}-${item.volume}-${index}`}>
-                        <div>
-                          <strong>{localName(item, lang)}</strong>
-                          <span>{item.volume}</span>
-                        </div>
-                        <b>{item.price}</b>
+                  {group.sections ? group.sections.map((section) => (
+                    <section className={styles.drinkSubsection} key={section.enTitle}>
+                      <h4>{lang === 'en' ? section.enTitle : section.bgTitle}</h4>
+                      <div className={section.items.some((item) => item.image) ? styles.bottleGrid : styles.drinkRows}>
+                        {section.items.map((item, index) => item.image ? (
+                          <div className={styles.bottleCard} key={`${localName(item, lang)}-${item.volume}-${index}`}>
+                            <div className={styles.bottleImage}><Image src={item.image} alt={localName(item, lang)} fill sizes="180px" /></div>
+                            <div className={styles.bottleCopy}>
+                              <strong>{localName(item, lang)}</strong>
+                              <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small>
+                              <span>{item.volume}</span>
+                              <b>{item.price}</b>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className={styles.drinkRow} key={`${localName(item, lang)}-${item.volume}-${index}`}>
+                            <div>
+                              <strong>{localName(item, lang)}</strong>
+                              {item.bgDetail || item.enDetail ? <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small> : null}
+                              <span>{item.volume}</span>
+                            </div>
+                            <b>{item.price}</b>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </section>
+                  )) : (
+                    <div className={styles.drinkRows}>
+                      {group.items.map((item, index) => (
+                        <div className={styles.drinkRow} key={`${localName(item, lang)}-${item.volume}-${index}`}>
+                          <div><strong>{localName(item, lang)}</strong><span>{item.volume}</span></div><b>{item.price}</b>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>

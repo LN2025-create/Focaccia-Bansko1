@@ -73,7 +73,7 @@ export default function TasteLanding() {
             </div>
 
             <div className={styles.storyList}>
-              {tasteArticles.map((article, index) => {
+              {tasteArticles.map((article) => {
                 const meta = getTasteProductMeta(article.slug);
                 const a = meta?.[lang];
                 if (!meta || !a) return null;
@@ -81,7 +81,7 @@ export default function TasteLanding() {
                 return (
                   <Link
                     href={href(`/taste/${article.slug}`)}
-                    className={`${styles.productStory} ${index % 2 ? styles.productStoryReverse : ''}`}
+                    className={styles.productStory}
                     key={article.slug}
                   >
                     <div className={styles.productStoryImage}>
@@ -117,20 +117,20 @@ export default function TasteLanding() {
 
               <div className={styles.mapLayout}>
                 <div className={styles.mapVisual} aria-label={labels.mapTitle}>
-                  <Image src="/images/taste/italy-vintage-map.png" alt="" fill sizes="(max-width: 820px) 100vw, 42vw" />
-                  {regionEntries.map(([regionId, region], index) => {
+                  <Image src="/images/taste/italy-silhouette.svg" alt={labels.mapTitle} fill sizes="(max-width: 820px) 100vw, 42vw" />
+                  {regionEntries.map(([regionId, region]) => {
                     const active = selectedRegion === regionId;
                     return (
                       <button
                         type="button"
                         key={regionId}
-                        className={`${styles.regionPoint} ${active ? styles.regionPointActive : ''}`}
+                        className={`${styles.regionPoint} ${styles[`region_${regionId}`] || ''} ${active ? styles.regionPointActive : ''}`}
                         style={{ left: `${region.x}%`, top: `${region.y}%` }}
                         onClick={() => setSelectedRegion(regionId)}
                         aria-pressed={active}
                         aria-label={region[lang].name}
                       >
-                        <span aria-hidden="true">{index + 1}</span>
+                        <span>{region[lang].name}</span>
                       </button>
                     );
                   })}

@@ -1,5 +1,50 @@
 # Changelog
 
+## [1.1.3] — 2026-07-16
+
+### Home page
+
+- Removed the rejected four-sandwich cut-out collage and its unused assets.
+- Replaced it with a single real Focaccia Bansko food photograph, without a repeated oversized logo.
+- Corrected the product message: Focaccia Bansko bakes the focaccia used to prepare its sandwiches; the site no longer suggests that bread or plain focaccia is sold separately.
+- Replaced the oven/burger-like icon with a focaccia tray icon and removed the oversized duplicate decorative SVG from feature cards.
+
+### Product stories
+
+- Standardised the product-led visual direction around close product photography.
+- Added unified close-up visuals for flour/dough, burrata, stracciatella, Gorgonzola, truffle caciotta, Provolone, prosciutto, Salame Napoli and Mangiafuoco.
+- Kept the premium mozzarella and close Mazza olive-oil images.
+- Added close product visuals for Parmigiano Reggiano, Peroni and Caffè Corsini so every product story now opens with a product-led image.
+- Changed individual product article heroes to a light split layout: close product image on the left and product/region/producer copy on the right.
+- Kept the main focaccia article outside this product template.
+
+### Italy map
+
+- Removed numbered controls and the vintage textured interactive map.
+- Added a clean Italy outline with softly highlighted active regions.
+- Region names appear directly on hover, keyboard focus and active selection.
+- Region buttons remain as a second, immediately understandable filtering method.
+
+### Social and Google controls
+
+- Coloured Facebook green, Instagram white and TikTok red.
+- Kept the social group on the left side of every page.
+- Added a separate, larger multicolour Google review button on the right.
+- The Google button opens the direct review form: `https://g.page/r/CW54B7v5AtugEAE/review`.
+
+### Menu
+
+- Changed “МЕНЮ 2026 / Menu 2026” to “МЕНЮ / MENU”.
+- Replaced the language-availability sentence with product and sourcing copy in Bulgarian and English.
+- Split wine into “На чаша / By the glass” and “Бутилки / Bottles”.
+- Added 1932 Fiano Salento IGT, 1932 Primitivo Salento IGT and Cuvée Brut “Bollé”, with bottle images and the confirmed prices.
+- Described Bollé accurately as a 100% Glera sparkling wine in a style close to Prosecco, not as certified Prosecco.
+
+### Validation
+
+- `npm ci`, `npm run lint` and `npm run build` are required immediately before packaging.
+- Final browser visual review remains required after deployment.
+
 ## [1.1.2] — 2026-07-15
 
 ### Typography and layout

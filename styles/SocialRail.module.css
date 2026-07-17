@@ -7,30 +7,23 @@
   gap: 9px;
   transform: translateY(-50%);
 }
-.rail a {
+.rail a, .googleReview {
   position: relative;
-  width: 42px;
-  height: 42px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(244,235,221,.2);
   border-radius: 50%;
-  color: var(--cream);
-  background: rgba(31,32,29,.92);
-  box-shadow: 0 10px 26px rgba(0,0,0,.2);
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
   backdrop-filter: blur(10px);
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.rail a:hover,
-.rail a:focus-visible {
-  transform: translateX(3px);
-  border-color: rgba(198,164,106,.68);
-  background: var(--olive-dark);
-}
+.rail a { width: 42px; height: 42px; border: 1px solid rgba(244,235,221,.26); }
+.facebook { color: #fff; background: #2f6b3d; }
+.instagram { color: #252820; background: #fff; border-color: rgba(31,32,29,.28) !important; }
+.tiktok { color: #fff; background: #b4312b; }
+.rail a:hover, .rail a:focus-visible { transform: translateX(4px) scale(1.04); box-shadow: 0 14px 30px rgba(0,0,0,.30); }
 .rail svg { width: 18px; height: 18px; fill: currentColor; }
-.rail span {
+.rail span, .googleReview span {
   position: absolute;
-  left: calc(100% + 9px);
   padding: 6px 9px;
   border-radius: 999px;
   color: var(--cream);
@@ -40,22 +33,39 @@
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-4px);
   transition: opacity .2s ease, transform .2s ease;
 }
-.rail a:hover span,
-.rail a:focus-visible span { opacity: 1; transform: translateX(0); }
-
+.rail span { left: calc(100% + 9px); transform: translateX(-4px); }
+.rail a:hover span, .rail a:focus-visible span { opacity: 1; transform: translateX(0); }
+.googleReview {
+  position: fixed;
+  z-index: 45;
+  right: 16px;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(31,32,29,.16);
+  background: #fff;
+  transform: translateY(-50%);
+}
+.googleReview:hover, .googleReview:focus-visible { transform: translateY(-50%) scale(1.07); box-shadow: 0 16px 34px rgba(0,0,0,.28); }
+.googleReview span { right: calc(100% + 10px); transform: translateX(4px); }
+.googleReview:hover span, .googleReview:focus-visible span { opacity: 1; transform: translateX(0); }
+.googleIcon { width: 27px; height: 27px; }
 @media (max-width: 900px) {
   .rail { left: 8px; top: auto; bottom: max(10px, env(safe-area-inset-bottom)); display: flex; gap: 6px; transform: none; }
-  .rail a { width: 34px; height: 34px; background: rgba(31,32,29,.88); }
+  .rail a { width: 34px; height: 34px; }
   .rail svg { width: 15px; height: 15px; }
-  .rail span { display: none; }
+  .rail span, .googleReview span { display: none; }
+  .googleReview { right: 9px; top: auto; bottom: max(8px, env(safe-area-inset-bottom)); width: 42px; height: 42px; transform: none; }
+  .googleReview:hover, .googleReview:focus-visible { transform: scale(1.05); }
+  .googleIcon { width: 23px; height: 23px; }
 }
 @media (max-width: 430px) {
   .rail { left: 7px; }
   .rail a { width: 31px; height: 31px; }
+  .googleReview { width: 40px; height: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .rail a, .rail span { transition: none; }
+  .rail a, .rail span, .googleReview, .googleReview span { transition: none; }
 }

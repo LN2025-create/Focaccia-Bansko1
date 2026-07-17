@@ -71,7 +71,6 @@ export default function Home() {
             <div className={styles.featureGrid}>
               {c.cards.map((card) => (
                 <article className={`${styles.featureCard} ${styles[`feature_${card.icon}`] || ''}`} key={card.title}>
-                  <div className={styles.cardDecor} aria-hidden="true"><FeatureIcon name={card.icon} /></div>
                   <div className={styles.icon}><FeatureIcon name={card.icon} /></div>
                   <div className={styles.featureCopy}>
                     <h3>{card.title}</h3>

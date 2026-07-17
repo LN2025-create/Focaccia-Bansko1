@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-07-16",
+  "lastUpdated": "2026-07-17",
   "project": {
     "name": "Focaccia Bansko",
     "domain": "focaccia.bg",
@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.1.3",
-    "status": "ready_for_review",
-    "scope": "Product-closeup article visuals, simplified interactive Italy outline, corrected focaccia messaging, separated social/review controls and expanded wine menu."
+    "version": "1.1.6",
+    "status": "ready_for_deployment",
+    "scope": "Verified code-level update across pages, components, styles and public assets: professional home collage, owner-supplied product photography, clean Italy outline, clean menu hero and vegan identification."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -57,10 +57,10 @@
       "mapPosition": "The Italy map is at the bottom of the Journey of Taste landing page.",
       "mapBehaviour": "Only regions connected to used products are marked; selecting one shows only that region’s product stories.",
       "marketShareRule": "Show market share only when a reliable exact claim is supported. Do not mention missing market-share data.",
-      "mapStyle": "Use a clean Italy outline with subtly highlighted active regions, no numbers; region names appear on hover/focus/tap and region buttons remain available."
+      "mapStyle": "Use one clean Italy outline and explicit labelled region buttons. No numbers, blobs, guessed hotspots or decorative region shapes."
     },
     "typography": "Use responsive clamp-based sizes, do not split words, and avoid isolated letters or syllables. Home hero lines use the same size.",
-    "homeHero": "Use one real professional food photograph, never a rough cut-out collage or a repeated oversized logo.",
+    "homeHero": "Use one professional full-width collage image based on the five requested sandwiches. Do not use individually pasted cut-outs or a beverage bottle.",
     "socialControls": "Facebook, Instagram and TikTok stay grouped on the left; the larger Google review button stays separately on the right."
   },
   "implemented": {
@@ -106,7 +106,11 @@
       "vintageInteractiveMap": false,
       "premiumMozzarellaImage": true,
       "cleanOutlineRegionMap": true,
-      "productCloseupCardStandard": true
+      "productCloseupCardStandard": true,
+      "ownerSuppliedProductPhotography": true,
+      "simpleOwnerSuppliedItalySilhouette": true,
+      "cleanItalyOutlineOnly": true,
+      "ownerSuppliedProductPhotographyV116": true
     },
     "homeRefinements": {
       "salumeriaCard": true,
@@ -116,7 +120,10 @@
       "compactEqualSizeHeroLines": true,
       "cleanSandwichHeroWithoutRepeatedLogo": true,
       "smallerHeaderLogo": true,
-      "focacciaOnlyMessaging": true
+      "focacciaOnlyMessaging": true,
+      "ownerSuppliedSandwichCollage": true,
+      "veganFriendlyBadge": true,
+      "professionalSingleCollageImage": true
     },
     "socialLinks": {
       "persistentLeftRail": true,
@@ -136,11 +143,12 @@
         "1932 Fiano Salento IGT — 12.00 €",
         "1932 Primitivo Salento IGT — 12.00 €",
         "Cuvée Brut “Bollé” — 12.50 €"
-      ]
+      ],
+      "veganoVeganBadge": true
     }
   },
   "activeTasks": [
-    "Review Version 1.1.3 after deployment on desktop, tablet and mobile."
+    "Deploy Version 1.1.6 and review the rendered site on desktop and mobile."
   ],
   "doNotRepeatAsNewTasks": [
     "Remove the visible PDF menu",
@@ -173,16 +181,18 @@
     "cleanZipRequired": true,
     "visualChecks": false,
     "visualChecksSummary": [
-      "Automated browser screenshots were not available in the packaging runtime; perform final visual review after deployment."
+      "Code, generated assets and static routes were checked locally. Final browser-level visual review should be performed after Vercel deploy."
     ],
     "localAssetReferencesChecked": true
   },
-  "version": "1.1.4",
+  "version": "1.1.6",
   "updated": "2026-07-17",
   "completed": [
-    "Removed sandwich cut-outs from product story covers",
-    "Replaced the stracciatella cover with a dedicated product close-up",
-    "Removed the wine bottle from the menu hero",
-    "Simplified the Italy map to a clean outline with labelled region filters"
+    "Rebuilt the home hero in pages/index.js and styles/Home.module.css around one professional full-width collage",
+    "Added Vegan friendly messaging on the home page and retained the Vegano badge in the menu",
+    "Removed every menu-hero image reference so a bottle cannot appear behind the menu title",
+    "Updated product story assets with the photographs supplied by the owner",
+    "Replaced the map artwork with a clean Italy outline and explicit region buttons",
+    "Modified real application files inside pages, components, styles, lib and public rather than documentation only"
   ]
 }

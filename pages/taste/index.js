@@ -44,7 +44,7 @@ export default function TasteLanding() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.landingHero}>
+        <section className={styles.landingHero} data-version="1.1.6">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
@@ -117,8 +117,8 @@ export default function TasteLanding() {
 
               <div className={styles.mapLayout}>
                 <div className={styles.mapVisual} aria-label={labels.mapTitle}>
-                  <Image src="/images/taste/italy-silhouette.svg" alt={labels.mapTitle} fill sizes="(max-width: 820px) 100vw, 42vw" />
-
+                  <Image src="/images/taste/italy-simple.webp" alt={labels.mapTitle} fill sizes="(max-width: 820px) 100vw, 42vw" />
+                  <span className={styles.mapLabel}>ITALIA</span>
                 </div>
 
                 <div className={styles.regionPanel}>

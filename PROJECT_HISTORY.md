@@ -165,3 +165,21 @@ The site typography was recalibrated after live visual review: headings are smal
 ## 2026-07-17 — Version 1.1.4
 
 Emergency visual correction: removed misleading sandwich imagery from product-led story cards, added dedicated ingredient close-ups, replaced the menu hero bottle, and simplified the map interaction.
+
+
+## 2026-07-17 — Version 1.1.5
+
+- Replaced the mistaken unchanged ZIP handoff with a real code update.
+- Added an exact five-sandwich responsive collage from owner-supplied photography.
+- Added home-page Vegan Friendly messaging and a vegan badge on Vegano.
+- Removed all background imagery from the menu hero so beverage bottles cannot overlap the heading.
+- Applied owner-supplied ingredient photography to the existing product stories, including a second Prosciutto Cotto image in the Casa Modena article.
+- Replaced the map artwork with the owner-supplied simple Italy silhouette and retained clear region buttons for filtering.
+
+## Version 1.1.6 — verified file update (2026-07-17)
+
+- Rebuilt the actual home-page React and CSS files around one professional five-sandwich collage.
+- Replaced product-story assets with the photographs supplied by the owner.
+- Replaced the map with a clean Italy outline and region buttons.
+- Removed all menu-hero image references so the Bollé bottle cannot appear behind the title.
+- Added version markers to the actual application code to make the deployment version unambiguous.

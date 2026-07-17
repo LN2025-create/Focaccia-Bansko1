@@ -1,5 +1,40 @@
 # Changelog
 
+## Version 1.1.6 — verified application update
+
+### Home page
+
+- Rebuilt the live home-page hero in `pages/index.js` and `styles/Home.module.css`.
+- Replaced the tiled cut-out composition with one professional full-width sandwich collage.
+- Kept both hero-title lines at the same responsive size.
+- Added a clear “Веган френдли / Vegan friendly” badge.
+- Corrected the final focaccia description so it no longer calls the product bread.
+
+### Product stories
+
+- Updated the product-story image files in `public/images/taste/products/` with the owner-supplied photographs for Gorgonzola, Parmigiano Reggiano, Provolone, truffle Caciotta, Prosciutto Crudo, Prosciutto Cotto, Burrata, Napoli salami and Carolina Reaper salami.
+- Preserved the product-led shared article template: the product image leads, followed by producer and region context.
+- Kept Porchetta, Mortadella and Gran Magro product photographs in the project for future product stories without assigning them to an unverified producer.
+
+### Italy map
+
+- Replaced the decorative map with one clean olive Italy outline.
+- Removed numbers, blobs, guessed hotspots and direct region marks.
+- Region selection remains explicit through labelled buttons, which filter the related stories.
+
+### Menu
+
+- Removed all menu-hero image references; no bottle can appear behind the title.
+- Kept `МЕНЮ / MENU` as the eyebrow and updated the intro copy.
+- Retained the Vegan badge on Vegano and the complete wine-by-the-glass / bottle sections.
+
+### Deployment integrity
+
+- Modified real files in `pages/`, `components/`, `styles/`, `lib/` and `public/`.
+- Added version marker `data-site-version="1.1.6"` in the shared layout.
+- `npm ci`, `npm run lint` and `npm run build` completed successfully.
+- All 22 routes were generated.
+
 ## [1.1.5] — 2026-07-17
 
 ### Critical corrections

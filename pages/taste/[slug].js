@@ -97,6 +97,13 @@ export default function TasteStory({ slug }) {
               <div><Paragraphs items={c.intro} /></div>
             </section>
 
+            {meta.secondaryImage ? (
+              <figure className={styles.secondaryProduct}>
+                <div><Image src={meta.secondaryImage} alt={meta.secondaryImageLabel?.[lang] || m.title} fill sizes="(max-width: 760px) 100vw, 900px" /></div>
+                <figcaption>{meta.secondaryImageLabel?.[lang]}</figcaption>
+              </figure>
+            ) : null}
+
             <section className={styles.why}>
               <p className="sectionEyebrow">Focaccia Bansko</p>
               <h2>{c.whyTitle || labels.why}</h2>

@@ -23,7 +23,7 @@ export default function Menu() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={`pageHero ${styles.menuHero}`}>
+        <section className={`pageHero ${styles.menuHero}`} data-version="1.1.6">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
@@ -55,6 +55,12 @@ export default function Menu() {
                       fill
                       sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw"
                     />
+                    {item.vegan ? (
+                      <span className={styles.veganTag} title={c.vegan}>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 4.3C13.2 4.5 8.4 6.7 6 10.2c-2.3 3.4-1.5 7.1.6 9.2 2.5-4.3 5.9-7.5 10.1-9.8-3.5 2.7-6.2 6-8.1 9.9 3.6.6 7.2-.7 9.2-3.8 2-3 2.6-7.2 1.9-11.4Z" fill="currentColor" /></svg>
+                        {c.vegan}
+                      </span>
+                    ) : null}
                   </div>
                   <div className={styles.sandwichBody}>
                     <div className={styles.cardTop}>

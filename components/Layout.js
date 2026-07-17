@@ -5,7 +5,7 @@ import styles from '../styles/Layout.module.css';
 
 export default function Layout({ children, lang, text, changeLanguage, href, mainClassName = '' }) {
   return (
-    <div className={styles.siteShell}>
+    <div className={styles.siteShell} data-site-version="1.1.6">
       <Header lang={lang} text={text} changeLanguage={changeLanguage} href={href} />
       <SocialRail />
       <main className={`${styles.main} ${mainClassName}`.trim()}>{children}</main>

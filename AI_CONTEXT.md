@@ -52,7 +52,7 @@ This repository contains its own continuity record so work does not depend only 
 ### Version 1.1.4 visual rule
 Product-story cover cards must show the ingredient itself. Never substitute a sandwich cut-out for an ingredient photograph. Sandwich photographs belong only in the final “where to taste it” section.
 
-### Version 1.1.5 locked decisions
+### Version 1.1.6 locked decisions
 
 - The menu hero has no background product image. Wine bottle photography belongs only in the wine list.
 - The home hero collage uses the five owner-supplied sandwich photographs and must remain responsive web content.

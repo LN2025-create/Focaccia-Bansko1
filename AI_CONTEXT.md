@@ -40,7 +40,7 @@ This repository contains its own continuity record so work does not depend only 
 
 ## Version 1.1.3 locked decisions
 
-- Never restore the rejected cut-out sandwich collage.
+- Do not restore the old rough cut-out collage. The approved home collage is the responsive five-item composition built from the owner-supplied Carolina Reaper, Vegano, Gran Magro, Birra & Crudo and Mortadella photographs.
 - Home copy must say that the focaccia is baked for the sandwiches; do not imply bread or plain focaccia is sold.
 - Product stories use close product photography and a split image/copy hero.
 - The interactive Italy map uses a clean outline and highlighted regions, without numbered markers.
@@ -51,3 +51,11 @@ This repository contains its own continuity record so work does not depend only 
 
 ### Version 1.1.4 visual rule
 Product-story cover cards must show the ingredient itself. Never substitute a sandwich cut-out for an ingredient photograph. Sandwich photographs belong only in the final “where to taste it” section.
+
+### Version 1.1.5 locked decisions
+
+- The menu hero has no background product image. Wine bottle photography belongs only in the wine list.
+- The home hero collage uses the five owner-supplied sandwich photographs and must remain responsive web content.
+- “Веган френдли / Vegan friendly” is visible on the home page, and Vegano carries a vegan leaf badge in the menu.
+- Existing product stories use the owner-supplied ingredient photographs where provided. Never replace an ingredient with a sandwich photograph.
+- The map uses the owner-supplied simple Italy silhouette and labelled region buttons; no numbered or blob markers.

@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.1.5] — 2026-07-17
+
+### Critical corrections
+
+- Removed every menu-hero background image, so the Bollé bottle can no longer appear behind the menu heading.
+- Replaced the previous emergency archive handoff with an actual code update based on Version 1.1.4.
+
+### Home page
+
+- Added a real five-sandwich web collage using the owner-supplied Carolina Reaper, Vegano, Gran Magro, Birra & Crudo and Mortadella photographs.
+- The collage is built as responsive web content rather than one rough flattened cut-out image.
+- Added a clear “Веган френдли / Vegan friendly” badge in the hero.
+- Corrected the first home paragraph so it says that the focaccia for the sandwiches is prepared and baked on site.
+
+### Menu
+
+- Added a visible vegan leaf badge to the Vegano card in Bulgarian and English.
+- Preserved the wine-by-the-glass and bottle sections while keeping bottle photography only inside the wine section.
+
+### Product stories
+
+- Replaced generic or unsuitable product covers with the owner-supplied images for burrata, Gorgonzola, truffle caciotta, Parmigiano Reggiano, Provolone, Prosciutto Crudo, Prosciutto Cotto, Salame Napoli and Carolina Reaper salami.
+- Casa Modena now shows Prosciutto Crudo as the lead product and Prosciutto Cotto as a second product image inside the article.
+- Kept stracciatella and mozzarella as close product-led visuals.
+
+### Italy map
+
+- Replaced the previous drawn/marked map with the owner-supplied simple Italy silhouette.
+- Region selection remains explicit through labelled buttons, with no numbers, blobs or ambiguous markers on the map.
+
+### Validation
+
+- `npm ci`, `npm run lint` and `npm run build` completed successfully.
+- Local image references and the clean ZIP structure were checked before delivery.
+
 ## [1.1.3] — 2026-07-16
 
 ### Home page

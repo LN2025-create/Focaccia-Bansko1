@@ -1,11 +1,9 @@
 # Image credits
 
-Product photographs added in Version 1.1.4:
+## Version 1.1.5 owner-supplied assets
 
-- Burrata: “Burrata di Corato” by Meg Zimbeck — CC BY 2.0, via Wikimedia Commons.
-- Gorgonzola: “Gorgonzola and a pear” by Jon Sullivan — public domain / CC0, via Wikimedia Commons.
-- Provolone: “Provolone Dolce close” by Dominik Hundhammer — GFDL / CC BY-SA 3.0, via Wikimedia Commons.
-- Prosciutto: “Prosciutto di Parma, Tagliere, Italia” by Luca Dea — CC BY 4.0, via Wikimedia Commons.
-- Salami: “Salame Italiano Toscano Finocchiona” by Afragidio — CC BY-SA 4.0, via Wikimedia Commons.
+The sandwich collage, the simple Italy silhouette and the new product photographs used for burrata, Gorgonzola, truffle caciotta, Parmigiano Reggiano, Provolone, Prosciutto Crudo, Prosciutto Cotto, Salame Napoli and Carolina Reaper salami were supplied by the project owner for use in this website project.
 
-Images were cropped and resized for the website. All other photographs are supplied project assets or generated specifically for the project.
+The repository does not make additional public licensing claims for those owner-supplied files. Their source records should be retained by the project owner.
+
+Other images already present in the repository are legacy project assets or images generated specifically for the project.

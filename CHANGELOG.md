@@ -173,3 +173,12 @@ All meaningful project changes must be recorded here. Completed work must not be
 - Removed the small Italy map from individual product articles.
 - Kept region information as a clean text section inside each article.
 - The interactive Italy map remains only at the bottom of the main “Пътят на вкуса” page.
+
+## Version 1.1.4 — emergency visual correction
+
+- Removed the sparkling-wine bottle from the menu hero and replaced it with a restrained Italian food still life.
+- Removed every sandwich cut-out used as a substitute for a product image in “The Journey of Taste”.
+- Added a dedicated close-up photograph of stracciatella.
+- Added product-led imagery for burrata, gorgonzola, truffle cheese, provolone, prosciutto and salami.
+- Replaced the unclear numbered/blob map interaction with a clean Italy outline and explicit labelled region controls.
+- Added image licensing and attribution notes in `IMAGE_CREDITS.md`.

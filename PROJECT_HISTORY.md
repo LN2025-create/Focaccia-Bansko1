@@ -160,3 +160,8 @@ The site typography was recalibrated after live visual review: headings are smal
 - Simplified the interactive Italy map to a clean outline with active regions and no numbers.
 - Separated the coloured social buttons on the left from a larger Google review call-to-action on the right.
 - Expanded the wine menu with wines by the glass and three photographed bottles.
+
+
+## 2026-07-17 — Version 1.1.4
+
+Emergency visual correction: removed misleading sandwich imagery from product-led story cards, added dedicated ingredient close-ups, replaced the menu hero bottle, and simplified the map interaction.

@@ -23,7 +23,7 @@ export default function Menu() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className="pageHero">
+        <section className={`pageHero ${styles.menuHero}`}>
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>

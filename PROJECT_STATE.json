@@ -176,5 +176,13 @@
       "Automated browser screenshots were not available in the packaging runtime; perform final visual review after deployment."
     ],
     "localAssetReferencesChecked": true
-  }
+  },
+  "version": "1.1.4",
+  "updated": "2026-07-17",
+  "completed": [
+    "Removed sandwich cut-outs from product story covers",
+    "Replaced the stracciatella cover with a dedicated product close-up",
+    "Removed the wine bottle from the menu hero",
+    "Simplified the Italy map to a clean outline with labelled region filters"
+  ]
 }

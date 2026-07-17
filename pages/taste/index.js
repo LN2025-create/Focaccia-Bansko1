@@ -118,22 +118,7 @@ export default function TasteLanding() {
               <div className={styles.mapLayout}>
                 <div className={styles.mapVisual} aria-label={labels.mapTitle}>
                   <Image src="/images/taste/italy-silhouette.svg" alt={labels.mapTitle} fill sizes="(max-width: 820px) 100vw, 42vw" />
-                  {regionEntries.map(([regionId, region]) => {
-                    const active = selectedRegion === regionId;
-                    return (
-                      <button
-                        type="button"
-                        key={regionId}
-                        className={`${styles.regionPoint} ${styles[`region_${regionId}`] || ''} ${active ? styles.regionPointActive : ''}`}
-                        style={{ left: `${region.x}%`, top: `${region.y}%` }}
-                        onClick={() => setSelectedRegion(regionId)}
-                        aria-pressed={active}
-                        aria-label={region[lang].name}
-                      >
-                        <span>{region[lang].name}</span>
-                      </button>
-                    );
-                  })}
+
                 </div>
 
                 <div className={styles.regionPanel}>

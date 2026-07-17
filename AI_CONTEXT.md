@@ -47,3 +47,7 @@ This repository contains its own continuity record so work does not depend only 
 - Social buttons are coloured and remain on the left; the separate larger Google review button stays on the right.
 - Google review URL: `https://g.page/r/CW54B7v5AtugEAE/review`.
 - Wine menu includes Fiano, Primitivo and Bollé bottle entries and photos at the confirmed prices.
+
+
+### Version 1.1.4 visual rule
+Product-story cover cards must show the ingredient itself. Never substitute a sandwich cut-out for an ingredient photograph. Sandwich photographs belong only in the final “where to taste it” section.

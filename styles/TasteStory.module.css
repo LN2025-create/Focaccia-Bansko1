@@ -109,3 +109,33 @@
 @media (max-width: 620px) {
   .secondaryProduct > div { min-height: 260px; }
 }
+
+/* V1.1.9 — product-led visual standard and Casa Modena dual-product presentation. */
+.productGallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 46px 0 0;
+}
+.productGallery figure { margin: 0; min-width: 0; }
+.productGallery figure > div {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #eee2d1;
+  box-shadow: 0 12px 32px rgba(72,54,35,.08);
+}
+.productGallery img { object-fit: cover; }
+.productGallery figcaption {
+  margin-top: 12px;
+  color: var(--graphite);
+  font-family: Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+}
+@media (max-width: 720px) {
+  .productGallery { grid-template-columns: 1fr; gap: 24px; margin-top: 38px; }
+  .productGallery figure > div { min-height: 280px; }
+}

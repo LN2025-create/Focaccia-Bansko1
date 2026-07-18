@@ -25,3 +25,9 @@
   .nav > a::after { display: none; }
   .language { align-self: flex-start; margin: 10px 0 0 8px; }
 }
+
+
+/* V1.1.7 technical recovery: explicit CSS-module exports used by Header.js. */
+.active { color: var(--cream) !important; }
+.languageActive { color: var(--cream) !important; }
+@media (min-width: 821px) { .navOpen { display: flex; } }

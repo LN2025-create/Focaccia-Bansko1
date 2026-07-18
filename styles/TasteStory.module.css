@@ -97,3 +97,15 @@
   .relatedCard { transition: none; }
   .relatedCard:hover { transform: none; }
 }
+
+
+/* V1.1.7 technical recovery: explicit responsive title and secondary product media. */
+.longTitle { font-size: clamp(2.2rem, 3.6vw, 3.55rem) !important; }
+.mazzaHeroImage { object-fit: cover; object-position: center; transform: scale(1.02); }
+.secondaryProduct { margin: 44px 0 0; }
+.secondaryProduct > div { position: relative; min-height: 380px; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: #f0e5d4; }
+.secondaryProduct img { object-fit: cover; }
+.secondaryProduct figcaption { margin-top: 10px; color: var(--muted); font-size: .88rem; }
+@media (max-width: 620px) {
+  .secondaryProduct > div { min-height: 260px; }
+}

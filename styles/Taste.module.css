@@ -202,3 +202,18 @@
   .productStory, .productStoryImage img, .regionPoint > span, .filteredStories a { animation: none; transition: none; }
   .productStory:hover, .filteredStories a:hover { transform: none; }
 }
+
+
+/* V1.1.7 technical recovery: make exported utility classes explicit. */
+.mapLabel {
+  position: absolute;
+  z-index: 2;
+  left: 22px;
+  bottom: 18px;
+  color: rgba(244,235,221,.78);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .22em;
+}
+.mazzaImage { object-fit: cover; object-position: center; transform: scale(1.08); }
+.regionButtonActive { border-color: rgba(198,164,106,.62) !important; color: #fff9e9 !important; background: rgba(198,164,106,.16) !important; }

@@ -48,3 +48,62 @@
   .price { font-size: 1.15rem; }
   .cta { align-items: flex-start; flex-direction: column; padding: 32px 24px; }
 }
+
+
+/* V1.1.7 technical recovery: keep hero, vegan mark and wine imagery inside their containers. */
+.menuHero { position: relative; overflow: hidden; background-image: none !important; }
+.veganTag {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(72,99,45,.92);
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.veganTag svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.wineGroup { grid-column: 1 / -1; }
+.drinkSubsection { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.drinkSubsection:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.drinkSubsection h4 { margin: 0 0 12px; color: var(--graphite); font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.bottleGrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+.bottleCard {
+  display: grid;
+  grid-template-columns: minmax(88px, .72fr) minmax(0, 1.28fr);
+  min-width: 0;
+  min-height: 230px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.48);
+}
+.bottleImage { position: relative; min-width: 0; min-height: 230px; overflow: hidden; background: rgba(255,255,255,.66); }
+.bottleImage img { object-fit: contain; object-position: center; padding: 14px; }
+.bottleCopy { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 18px 16px; }
+.bottleCopy strong, .bottleCopy small, .bottleCopy span, .bottleCopy b { display: block; }
+.bottleCopy strong { color: var(--graphite); line-height: 1.25; }
+.bottleCopy small { margin-top: 7px; color: var(--muted); line-height: 1.4; }
+.bottleCopy span { margin-top: 12px; color: var(--muted); font-size: .86rem; }
+.bottleCopy b { margin-top: 5px; color: var(--terracotta); }
+
+@media (max-width: 980px) {
+  .bottleGrid { grid-template-columns: 1fr; }
+  .bottleCard { grid-template-columns: 120px minmax(0,1fr); min-height: 190px; }
+  .bottleImage { min-height: 190px; }
+}
+@media (max-width: 480px) {
+  .bottleCard { grid-template-columns: 96px minmax(0,1fr); min-height: 170px; }
+  .bottleImage { min-height: 170px; }
+  .bottleImage img { padding: 10px; }
+  .bottleCopy { padding: 15px 13px; }
+}

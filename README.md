@@ -2,7 +2,7 @@
 
 > **Before editing:** read [`PROJECT_STATE.json`](./PROJECT_STATE.json), [`PROJECT_HISTORY.md`](./PROJECT_HISTORY.md) and [`CHANGELOG.md`](./CHANGELOG.md). The active application is the Next.js project in the repository root. An obsolete nested project copy was removed on 2026-07-13 so only one application remains.
 
-Next.js website for Focaccia Bansko. Current repository release: **1.1.0**.
+Next.js website for Focaccia Bansko. Current repository release: **1.2.0**.
 
 ## Local development
 
@@ -47,3 +47,10 @@ The site uses a warm Italian-inspired palette: cream, olive green, terracotta, g
 - The interactive Italy map is at the bottom and filters stories by the selected region.
 - Market-position copy is shown only when a supported exact claim exists.
 - Home-page feature cards use the “Салумерия” title and the 01 / 02 / 03 strip ends with “Кафе, вино и кроасан”.
+
+## Version 1.2.0 final map and QA
+
+- The Italy section uses the owner-supplied simple silhouette and labelled region buttons.
+- The silhouette does not contain guessed region shapes, numbered markers or decorative hotspots.
+- Selecting a region filters the connected product stories and exposes an accessible selected state.
+- Stage 4 completed desktop/mobile visual review, BG/EN route checks, asset checks, lint and production build.

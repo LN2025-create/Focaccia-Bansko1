@@ -108,3 +108,11 @@
 @media (prefers-reduced-motion: reduce) {
   .sandwichCard, .sandwichCard:hover, .sandwichImage img, .sandwichCard:hover .sandwichImage img { transition: none; transform: none; }
 }
+
+
+.dessertSection { margin-top: 44px; }
+.dessertCard { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 18px; align-items: center; padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.48)); box-shadow: 0 14px 38px rgba(72,54,35,.08); }
+.dessertIcon { width: 68px; height: 68px; display: grid; place-items: center; border-radius: 50%; background: rgba(198,164,106,.16); font-size: 1.9rem; }
+.dessertCard h3 { margin: 0 0 8px; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(1.45rem, 2.6vw, 1.85rem); }
+.dessertCard p { margin: 0; color: var(--muted); line-height: 1.6; }
+@media (max-width: 720px) { .dessertCard { grid-template-columns: 1fr; } .dessertIcon { width: 60px; height: 60px; } }

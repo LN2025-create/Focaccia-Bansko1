@@ -15,11 +15,14 @@ const routes = [
 export default function Header({ lang, text, changeLanguage, href }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const homeLabel = lang === 'en' ? 'Focaccia Bansko - Home' : 'Focaccia Bansko - Начало';
+  const menuLabel = lang === 'en' ? 'Menu' : 'Меню';
+  const languageLabel = lang === 'en' ? 'Language' : 'Език';
 
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link href={href('/')} className={styles.brand} aria-label="Focaccia Bansko - Home">
+        <Link href={href('/')} className={styles.brand} aria-label={homeLabel}>
           <Image
             src="/images/focaccia-logo-v2.png"
             alt="Focaccia - Panini eccellenti"
@@ -35,7 +38,7 @@ export default function Header({ lang, text, changeLanguage, href }) {
           className={styles.menuButton}
           aria-expanded={open}
           aria-controls="main-navigation"
-          aria-label="Menu"
+          aria-label={menuLabel}
           onClick={() => setOpen((value) => !value)}
         >
           <span />
@@ -54,7 +57,7 @@ export default function Header({ lang, text, changeLanguage, href }) {
               {text.nav[key]}
             </Link>
           ))}
-          <div className={styles.language} role="group" aria-label="Language">
+          <div className={styles.language} role="group" aria-label={languageLabel}>
             <button
               type="button"
               onClick={() => { changeLanguage('bg'); setOpen(false); }}

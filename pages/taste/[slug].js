@@ -30,12 +30,12 @@ export default function TasteStory({ slug }) {
     journey: 'The Journey of Taste', product: 'The product', producer: 'The producer', facts: 'Key facts',
     market: 'Verified market position', region: 'The region', sources: 'Verified sources', menu: 'Explore the menu',
     back: 'Back to The Journey of Taste', related: 'More from this region', read: 'Read the story',
-    atFocaccia: 'At Focaccia Bansko', why: 'Why we chose it',
+    atFocaccia: 'At Focaccia Bansko', why: 'Why we chose it', usesEyebrow: 'How else it is used', pairingEyebrow: 'Pairing idea',
   } : {
     journey: 'Пътят на вкуса', product: 'Продуктът', producer: 'Производителят', facts: 'Основни факти',
     market: 'Проверена пазарна позиция', region: 'Регионът', sources: 'Проверени източници', menu: 'Разгледайте менюто',
     back: 'Към „Пътят на вкуса“', related: 'Още от този регион', read: 'Прочетете историята',
-    atFocaccia: 'Във Focaccia Bansko', why: 'Защо го избрахме',
+    atFocaccia: 'Във Focaccia Bansko', why: 'Защо го избрахме', usesEyebrow: 'Къде още се използва', pairingEyebrow: 'Идея за съчетаване',
   };
 
   return (
@@ -57,6 +57,7 @@ export default function TasteStory({ slug }) {
                   priority
                   sizes="(max-width: 820px) 100vw, 1120px"
                   className={`${styles.heroImage} ${slug === 'mazza' ? styles.mazzaHeroImage : ''}`}
+                  style={meta.heroObjectPosition ? { objectPosition: meta.heroObjectPosition } : undefined}
                 />
               </div>
               <div className={styles.heroCopy}>
@@ -97,7 +98,24 @@ export default function TasteStory({ slug }) {
               <div><Paragraphs items={c.intro} /></div>
             </section>
 
-            {meta.secondaryImage ? (
+            {meta.productGallery?.length ? (
+              <section className={styles.productGallery} aria-label={lang === 'en' ? 'Products in this story' : 'Продуктите в тази история'}>
+                {meta.productGallery.map((item) => (
+                  <figure key={item.src}>
+                    <div>
+                      <Image
+                        src={item.src}
+                        alt={item.label?.[lang] || m.title}
+                        fill
+                        sizes="(max-width: 760px) 100vw, 46vw"
+                        style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
+                      />
+                    </div>
+                    <figcaption>{item.label?.[lang]}</figcaption>
+                  </figure>
+                ))}
+              </section>
+            ) : meta.secondaryImage ? (
               <figure className={styles.secondaryProduct}>
                 <div><Image src={meta.secondaryImage} alt={meta.secondaryImageLabel?.[lang] || m.title} fill sizes="(max-width: 760px) 100vw, 900px" /></div>
                 <figcaption>{meta.secondaryImageLabel?.[lang]}</figcaption>
@@ -137,12 +155,12 @@ export default function TasteStory({ slug }) {
 
             <section className={styles.culinaryGrid}>
               <div>
-                <p className="sectionEyebrow">{m.usesTitle}</p>
+                <p className="sectionEyebrow">{labels.usesEyebrow}</p>
                 <h2>{m.usesTitle}</h2>
                 <p>{m.uses}</p>
               </div>
               <div>
-                <p className="sectionEyebrow">{m.pairingTitle}</p>
+                <p className="sectionEyebrow">{labels.pairingEyebrow}</p>
                 <h2>{m.pairingTitle}</h2>
                 <p>{m.pairing}</p>
               </div>

@@ -3,12 +3,31 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
-import { sandwiches, drinkGroups } from '../lib/menuData';
+import { sandwiches, drinkGroups, dessert } from '../lib/menuData';
 import styles from '../styles/Menu.module.css';
 
 function localName(item, lang) {
   if (item.name) return item.name;
   return lang === 'en' ? item.enName : item.bgName;
+}
+
+function VeganIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19.7 4.3C13.2 4.5 8.4 6.7 6 10.2c-2.3 3.4-1.5 7.1.6 9.2 2.5-4.3 5.9-7.5 10.1-9.8-3.5 2.7-6.2 6-8.1 9.9 3.6.6 7.2-.7 9.2-3.8 2-3 2.6-7.2 1.9-11.4Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function WineGlassIcon({ red = false }) {
+  return (
+    <svg viewBox="0 0 48 64" aria-hidden="true">
+      <path d="M10 5h28l-2.4 19.3C34.2 35.1 29.8 40 24 40s-10.2-4.9-11.6-15.7L10 5Z" fill="none" stroke="currentColor" strokeWidth="2.4" />
+      <path d="M14 22h20" stroke="currentColor" strokeWidth="2.4" />
+      <path d="M24 40v14M16 59h16" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M14.5 22h19l-1.2 5.8C31 34 28.2 36.5 24 36.5S17 34 15.7 27.8L14.5 22Z" fill={red ? 'rgba(145,45,36,.78)' : 'rgba(212,184,105,.72)'} />
+    </svg>
+  );
 }
 
 export default function Menu() {
@@ -23,7 +42,7 @@ export default function Menu() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={`pageHero ${styles.menuHero}`} data-version="1.1.6">
+        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.1">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
@@ -47,7 +66,7 @@ export default function Menu() {
 
             <div className={styles.sandwichGrid}>
               {sandwiches.map((item) => (
-                <article className={styles.sandwichCard} key={item.name}>
+                <article className={styles.sandwichCard} id={item.name === 'Vegano' ? 'vegano' : undefined} key={item.name}>
                   <div className={styles.sandwichImage}>
                     <Image
                       src={item.image}
@@ -56,9 +75,9 @@ export default function Menu() {
                       sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw"
                     />
                     {item.vegan ? (
-                      <span className={styles.veganTag} title={c.vegan}>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 4.3C13.2 4.5 8.4 6.7 6 10.2c-2.3 3.4-1.5 7.1.6 9.2 2.5-4.3 5.9-7.5 10.1-9.8-3.5 2.7-6.2 6-8.1 9.9 3.6.6 7.2-.7 9.2-3.8 2-3 2.6-7.2 1.9-11.4Z" fill="currentColor" /></svg>
-                        {c.vegan}
+                      <span className={styles.veganTag} title={c.vegan} aria-label={c.vegan}>
+                        <VeganIcon />
+                        <strong>{c.vegan}</strong>
                       </span>
                     ) : null}
                   </div>
@@ -77,6 +96,23 @@ export default function Menu() {
             </div>
 
             <p className={styles.foodNote}>{c.foodNote}</p>
+
+            <div className={styles.dessertSection}>
+              <div className={styles.sectionHeading}>
+                <div>
+                  <p className="sectionEyebrow">{c.dessertTitle}</p>
+                  <h2>{c.dessertName}</h2>
+                </div>
+                <p>{c.dessertPrice}</p>
+              </div>
+              <article className={styles.dessertCard}>
+                <div className={styles.dessertIcon}>🥐</div>
+                <div>
+                  <h3>{lang === 'en' ? dessert.enName : dessert.bgName}</h3>
+                  <p>{lang === 'en' ? dessert.en : dessert.bg}</p>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -94,33 +130,39 @@ export default function Menu() {
               {drinkGroups.map((group) => (
                 <article className={`${styles.drinkGroup} ${group.featured ? styles.wineGroup : ''}`} key={group.enTitle}>
                   <h3>{lang === 'en' ? group.enTitle : group.bgTitle}</h3>
-                  {group.sections ? group.sections.map((section) => (
-                    <section className={styles.drinkSubsection} key={section.enTitle}>
-                      <h4>{lang === 'en' ? section.enTitle : section.bgTitle}</h4>
-                      <div className={section.items.some((item) => item.image) ? styles.bottleGrid : styles.drinkRows}>
-                        {section.items.map((item, index) => item.image ? (
-                          <div className={styles.bottleCard} key={`${localName(item, lang)}-${item.volume}-${index}`}>
-                            <div className={styles.bottleImage}><Image src={item.image} alt={localName(item, lang)} fill sizes="180px" /></div>
-                            <div className={styles.bottleCopy}>
-                              <strong>{localName(item, lang)}</strong>
-                              <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small>
-                              <span>{item.volume}</span>
-                              <b>{item.price}</b>
+                  {group.sections ? group.sections.map((section) => {
+                    const bottleSection = section.items.some((item) => item.image);
+                    return (
+                      <section className={styles.drinkSubsection} key={section.enTitle}>
+                        <h4>{lang === 'en' ? section.enTitle : section.bgTitle}</h4>
+                        <div className={bottleSection ? styles.bottleGrid : styles.glassGrid}>
+                          {section.items.map((item, index) => bottleSection ? (
+                            <div className={styles.bottleCard} key={`${localName(item, lang)}-${item.volume}-${index}`}>
+                              <div className={styles.bottleImage}>
+                                <Image src={item.image} alt={localName(item, lang)} fill sizes="(max-width: 700px) 42vw, 240px" />
+                              </div>
+                              <div className={styles.bottleCopy}>
+                                <strong>{localName(item, lang)}</strong>
+                                <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small>
+                                <span>{item.volume}</span>
+                                <b>{item.price}</b>
+                              </div>
                             </div>
-                          </div>
-                        ) : (
-                          <div className={styles.drinkRow} key={`${localName(item, lang)}-${item.volume}-${index}`}>
-                            <div>
-                              <strong>{localName(item, lang)}</strong>
-                              {item.bgDetail || item.enDetail ? <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small> : null}
-                              <span>{item.volume}</span>
+                          ) : (
+                            <div className={styles.glassCard} key={`${localName(item, lang)}-${item.volume}-${index}`}>
+                              <div className={styles.glassIcon}><WineGlassIcon red={localName(item, lang).includes('Primitivo')} /></div>
+                              <div className={styles.glassCopy}>
+                                <strong>{localName(item, lang)}</strong>
+                                {item.bgDetail || item.enDetail ? <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small> : null}
+                                <span>{item.volume}</span>
+                                <b>{item.price}</b>
+                              </div>
                             </div>
-                            <b>{item.price}</b>
-                          </div>
-                        ))}
-                      </div>
-                    </section>
-                  )) : (
+                          ))}
+                        </div>
+                      </section>
+                    );
+                  }) : (
                     <div className={styles.drinkRows}>
                       {group.items.map((item, index) => (
                         <div className={styles.drinkRow} key={`${localName(item, lang)}-${item.volume}-${index}`}>

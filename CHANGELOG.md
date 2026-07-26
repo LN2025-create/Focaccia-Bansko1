@@ -1,5 +1,144 @@
 # Changelog
 
+## Version 1.2.1 — post-audit corrections (2026-07-25)
+
+### Home page
+
+- Removed the multi-tile collage structure from the home hero.
+- Added one cohesive hero photograph with proper negative space and a warmer, more premium product-first feel.
+- Reworked the hero layout into a cleaner two-column composition so the message, buttons and rating remain part of the first impression.
+- Added an explicit `aria-label` for the two-line hero heading so the text is not read as a glued string.
+
+### Menu and contacts
+
+- Added visible dessert presence to the menu with the agreed single dessert: a freshly baked croissant served with Italian espresso or cappuccino.
+- Replaced the placeholder `F` in contacts with the real Focaccia logo and added a direct Google Maps action.
+- Updated the footer description so it reflects sandwiches made with focaccia baked on site rather than suggesting standalone focaccia as the main product.
+
+### Journey of Taste and accessibility
+
+- Reduced repeated wording in the Taste Journey region prompt.
+- Replaced repeated eyebrow headings inside product stories with cleaner generic labels.
+- Localised the Google Review control and the Google rating `aria-label`.
+- Localised header accessibility labels.
+
+### Validation note
+
+- The source corrections were reviewed directly.
+- A fresh `npm ci`, `lint` and production `build` pass were **not re-run for 1.2.1 in this container session**, so they still need to be executed in a full local/deployment environment before publishing.
+
+## Version 1.2.0 — Stage 4 final map and full-site QA (2026-07-18)
+
+### Final Italy map
+
+- Kept the owner-supplied simple Italy silhouette and the explicit labelled region selector.
+- Removed all unused CSS for numbered/blob markers and deleted the obsolete vintage and journey-map assets.
+- Corrected the explanatory copy so it describes the region selector accurately rather than implying that approximate regions are drawn on the silhouette.
+- Added accessible `aria-pressed` states, result controls, a live results area and a visible selected-region label.
+
+### Full-site QA
+
+- Rendered and reviewed desktop and mobile layouts for home, menu, location, contacts, Journey of Taste, the main focaccia story and a representative Casa Modena article.
+- Checked the final map section separately at 1440 px and 390 px.
+- Confirmed the persistent Facebook, Instagram and TikTok rail plus the separate Google Review control.
+- Updated all application version markers and repository continuity files to 1.2.0.
+
+### Validation
+
+- `npm ci` completed with 0 reported vulnerabilities.
+- `npm run lint` completed successfully.
+- `npm run build` completed successfully and generated all 22 routes.
+- Checked 40 Bulgarian/English page responses plus the custom 404 response.
+- Checked 58 local media references, CSS-module exports, social URLs and obsolete map references; no missing local assets or stale map references remain.
+- Created the clean canonical archive `Focaccia-BG-V1.2.0.zip`.
+
+## Version 1.1.9 — Stage 3 product-story refinement (2026-07-18)
+
+### Product-led imagery
+
+- Standardised all fourteen product-story cards and article heroes around the approved mozzarella pattern: the ingredient leads, followed by producer, region and the Focaccia Bansko menu connection.
+- Replaced the Burrata, Stracciatella, Gorgonzola, truffle Caciotta, Parmigiano Reggiano, Provolone, Prosciutto Crudo, Prosciutto Cotto, Salame Napoli and Carolina Reaper hero assets with controlled close-product crops.
+- Kept the approved flour, Mazza olive oil, Fior di Latte, Peroni and Caffè Corsini imagery.
+- Confirmed that no product article hero uses a sandwich photograph. Sandwich imagery remains only in the final “where to taste it” section.
+
+### Casa Modena
+
+- Added a dedicated two-product presentation for Prosciutto Crudo and Prosciutto Cotto.
+- Kept Crudo as the article hero and displayed both products together after the producer section with individual labels.
+
+### Layout and typography
+
+- Preserved the shared split image/copy article hero on desktop and the stacked product-first layout on mobile.
+- Verified long titles such as “Нашият Parmigiano Reggiano” and “Нашето сирене с трюфел” without broken words, overlap or isolated letters.
+- Kept the first main focaccia story unchanged.
+
+### Validation
+
+- `npm ci` completed with 0 reported vulnerabilities.
+- `npm run lint` completed successfully.
+- `npm run build` completed successfully and generated all 22 routes.
+- Checked 40 Bulgarian/English route responses and 57 local media references; all returned valid results and no local assets were missing.
+- Rendered the top of all fourteen product articles and captured each landing-page product card individually.
+- Rendered representative full desktop and mobile pages for Stracciatella, Gorgonzola, Casa Modena and Parmigiano Reggiano.
+
+## Version 1.1.8 — Stage 2 home and menu refinement (2026-07-18)
+
+### Home page
+
+- Replaced the flattened generated hero artwork with a responsive editorial collage built from the five owner-supplied sandwich photographs: Carolina Reaper, Vegano, Gran Magro, Birra & Crudo and Mortadella.
+- The collage remains real web content rather than one generated composite; each product has its own controlled crop, label and responsive position.
+- Kept the two hero-title lines at exactly the same responsive font size and reduced their overall scale.
+- Added one restrained “Веган френдли / Vegan friendly” badge linked to the Vegano menu item.
+- Shortened the hero explanation to the essential product message: the focaccia is prepared and baked on site for the sandwiches.
+
+### Menu
+
+- Kept the menu hero completely free of background product images.
+- Updated the Bulgarian and English intro copy to describe focaccia baked on site, Italian products and the curated drink selection.
+- Strengthened the Vegano identification with a compact green leaf badge and a direct `#vegano` anchor.
+- Rebuilt the wine presentation into clear “На чаша / By the glass” cards and controlled bottle cards.
+- Kept all bottle photography inside the wine section and preserved the confirmed products, volumes and prices.
+
+### Validation
+
+- `npm run lint` completed successfully.
+- `npm run build` completed successfully and generated all 22 routes.
+- Verified HTTP 200 responses for the principal routes.
+- Checked every local image/video reference used by source and styles; no missing assets were found.
+- Rendered real built HTML in headless Chromium for desktop and mobile previews of the home and menu pages.
+
+## Version 1.1.7 — Stage 1 technical recovery (2026-07-18)
+
+### Scope
+
+- Technical recovery only. No new redesign, new product photography or article-content changes were introduced in this stage.
+
+### Corrected application structure
+
+- Removed the obsolete nested project copy `focaccia-next-clean-2/`.
+- Removed the stale PDF menu file and archive-only system metadata from the delivery tree.
+- Kept the active Next.js application only in the repository root.
+
+### Corrected missing layout rules
+
+- Added the missing home-page container rules for `heroCollage`, `collageCaption`, `collageVeganMark` and `veganBadge`.
+- Added the missing menu rules for `menuHero`, `veganTag`, `wineGroup`, `drinkSubsection`, `bottleGrid`, `bottleCard`, `bottleImage` and `bottleCopy`.
+- Added explicit map, article and header utility classes used by the React files.
+- Constrained wine bottle images to their cards, the vegan icon to its badge and the home image to its own hero container.
+
+### Map recovery
+
+- Replaced the missing `/images/taste/italy-simple.webp` reference with the existing `/images/taste/italy-silhouette.svg` asset.
+- The region filter remains button-driven; no new map design was introduced in this technical stage.
+
+### Validation
+
+- Verified that every CSS-module class referenced by `pages/` and `components/` exists in its imported stylesheet.
+- `npm ci` completed with 0 reported vulnerabilities.
+- `npm run lint` completed successfully.
+- `npm run build` completed successfully and generated all 22 routes.
+- Verified HTTP 200 responses for the main pages and all local image references used by the recovered layouts.
+
 ## Version 1.1.6 — verified application update
 
 ### Home page

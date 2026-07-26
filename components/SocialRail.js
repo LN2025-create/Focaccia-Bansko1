@@ -26,10 +26,13 @@ function GoogleIcon() {
   );
 }
 
-export default function SocialRail() {
+export default function SocialRail({ lang = 'bg' }) {
+  const railLabel = lang === 'en' ? 'Focaccia Bansko social media' : 'Социални мрежи на Focaccia Bansko';
+  const googleLabel = lang === 'en' ? 'Leave a Google review' : 'Остави отзив в Google';
+
   return (
     <>
-      <aside className={styles.rail} aria-label="Focaccia Bansko social media">
+      <aside className={styles.rail} aria-label={railLabel}>
         {socialLinks.map((item) => (
           <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.name} title={item.name} className={styles[item.className]}>
             {item.icon}<span>{item.name}</span>
@@ -41,11 +44,11 @@ export default function SocialRail() {
         href="https://g.page/r/CW54B7v5AtugEAE/review"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Остави отзив в Google"
-        title="Остави отзив в Google"
+        aria-label={googleLabel}
+        title={googleLabel}
       >
         <GoogleIcon />
-        <span>Остави отзив в Google</span>
+        <span>{googleLabel}</span>
       </a>
     </>
   );

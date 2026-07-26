@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
@@ -8,6 +9,7 @@ export default function Contacts() {
   const { lang, text, changeLanguage, href } = useLanguage();
   const c = text.contacts;
   const address = lang === 'en' ? site.addressEn : site.addressBg;
+  const directionsLabel = lang === 'en' ? 'Open in Google Maps' : 'Отвори в Google Maps';
 
   const rows = [
     { label: c.phone, value: site.phoneDisplay, href: `tel:${site.phoneHref}` },
@@ -45,12 +47,21 @@ export default function Contacts() {
               ))}
             </div>
             <aside className={styles.card}>
-              <div className={styles.cardLogo}>F</div>
+              <div className={styles.cardLogoWrap}>
+                <Image
+                  src="/images/focaccia-logo-v2.png"
+                  alt="Focaccia - Panini eccellenti"
+                  width={2439}
+                  height={940}
+                  className={styles.cardLogoImage}
+                />
+              </div>
               <h2>Focaccia Bansko</h2>
               <p>{address}</p>
               <div className={styles.actions}>
                 <a href={`tel:${site.phoneHref}`} className="button buttonPrimary">{c.call}</a>
                 <a href={`mailto:${site.email}`} className="button buttonSecondary">{c.write}</a>
+                <a href={site.mapsUrl} target="_blank" rel="noreferrer" className="button buttonSecondary">{directionsLabel}</a>
               </div>
             </aside>
           </div>

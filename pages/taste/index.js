@@ -17,14 +17,16 @@ export default function TasteLanding() {
   const labels = lang === 'en' ? {
     all: 'All product stories', read: 'Read the story', productIn: 'At Focaccia Bansko',
     mapEyebrow: 'The regions we work with', mapTitle: 'Explore our Italy',
-    mapText: 'Only the Italian regions connected to products we use are marked. Select a region to see its product stories.',
-    choose: 'Choose a region', showAll: 'Clear selection', from: 'Products from', ending: 'The journey ends in Bansko',
+    mapText: 'The selector includes only Italian regions connected to products we use. Choose one to see its product stories.',
+    prompt: 'Select a region to reveal the product stories linked to it.',
+    choose: 'Choose a region', showAll: 'Clear selection', from: 'Products from', selected: 'Selected region', ending: 'The journey ends in Bansko',
     endingText: 'Ingredients from different Italian regions meet in one focaccia, prepared and baked on site every day.',
   } : {
     all: 'Всички продуктови истории', read: 'Прочетете историята', productIn: 'Във Focaccia Bansko',
     mapEyebrow: 'Регионите, с които работим', mapTitle: 'Разгледайте нашата Италия',
-    mapText: 'Отбелязани са само италианските региони, свързани с продуктите, които използваме. Изберете регион, за да видите неговите истории.',
-    choose: 'Изберете регион', showAll: 'Изчисти избора', from: 'Продукти от', ending: 'Пътят завършва в Банско',
+    mapText: 'В избора са включени само италианските региони, свързани с продуктите, които използваме. Изберете регион, за да видите неговите истории.',
+    prompt: 'Избери регион, за да се покажат свързаните с него продуктови истории.',
+    choose: 'Изберете регион', showAll: 'Изчисти избора', from: 'Продукти от', selected: 'Избран регион', ending: 'Пътят завършва в Банско',
     endingText: 'Съставки от различни италиански региони се срещат в една фокача, приготвена и изпечена на място всеки ден.',
   };
 
@@ -44,7 +46,7 @@ export default function TasteLanding() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.landingHero} data-version="1.1.6">
+        <section className={styles.landingHero} data-version="1.2.0">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
@@ -116,19 +118,27 @@ export default function TasteLanding() {
               </div>
 
               <div className={styles.mapLayout}>
-                <div className={styles.mapVisual} aria-label={labels.mapTitle}>
-                  <Image src="/images/taste/italy-simple.webp" alt={labels.mapTitle} fill sizes="(max-width: 820px) 100vw, 42vw" />
+                <div className={`${styles.mapVisual} ${selectedRegion ? styles.mapVisualSelected : ''}`}>
+                  <Image src="/images/taste/italy-silhouette.svg" alt={labels.mapTitle} fill sizes="(max-width: 820px) 100vw, 42vw" />
                   <span className={styles.mapLabel}>ITALIA</span>
+                  {selectedRegion && (
+                    <div className={styles.selectedRegionBadge} aria-live="polite">
+                      <small>{labels.selected}</small>
+                      <strong>{tasteRegions[selectedRegion][lang].name}</strong>
+                    </div>
+                  )}
                 </div>
 
                 <div className={styles.regionPanel}>
                   <p>{labels.choose}</p>
-                  <div className={styles.regionButtons}>
+                  <div className={styles.regionButtons} role="group" aria-label={labels.choose}>
                     {regionEntries.map(([regionId, region]) => (
                       <button
                         type="button"
                         key={regionId}
                         className={selectedRegion === regionId ? styles.regionButtonActive : undefined}
+                        aria-pressed={selectedRegion === regionId}
+                        aria-controls="region-results"
                         onClick={() => setSelectedRegion(regionId)}
                       >
                         {region[lang].name}
@@ -142,9 +152,9 @@ export default function TasteLanding() {
                     </button>
                   )}
 
-                  <div className={styles.regionResults} aria-live="polite">
+                  <div id="region-results" className={styles.regionResults} aria-live="polite" aria-atomic="true">
                     {!selectedRegion ? (
-                      <p className={styles.regionPrompt}>{labels.mapText}</p>
+                      <p className={styles.regionPrompt}>{labels.prompt}</p>
                     ) : (
                       <>
                         <h3>{labels.from} {tasteRegions[selectedRegion][lang].name}</h3>

@@ -183,3 +183,37 @@ Emergency visual correction: removed misleading sandwich imagery from product-le
 - Replaced the map with a clean Italy outline and region buttons.
 - Removed all menu-hero image references so the Bollé bottle cannot appear behind the title.
 - Added version markers to the actual application code to make the deployment version unambiguous.
+
+## 2026-07-18 — Version 1.1.7 Stage 1 technical recovery
+
+- Returned the application to one repository-root Next.js project.
+- Restored missing CSS-module rules that had allowed images and SVG icons to escape their containers.
+- Reconnected the Journey of Taste page to an existing Italy silhouette asset.
+- Deliberately postponed the home collage redesign, product-story visual pass and final interactive map redesign to later stages.
+
+## 2026-07-18 — Version 1.1.8 Stage 2
+
+- Replaced the unstable flattened home artwork with a responsive five-tile editorial collage using only the owner-supplied sandwich photographs.
+- Locked the home hero to two equal-size, smaller title lines and concise focaccia messaging.
+- Kept one restrained Vegan Friendly badge on the home page and strengthened the Vegano menu badge.
+- Kept the menu hero image-free and rebuilt the wine-by-the-glass and bottle presentation for desktop and mobile.
+- Completed browser-level visual review of the built home and menu pages before packaging.
+
+
+## 2026-07-18 — Version 1.1.9 Stage 3
+
+- Completed the product-story visual and content audit without changing the main focaccia story.
+- Standardised all fourteen product cards and article heroes around the approved close-product mozzarella layout.
+- Added controlled owner-supplied product crops for Burrata, Gorgonzola, truffle Caciotta, Parmigiano Reggiano, Provolone, Prosciutto Crudo, Prosciutto Cotto, Salame Napoli and Carolina Reaper; retained the approved Stracciatella close-up created for this project.
+- Added a dedicated Casa Modena gallery showing Crudo and Cotto separately.
+- Verified every product card and article hero, plus representative full desktop and mobile article pages.
+- Confirmed successful lint, production build, route checks and local-asset checks.
+
+## 2026-07-18 — Version 1.2.0 Stage 4
+
+- Finalised the Journey of Taste map with one simple Italy silhouette and explicit labelled region controls.
+- Removed obsolete vintage/journey map assets and the old guessed marker CSS.
+- Added accessible selected-state semantics and a visible selected-region label.
+- Completed full desktop/mobile visual review of the core pages, main focaccia story and a representative product article.
+- Completed BG/EN route, asset, CSS-module, social-link, lint and production-build checks.
+- Standardised the delivery name as `Focaccia-BG-V1.2.0.zip` everywhere.

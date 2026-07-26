@@ -4,7 +4,7 @@ import styles from '../styles/GoogleRating.module.css';
 
 const fallback = { rating: 4.9, count: 240, url: site.mapsUrl };
 
-export default function GoogleRating({ text }) {
+export default function GoogleRating({ text, lang = 'bg' }) {
   const [data, setData] = useState(fallback);
 
   useEffect(() => {
@@ -23,9 +23,12 @@ export default function GoogleRating({ text }) {
   }, []);
 
   const rounded = Math.max(0, Math.min(5, Math.round(data.rating)));
+  const ariaLabel = lang === 'en'
+    ? `Google rating ${data.rating} from ${data.count} reviews`
+    : `Google рейтинг ${data.rating} от ${data.count} отзива`;
 
   return (
-    <a className={styles.rating} href={data.url} target="_blank" rel="noreferrer" aria-label={`Google ${data.rating} from ${data.count} reviews`}>
+    <a className={styles.rating} href={data.url} target="_blank" rel="noreferrer" aria-label={ariaLabel}>
       <span className={styles.google}>Google</span>
       <strong>{data.rating.toFixed(1)}</strong>
       <span className={styles.stars} aria-hidden="true">

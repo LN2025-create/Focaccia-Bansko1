@@ -1,5 +1,27 @@
 # Changelog
 
+## Version 1.2.2 — linked home cards and hero layout correction (2026-07-26)
+
+### Home hero
+
+- Removed the visible development-facing caption below the hero photograph.
+- Increased the available desktop width and rebalanced the text/image columns.
+- Reduced and constrained the headline size so both approved equal-size lines remain fully visible without entering the image area.
+- Moved the stacked responsive breakpoint earlier so intermediate desktop/tablet widths cannot create overlap.
+
+### Functional home cards
+
+- Converted all three dark quick-fact cards into full keyboard-accessible links.
+- Converted all four light feature cards into full keyboard-accessible links.
+- Added hover, focus-visible and arrow affordances so the cards clearly behave as navigation.
+- Connected the cards to the relevant pages and sections: the focaccia story, Taste Journey, drinks and the croissant/coffee section.
+- Updated the language-link helper so anchors work correctly in both Bulgarian and English.
+
+### Validation note
+
+- Source files and link targets were reviewed directly.
+- Automated dependency installation, lint and production build were not run in this container session; Vercel must complete a successful build after upload, followed by desktop/mobile visual review.
+
 ## Version 1.2.1 — post-audit corrections (2026-07-25)
 
 ### Home page

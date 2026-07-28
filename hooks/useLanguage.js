@@ -18,7 +18,19 @@ export function useLanguage() {
     });
   };
 
-  const href = (pathname) => (lang === 'en' ? { pathname, query: { lang: 'en' } } : pathname);
+  const href = (url) => {
+    const [pathname, anchor] = url.split('#');
+
+    if (lang === 'en') {
+      return {
+        pathname,
+        query: { lang: 'en' },
+        ...(anchor ? { hash: `#${anchor}` } : {}),
+      };
+    }
+
+    return anchor ? `${pathname}#${anchor}` : pathname;
+  };
 
   return { lang, text: copy[lang], changeLanguage, href };
 }

@@ -42,7 +42,7 @@ export default function Menu() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.1">
+        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.2">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
@@ -97,7 +97,7 @@ export default function Menu() {
 
             <p className={styles.foodNote}>{c.foodNote}</p>
 
-            <div className={styles.dessertSection}>
+            <div id="dessert" className={styles.dessertSection}>
               <div className={styles.sectionHeading}>
                 <div>
                   <p className="sectionEyebrow">{c.dessertTitle}</p>

@@ -1,13 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import Layout from "../components/Layout";
-import OpeningBadge from "../components/OpeningBadge";
-import GoogleRating from "../components/GoogleRating";
-import FeatureIcon from "../components/FeatureIcon";
-import { useLanguage } from "../hooks/useLanguage";
-import { site } from "../lib/content";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import Layout from '../components/Layout';
+import OpeningBadge from '../components/OpeningBadge';
+import GoogleRating from '../components/GoogleRating';
+import FeatureIcon from '../components/FeatureIcon';
+import { useLanguage } from '../hooks/useLanguage';
+import { site } from '../lib/content';
+import styles from '../styles/Home.module.css';
 
 function VeganIcon() {
   return (
@@ -21,13 +21,14 @@ export default function Home() {
   const { lang, text, changeLanguage, href } = useLanguage();
   const c = text.home;
   const introParagraphs = Array.isArray(c.intro) ? c.intro : [c.intro];
-  const metaDescription = introParagraphs.join(" ");
+  const metaDescription = introParagraphs.join(' ');
   const titleLabel = `${c.title} ${c.titleAccent}`;
+  const openLabel = lang === 'en' ? 'Open page' : 'Отвори страницата';
 
   return (
     <>
       <Head>
-        <title>{lang === "en" ? "Focaccia Bansko | Fresh focaccia sandwiches" : "Focaccia Bansko | Сандвичи с прясна фокача"}</title>
+        <title>{lang === 'en' ? 'Focaccia Bansko | Fresh focaccia sandwiches' : 'Focaccia Bansko | Сандвичи с прясна фокача'}</title>
         <meta name="description" content={metaDescription} />
         <meta name="theme-color" content="#20201e" />
         <meta property="og:title" content="Focaccia Bansko" />
@@ -36,7 +37,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.hero} data-version="1.2.1">
+        <section className={styles.hero} data-version="1.2.2">
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroInner}>
             <div className={styles.heroMain}>
@@ -48,7 +49,7 @@ export default function Home() {
                     <span>{c.title}</span>
                     <em>{c.titleAccent}</em>
                   </h1>
-                  <Link href={`${href("/menu")}#vegano`} className={styles.veganBadge} aria-label={c.veganFriendly}>
+                  <Link href={href('/menu#vegano')} className={styles.veganBadge} aria-label={c.veganFriendly}>
                     <VeganIcon />
                     <span>{c.veganFriendly}</span>
                   </Link>
@@ -57,7 +58,7 @@ export default function Home() {
                 <div className={styles.heroDetails}>
                   <div className={styles.intro}>{introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
                   <div className={styles.actions}>
-                    <Link href={href("/menu")} className="button buttonPrimary">{c.menuCta}</Link>
+                    <Link href={href('/menu')} className="button buttonPrimary">{c.menuCta}</Link>
                     <a href={site.mapsUrl} target="_blank" rel="noreferrer" className="button buttonSecondary">{c.directionsCta}</a>
                   </div>
                   <GoogleRating text={text.rating} lang={lang} />
@@ -68,30 +69,32 @@ export default function Home() {
                 <div className={styles.heroImageFrame}>
                   <Image
                     src="/images/home/hero-main.webp"
-                    alt={lang === "en" ? "Artisanal focaccia sandwich from Focaccia Bansko" : "Авторски сандвич с прясно изпечена фокача от Focaccia Bansko"}
+                    alt={lang === 'en' ? 'Artisanal focaccia sandwich from Focaccia Bansko' : 'Авторски сандвич с прясно изпечена фокача от Focaccia Bansko'}
                     fill
                     priority
-                    sizes="(max-width: 980px) 100vw, 48vw"
+                    sizes="(max-width: 1280px) 100vw, 45vw"
                     className={styles.heroImage}
                   />
                 </div>
-                <figcaption className={styles.heroCaption}>
-                  <strong>{lang === "en" ? "Fresh focaccia, baked on site" : "Прясна фокача, изпечена на място"}</strong>
-                  <span>{lang === "en" ? "A single hero scene instead of a collage — warm, simple and product-first." : "Една цялостна сцена вместо колаж — топла, чиста и фокусирана върху продукта."}</span>
-                </figcaption>
               </figure>
             </div>
           </div>
 
-          <div className={styles.quickFacts}>
+          <nav className={styles.quickFacts} aria-label={lang === 'en' ? 'Quick links' : 'Бързи връзки'}>
             {c.quickFacts.map((fact, index) => (
-              <div key={fact.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+              <Link
+                href={href(fact.path)}
+                className={styles.quickFactLink}
+                key={fact.title}
+                aria-label={`${fact.title} — ${openLabel}`}
+              >
+                <span className={styles.quickFactNumber}>{String(index + 1).padStart(2, '0')}</span>
                 <div className={styles.quickFactIcon}><FeatureIcon name={fact.icon} /></div>
                 <p><strong>{fact.title}</strong><small>{fact.text}</small></p>
-              </div>
+                <span className={styles.quickFactArrow} aria-hidden="true">→</span>
+              </Link>
             ))}
-          </div>
+          </nav>
         </section>
 
         <section className="section">
@@ -103,13 +106,19 @@ export default function Home() {
             </div>
             <div className={styles.featureGrid}>
               {c.cards.map((card) => (
-                <article className={`${styles.featureCard} ${styles[`feature_${card.icon}`] || ""}`} key={card.title}>
+                <Link
+                  href={href(card.path)}
+                  className={`${styles.featureCard} ${styles[`feature_${card.icon}`] || ''}`}
+                  key={card.title}
+                  aria-label={`${card.title} — ${openLabel}`}
+                >
                   <div className={styles.icon}><FeatureIcon name={card.icon} /></div>
                   <div className={styles.featureCopy}>
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>
                   </div>
-                </article>
+                  <span className={styles.cardArrow} aria-hidden="true">→</span>
+                </Link>
               ))}
             </div>
           </div>

@@ -37,7 +37,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.hero} data-version="1.2.2">
+        <section className={styles.hero} data-version="1.2.3">
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroInner}>
             <div className={styles.heroMain}>

@@ -22,3 +22,8 @@ The Stracciatella close-up was generated specifically for this website project. 
 ## Version 1.2.1 generated hero asset
 
 The new home-page hero image `public/images/home/hero-main.webp` was generated specifically for this website project using the owner-supplied sandwich photographs only as visual product references.
+
+
+## Version 1.2.3 owner-supplied beer assets
+
+The Birra Moretti, Peroni and Peroni Nastro Azzurro bottle images were supplied by the project owner. Transparent web crops were prepared specifically for the menu beer cards.

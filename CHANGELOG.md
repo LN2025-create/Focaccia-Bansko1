@@ -1,5 +1,36 @@
 # Changelog
 
+## Version 1.2.3 — Salumeria, croissant variants, beer photography and rating refresh (2026-07-28)
+
+### Google rating
+
+- Reduced the public API cache from 24 hours to 30 minutes.
+- The home rating widget checks again every 30 minutes while the page remains open.
+- Live Google Places data shows the exact review count; the plus sign is retained only for the static fallback.
+
+### Croissant
+
+- Updated the dessert description to pair the freshly baked croissant with Corsini espresso or cappuccino.
+- Added four clear options: plain, chocolate, pistachio cream and apricot.
+
+### Salumeria
+
+- Added a full bilingual Salumeria section before drinks.
+- Added cheese and cured-meat lists with EUR pricing and units.
+- Prices are per 100 g except fresh Burrata, which is listed as 125 g.
+- Updated the home Salumeria card to link directly to `/menu#salumeria`.
+
+### Beer photography
+
+- Added dedicated product cards for Birra Moretti, Peroni and Peroni Nastro Azzurro.
+- Prepared the owner-supplied bottle images with transparent backgrounds and responsive menu presentation.
+- Consolidated multiple bottle sizes under each beer product card.
+
+### Validation note
+
+- Source and assets were reviewed directly.
+- A fresh dependency install, lint and production build were not completed in this container session; Vercel deployment remains the final automated check.
+
 ## Version 1.2.2 — linked home cards and hero layout correction (2026-07-26)
 
 ### Home hero

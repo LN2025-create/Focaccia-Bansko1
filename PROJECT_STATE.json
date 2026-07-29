@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-07-26",
+  "lastUpdated": "2026-07-28",
   "project": {
     "name": "Focaccia Bansko",
     "domain": "focaccia.bg",
@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.2.2",
+    "version": "1.2.3",
     "status": "owner_review_pending",
-    "scope": "Correct home hero overlap and remove development-facing caption; convert both home card groups into full keyboard-accessible links."
+    "scope": "Add a full Salumeria section before drinks, connect the home Salumeria card to it, expand the croissant options, add beer product photography, and refresh the Google rating endpoint every 30 minutes."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -62,7 +62,11 @@
     "typography": "Use responsive clamp-based sizes, do not split words, and avoid isolated letters or syllables. Home hero lines use the same size.",
     "homeHero": "Use one cohesive photographic hero scene. The two equal-size headline lines must remain fully visible and must never overlap the image. Do not show development commentary below the image.",
     "socialControls": "Facebook, Instagram and TikTok stay grouped on the left; the larger Google review button stays separately on the right.",
-    "homeCards": "Both the three dark quick-fact cards and the four light feature cards are full-card links with keyboard focus states and direct destinations."
+    "homeCards": "Both the three dark quick-fact cards and the four light feature cards are full-card links with keyboard focus states and direct destinations.",
+    "googleRating": "Use the Google Places API rating and exact review count when configured. Cache for 30 minutes and refresh the browser widget every 30 minutes; show a plus sign only for the static fallback.",
+    "salumeria": "The menu contains a bilingual Salumeria section before drinks. Prices are displayed in EUR only; most items are priced per 100 g, while fresh Burrata is 125 g.",
+    "croissant": "The freshly baked croissant is served with Corsini espresso or cappuccino and is available plain or filled with chocolate, pistachio cream or apricot.",
+    "beerPhotography": "Birra Moretti, Peroni and Peroni Nastro Azzurro use owner-supplied bottle images in dedicated beer cards."
   },
   "implemented": {
     "corePages": [
@@ -170,7 +174,29 @@
       "cleanMenuHero": true,
       "dessertVisibility": true,
       "heroIntroUpdated": true
-    }
+    },
+    "googleRatingRefresh": {
+      "cacheSeconds": 1800,
+      "clientRefreshMinutes": 30,
+      "exactLiveCount": true
+    },
+    "salumeriaMenu": {
+      "position": "before drinks",
+      "bilingual": true,
+      "homeCardTarget": "/menu#salumeria",
+      "eurOnly": true
+    },
+    "croissantOptions": [
+      "plain",
+      "chocolate",
+      "pistachio cream",
+      "apricot"
+    ],
+    "beerPhotography": [
+      "Birra Moretti",
+      "Peroni",
+      "Peroni Nastro Azzurro"
+    ]
   },
   "activeTasks": [],
   "doNotRepeatAsNewTasks": [
@@ -202,11 +228,12 @@
     "productionBuild": false,
     "generatedRoutes": 22,
     "cleanZipRequired": false,
-    "visualChecks": false,
+    "visualChecks": true,
     "visualChecksSummary": [
-      "Replaced the multi-tile home hero with one cohesive photographic scene and reviewed the new asset visually.",
-      "Reviewed the corrected source files for the home, menu, contacts and Journey of Taste pages.",
-      "A new build/lint pass could not be re-run in the current container environment because dependency installation was not completed."
+      "Reviewed and cleaned all three owner-supplied beer bottle images for transparent web presentation.",
+      "Transcribed and cross-checked all Salumeria products, units and EUR prices from the supplied bilingual menu artwork.",
+      "Reviewed source structure for menu anchors, bilingual content and Google rating refresh logic.",
+      "Automated lint/build still require a full dependency-installed environment or Vercel deployment."
     ],
     "localAssetReferencesChecked": true,
     "cleanZipCreated": true,
@@ -214,8 +241,8 @@
     "cssModuleReferenceCheck": true,
     "custom404Checked": true
   },
-  "version": "1.2.2",
-  "updated": "2026-07-26",
+  "version": "1.2.3",
+  "updated": "2026-07-28",
   "completed": [
     "Completed Stage 1 technical recovery",
     "Completed Stage 2 home-page and menu refinement",
@@ -230,17 +257,18 @@
     "Verified the core site, main story and representative product article on desktop and mobile",
     "Created the clean Focaccia-BG-V1.2.0 delivery archive with one canonical name",
     "Prepared Version 1.2.1 with a cohesive single-image home hero and post-audit UI/content corrections",
-    "Prepared Version 1.2.2 with corrected hero spacing and fully linked home-page cards"
+    "Prepared Version 1.2.2 with corrected hero spacing and fully linked home-page cards",
+    "Prepared Version 1.2.3 with Salumeria menu, croissant variants, beer photography and 30-minute Google rating refresh"
   ],
-  "status": "Version 1.2.2 prepared for owner review and deployment.",
+  "status": "Version 1.2.3 prepared for owner review and deployment.",
   "active_project_root": "repository root",
   "nested_duplicate_present": false,
   "technical_validation": {
+    "npm_ci": "not re-run for 1.2.3 in this container session",
+    "eslint": "not re-run for 1.2.3 in this container session",
+    "next_build": "not re-run for 1.2.3 in this container session",
     "source_review": "completed",
-    "npm_ci": "not run in this container session",
-    "eslint": "not run in this container session",
-    "next_build": "not run in this container session",
-    "required_after_upload": "Allow Vercel to build, then verify the production home page at desktop and mobile widths."
+    "asset_review": "three beer assets prepared and referenced"
   },
   "pending_stages": []
 }

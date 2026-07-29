@@ -6,7 +6,9 @@ const FALLBACK = {
 };
 
 export default async function handler(req, res) {
-  res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate=604800');
+  // Refresh the public value every 30 minutes. A stale value can still be served
+  // briefly while Vercel updates it in the background.
+  res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=21600');
 
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
@@ -31,6 +33,7 @@ export default async function handler(req, res) {
       count: Number(place.userRatingCount) || FALLBACK.count,
       url: place.googleMapsUri || FALLBACK.url,
       live: true,
+      updatedAt: new Date().toISOString(),
     });
   } catch (error) {
     console.error('Google rating update failed:', error);

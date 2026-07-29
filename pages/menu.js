@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
-import { sandwiches, drinkGroups, dessert } from '../lib/menuData';
+import { sandwiches, salumeriaGroups, drinkGroups, dessert } from '../lib/menuData';
 import styles from '../styles/Menu.module.css';
 
 function localName(item, lang) {
@@ -42,13 +42,14 @@ export default function Menu() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.2">
+        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.3">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
             <p>{c.intro}</p>
             <div className={styles.heroActions}>
               <a href="#sandwiches" className="button buttonPrimary">{c.sandwichesLink}</a>
+              <a href="#salumeria" className="button buttonSecondary">{c.salumeriaLink}</a>
               <a href="#drinks" className="button buttonSecondary">{c.drinksLink}</a>
             </div>
           </div>
@@ -107,11 +108,48 @@ export default function Menu() {
               </div>
               <article className={styles.dessertCard}>
                 <div className={styles.dessertIcon}>🥐</div>
-                <div>
+                <div className={styles.dessertCopy}>
                   <h3>{lang === 'en' ? dessert.enName : dessert.bgName}</h3>
                   <p>{lang === 'en' ? dessert.en : dessert.bg}</p>
+                  <strong className={styles.dessertServing}>{c.dessertServing}</strong>
+                  <div className={styles.dessertOptions} aria-label={c.dessertOptionsLabel}>
+                    {dessert.options.map((option) => (
+                      <span key={option.en}>{lang === 'en' ? option.en : option.bg}</span>
+                    ))}
+                  </div>
                 </div>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="salumeria" className={`${styles.salumeriaSection} section`}>
+          <div className="container">
+            <div className={styles.sectionHeading}>
+              <div>
+                <p className="sectionEyebrow">{c.salumeriaEyebrow}</p>
+                <h2>{c.salumeriaTitle}</h2>
+              </div>
+              <p>{c.salumeriaIntro}</p>
+            </div>
+
+            <div className={styles.salumeriaGrid}>
+              {salumeriaGroups.map((group) => (
+                <article className={styles.salumeriaGroup} key={group.enTitle}>
+                  <h3>{lang === 'en' ? group.enTitle : group.bgTitle}</h3>
+                  <div className={styles.salumeriaRows}>
+                    {group.items.map((item) => (
+                      <div className={styles.salumeriaRow} key={`${localName(item, lang)}-${item.unit}`}>
+                        <div>
+                          <strong>{localName(item, lang)}</strong>
+                          <span>{item.unit}</span>
+                        </div>
+                        <b>{item.price}</b>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -128,9 +166,28 @@ export default function Menu() {
 
             <div className={styles.drinkGrid}>
               {drinkGroups.map((group) => (
-                <article className={`${styles.drinkGroup} ${group.featured ? styles.wineGroup : ''}`} key={group.enTitle}>
+                <article className={`${styles.drinkGroup} ${group.featured ? styles.wineGroup : ''} ${group.visual === 'beer' ? styles.beerGroup : ''}`} key={group.enTitle}>
                   <h3>{lang === 'en' ? group.enTitle : group.bgTitle}</h3>
-                  {group.sections ? group.sections.map((section) => {
+                  {group.visual === 'beer' ? (
+                    <div className={styles.beerGrid}>
+                      {group.items.map((item) => (
+                        <div className={styles.beerCard} key={item.name}>
+                          <div className={styles.beerImage}>
+                            <Image src={item.image} alt={`${item.name} — Focaccia Bansko`} fill sizes="(max-width: 760px) 100vw, 30vw" />
+                          </div>
+                          <div className={styles.beerCopy}>
+                            <strong>{item.name}</strong>
+                            <small>{lang === 'en' ? item.enDetail : item.bgDetail}</small>
+                            <div className={styles.beerVariants}>
+                              {item.variants.map((variant) => (
+                                <div key={variant.volume}><span>{variant.volume}</span><b>{variant.price}</b></div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : group.sections ? group.sections.map((section) => {
                     const bottleSection = section.items.some((item) => item.image);
                     return (
                       <section className={styles.drinkSubsection} key={section.enTitle}>

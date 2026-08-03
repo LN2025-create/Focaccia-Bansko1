@@ -1,5 +1,41 @@
 # Changelog
 
+## Version 1.2.4 — business email, live Google profile data and navigation refinements (2026-08-03)
+
+### Business email
+
+- Replaced the public contact address with `info@focaccia.bg` across contacts, footer and structured data.
+- Kept the existing ABV mailbox only as the private forwarding destination.
+
+### Google Business Profile integration
+
+- Replaced the paid Places API implementation with the approved Google Business Profile APIs and server-side OAuth 2.0.
+- Added a combined server endpoint for the exact average rating, exact review count, regular hours and special/holiday hours.
+- Added refreshes on every page visit, every 30 minutes and whenever the browser tab becomes active.
+- Removed the fixed `4.9 / 240+` fallback. When Google data is unavailable, the site links to Google without showing an approximate count.
+- Removed the locally calculated open/closed fallback. The live status is computed only from Google `regularHours` and `specialHours`; otherwise visitors are directed to Google.
+- Added safe Vercel environment-variable documentation and a `.env.example` without secrets.
+
+### Homepage and navigation
+
+- Replaced the burger-like icon for Italian products and Salumeria with a dedicated cheese-and-cured-meat symbol.
+- Added live Google-sourced hours to the homepage visit card, location page and contacts page.
+- Added LocalBusiness/Restaurant structured data with the new domain email and official social links.
+- Refined the mobile social controls into a clearer dock and reserved page space so they do not cover content.
+
+### Menu usability
+
+- Added a sticky, horizontally scrollable menu-section navigation for sandwiches, croissant, Salumeria and drinks.
+- Added correct anchor offsets below the fixed header.
+- Added a bilingual allergen-information notice without inventing product-specific allergen claims.
+
+### Validation note
+
+- All JavaScript and JSX files passed a syntax parse.
+- Business-hours calculations were checked against normal daily hours and a special closed day.
+- `npm ci`, ESLint and the production build could not run because the execution environment's npm registry returned missing-package 404 errors. A successful Vercel build is therefore required before production deployment.
+- Live Google data remains inactive until Google approves the API request and the OAuth environment variables are added in Vercel.
+
 ## Version 1.2.3 — Salumeria, croissant variants, beer photography and rating refresh (2026-07-28)
 
 ### Google rating

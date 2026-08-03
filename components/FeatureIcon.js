@@ -2,6 +2,10 @@ export default function FeatureIcon({ name }) {
   const common = { width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.7, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true };
 
 
+  if (name === 'salumeria') {
+    return <svg {...common}><path d="M3.5 17.5h17"/><path d="M5 17.5V9.8l6.2-4.2 3.3 2.2-3 2.1V17.5"/><path d="M11.5 10h8l1 7.5h-9"/><circle cx="15" cy="12.8" r=".8"/><circle cx="18" cy="15.1" r=".8"/><path d="M5 12.3h6.5"/><circle cx="7.4" cy="14.8" r=".8"/></svg>;
+  }
+
   if (name === 'oven') {
     return <svg {...common}><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M6 6V4h12v2"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="16" cy="12" r="1"/><path d="M6 15c3-2 9-2 12 0"/></svg>;
   }

@@ -64,3 +64,7 @@ img { max-width: 100%; display: block; }
   .section { padding: 76px 0; }
   .pageHero { padding: 124px 0 42px; }
 }
+
+@media (max-width: 900px) {
+  body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+}

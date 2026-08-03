@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import OpeningBadge from '../components/OpeningBadge';
 import GoogleRating from '../components/GoogleRating';
+import BusinessHours from '../components/BusinessHours';
 import FeatureIcon from '../components/FeatureIcon';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
@@ -37,13 +38,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.hero} data-version="1.2.3">
+        <section className={styles.hero} data-version="1.2.4">
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroInner}>
             <div className={styles.heroMain}>
               <div className={styles.heroTextColumn}>
                 <div className={styles.heroCopy}>
-                  <OpeningBadge text={text.open} />
+                  <OpeningBadge text={text.open} lang={lang} />
                   <p className={styles.eyebrow}>{c.eyebrow}</p>
                   <h1 aria-label={titleLabel}>
                     <span>{c.title}</span>
@@ -131,6 +132,7 @@ export default function Home() {
                 <p className="sectionEyebrow">Focaccia Bansko</p>
                 <h2>{c.visitTitle}</h2>
                 <p>{c.visitText}</p>
+                <BusinessHours lang={lang} compact />
               </div>
               <div className={styles.visitActions}>
                 <a href={`tel:${site.phoneHref}`} className="button buttonPrimary">{c.call}</a>

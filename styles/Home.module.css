@@ -231,7 +231,8 @@
 .featureCopy { position: relative; z-index: 1; }
 .featureCard h3 { margin: 0; color: var(--graphite); font-family: Georgia, serif; font-size: clamp(1.55rem, 2.8vw, 2.15rem); line-height: 1.08; }
 .featureCard p { max-width: 470px; margin: 12px 0 0; color: var(--muted); line-height: 1.6; }
-.feature_sandwich { background: radial-gradient(circle at 92% 15%, rgba(158,63,50,.08), transparent 28%), linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.48)); }
+.feature_sandwich,
+.feature_salumeria { background: radial-gradient(circle at 92% 15%, rgba(158,63,50,.08), transparent 28%), linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.48)); }
 .feature_glass { background: radial-gradient(circle at 92% 15%, rgba(198,164,106,.12), transparent 30%), linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.48)); }
 .feature_coffee { background: radial-gradient(circle at 92% 15%, rgba(94,111,58,.10), transparent 30%), linear-gradient(145deg, rgba(255,249,239,.98), rgba(232,216,194,.48)); }
 

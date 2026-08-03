@@ -1,0 +1,11 @@
+.hours { display: flex; flex-direction: column; gap: 4px; color: inherit; }
+.hours strong { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 500; }
+.hours span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+.hours > a { width: fit-content; margin-top: 3px; color: var(--olive); font-size: .76rem; font-weight: 850; text-decoration: underline; text-underline-offset: 3px; }
+.hours:hover > strong { color: var(--terracotta); }
+.open { color: var(--olive-dark); }
+.closed { color: var(--terracotta); }
+.compact { margin-top: 14px; }
+.compact strong { color: var(--cream); font-family: inherit; font-size: .92rem; font-weight: 850; }
+.compact span { color: rgba(244,235,221,.72); }
+.compact > a { color: #d4bf8f; }

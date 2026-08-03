@@ -2,7 +2,7 @@
 
 > **Before editing:** read [`PROJECT_STATE.json`](./PROJECT_STATE.json), [`PROJECT_HISTORY.md`](./PROJECT_HISTORY.md) and [`CHANGELOG.md`](./CHANGELOG.md). The active application is the Next.js project in the repository root. An obsolete nested project copy was removed on 2026-07-13 so only one application remains.
 
-Next.js website for Focaccia Bansko. Current repository release: **1.2.0**.
+Next.js website for Focaccia Bansko. Current repository release: **1.2.4**.
 
 ## Local development
 
@@ -11,22 +11,29 @@ npm install
 npm run dev
 ```
 
-## Google rating auto-update
+## Google Business Profile synchronization
 
-The site works without additional configuration and uses a safe fallback rating. To refresh the rating from Google once every 24 hours, add these environment variables in Vercel:
+Version 1.2.4 reads the current Google rating, exact review count, regular opening hours and special/holiday hours from the approved Google Business Profile APIs. The integration is server-side and uses OAuth 2.0; secrets must never be exposed in browser code or committed to Git.
 
-- `GOOGLE_PLACES_API_KEY`
-- `GOOGLE_PLACE_ID`
+After Google approves the Cloud project, add these variables in Vercel:
 
-The API key must have Places API (New) enabled. The server route requests only `rating`, `userRatingCount` and `googleMapsUri` and caches the response for 24 hours.
+- `GBP_CLIENT_ID`
+- `GBP_CLIENT_SECRET`
+- `GBP_REFRESH_TOKEN`
+- `GBP_ACCOUNT_ID`
+- `GBP_LOCATION_ID`
+
+The site requests `accounts.locations.reviews.list` for `averageRating` and `totalReviewCount`, and Business Information `locations.get` for `regularHours` and `specialHours`. Browser widgets refresh on every visit, every 30 minutes and whenever the tab becomes active. The server may reuse a successful response for five minutes to protect quota.
+
+When live access is unavailable, the site does not display a fixed review count and does not claim that the shop is open or closed. It links visitors directly to Google instead.
 
 ## Business details
 
 - Address: ул. „Пирин“ 93, 2770 Банско
 - Phone: +359 897 822 441
 - Instagram: @focaccia_bansko_panini
-- Email: focacciaexpert@abv.bg
-- Opening hours: 10:00–22:00
+- Email: info@focaccia.bg (forwarded to focacciaexpert@abv.bg through ImprovMX)
+- Opening hours: synchronized from Google Business Profile, including special and holiday hours
 
 
 ## Brand assets

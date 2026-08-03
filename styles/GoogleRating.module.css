@@ -4,3 +4,6 @@
 .stars { color: var(--gold); letter-spacing: .07em; }
 .count { opacity: .85; }
 @media (max-width: 480px) { .count { display: none; } }
+.currentLabel { color: rgba(244,235,221,.82); font-weight: 750; }
+.unavailable { border-style: dashed; }
+.unavailable:hover .currentLabel { color: var(--cream); }

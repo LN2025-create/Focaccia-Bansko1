@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
 import styles from '../styles/Location.module.css';
+import BusinessHours from '../components/BusinessHours';
 
 export default function Location() {
   const { lang, text, changeLanguage, href } = useLanguage();
@@ -34,7 +35,7 @@ export default function Location() {
               </div>
               <div className={styles.detail}>
                 <span>{c.hoursLabel}</span>
-                <strong>{site.hours}</strong>
+                <BusinessHours lang={lang} />
               </div>
               <div className={styles.detail}>
                 <span>{c.phoneLabel}</span>

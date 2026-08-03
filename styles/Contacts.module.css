@@ -2,9 +2,9 @@
 .list { border: 1px solid var(--line); border-radius: 26px; overflow: hidden; background: var(--paper); box-shadow: 0 14px 38px rgba(72,54,35,.08); }
 .row { min-height: 94px; padding: 24px 28px; display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); }
 .row:last-child { border-bottom: 0; }
-.row span { color: var(--olive); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
-.row a, .row strong { color: var(--graphite); font-family: Georgia, serif; font-size: clamp(1.1rem, 2.4vw, 1.55rem); font-weight: 500; overflow-wrap: anywhere; }
-.row a:hover { color: var(--terracotta); }
+.row > span { color: var(--olive); font-size: .72rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.row > a, .row > strong { color: var(--graphite); font-family: Georgia, serif; font-size: clamp(1.1rem, 2.4vw, 1.55rem); font-weight: 500; overflow-wrap: anywhere; }
+.row > a:hover { color: var(--terracotta); }
 .card { padding: 42px; border-radius: 26px; color: var(--cream); background: radial-gradient(circle at 90% 5%, rgba(158,63,50,.24), transparent 36%), linear-gradient(145deg, #485936, #2f3c2b); border: 1px solid rgba(198,164,106,.24); display: flex; flex-direction: column; justify-content: center; box-shadow: var(--shadow); }
 .cardLogoWrap { width: min(240px, 100%); padding: 16px 18px; border-radius: 18px; background: rgba(255,249,239,.96); box-shadow: 0 10px 28px rgba(0,0,0,.12); }
 .cardLogoImage { width: 100%; height: auto; display: block; }

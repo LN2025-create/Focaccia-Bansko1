@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
 import styles from '../styles/Contacts.module.css';
+import BusinessHours from '../components/BusinessHours';
 
 export default function Contacts() {
   const { lang, text, changeLanguage, href } = useLanguage();
@@ -15,7 +16,7 @@ export default function Contacts() {
     { label: c.phone, value: site.phoneDisplay, href: `tel:${site.phoneHref}` },
     { label: c.email, value: site.email, href: `mailto:${site.email}` },
     { label: c.instagram, value: site.instagramHandle, href: site.instagramUrl, external: true },
-    { label: c.hours, value: site.hours },
+    { label: c.hours, component: <BusinessHours lang={lang} /> },
     { label: c.address, value: address, href: site.mapsUrl, external: true },
   ];
 
@@ -40,9 +41,9 @@ export default function Contacts() {
               {rows.map((row) => (
                 <div className={styles.row} key={row.label}>
                   <span>{row.label}</span>
-                  {row.href ? (
+                  {row.component || (row.href ? (
                     <a href={row.href} target={row.external ? '_blank' : undefined} rel={row.external ? 'noreferrer' : undefined}>{row.value}</a>
-                  ) : <strong>{row.value}</strong>}
+                  ) : <strong>{row.value}</strong>)}
                 </div>
               ))}
             </div>

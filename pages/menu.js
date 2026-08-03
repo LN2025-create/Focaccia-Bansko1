@@ -42,7 +42,7 @@ export default function Menu() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.3">
+        <section className={`pageHero ${styles.menuHero}`} data-version="1.2.4">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>
@@ -54,6 +54,15 @@ export default function Menu() {
             </div>
           </div>
         </section>
+
+        <nav className={styles.menuNav} aria-label={lang === 'en' ? 'Menu sections' : 'Раздели на менюто'}>
+          <div className={styles.menuNavInner}>
+            <a href="#sandwiches">{c.sandwichesLink}</a>
+            <a href="#dessert">{c.dessertLink}</a>
+            <a href="#salumeria">{c.salumeriaLink}</a>
+            <a href="#drinks">{c.drinksLink}</a>
+          </div>
+        </nav>
 
         <section id="sandwiches" className="section sectionTight">
           <div className="container">
@@ -96,7 +105,10 @@ export default function Menu() {
               ))}
             </div>
 
-            <p className={styles.foodNote}>{c.foodNote}</p>
+            <div className={styles.menuNotes}>
+              <p className={styles.foodNote}>{c.foodNote}</p>
+              <p className={styles.allergenNote}>{c.allergenNote}</p>
+            </div>
 
             <div id="dessert" className={styles.dessertSection}>
               <div className={styles.sectionHeading}>

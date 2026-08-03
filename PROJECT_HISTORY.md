@@ -17,7 +17,7 @@
 - Business: **Focaccia Bansko**
 - Address: **ул. „Пирин“ 93, 2770 Банско**
 - Phone: **+359 897 822 441**
-- Email: **focacciaexpert@abv.bg**
+- Email: **info@focaccia.bg**
 - Instagram: **@focaccia_bansko_panini**
 - Opening hours: **daily 10:00–22:00**
 - Website: **focaccia.bg**

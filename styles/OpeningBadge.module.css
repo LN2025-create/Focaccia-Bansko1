@@ -2,3 +2,5 @@
 .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 5px color-mix(in srgb, currentColor 15%, transparent); }
 .open { color: #b5c88a; background: rgba(94,111,58,.20); }
 .closed { color: #dc8775; background: rgba(158,63,50,.16); }
+.unknown { color: #d8c79d; background: rgba(198,164,106,.12); text-decoration: none; }
+.unknown:hover { background: rgba(198,164,106,.20); }

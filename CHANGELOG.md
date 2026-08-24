@@ -1,5 +1,31 @@
 # Changelog
 
+## Version 1.2.5 — live Google photo gallery (2026-08-22)
+
+### Google Business Profile media
+
+- Added a server-side `business-media` endpoint that reads the current photos from the connected Focaccia Google Business Profile with the existing OAuth credentials.
+- Filters the feed to photos, sorts them newest-first and refreshes the browser data on visits, every 30 minutes and when the tab becomes active.
+- Keeps a short five-minute server cache to limit Google API traffic without storing permanent Google image URLs in the site source.
+
+### Homepage slideshow and gallery
+
+- Added one clean slideshow card in the open space of the homepage hero instead of a mosaic.
+- The card advances automatically every 4.5 seconds and loops continuously from the last image back to the first.
+- Clicking the card opens an on-site lightbox gallery with previous/next controls, keyboard arrows, Escape-to-close and mobile swipe gestures.
+- Gallery navigation is circular in both directions: last → first and first → last.
+- Automatic slideshow playback pauses while the lightbox is open and resumes after it closes.
+- Added adjacent-image preloading and a reduced-motion fallback.
+
+### Runtime
+
+- Production was verified by the owner on Vercel with Node.js 24.x before this release was prepared.
+
+### Validation note
+
+- The new source files and responsive CSS were reviewed directly.
+- A local clean `npm ci` could not complete in this execution environment, so Vercel remains the final production build check after upload.
+
 ## Version 1.2.4 — business email, live Google profile data and navigation refinements (2026-08-03)
 
 ### Business email

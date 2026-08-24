@@ -217,3 +217,7 @@ Emergency visual correction: removed misleading sandwich imagery from product-le
 - Completed full desktop/mobile visual review of the core pages, main focaccia story and a representative product article.
 - Completed BG/EN route, asset, CSS-module, social-link, lint and production-build checks.
 - Standardised the delivery name as `Focaccia-BG-V1.2.0.zip` everywhere.
+## 2026-08-22 — Version 1.2.5
+
+Added a live Google Business Profile media feed to the homepage. The hero now contains one automatic photo slideshow card; clicking it opens an on-site circular gallery with swipe, keyboard arrows and looped previous/next navigation. The existing V1.2.4 OAuth credentials are reused, with no new environment variables.
+

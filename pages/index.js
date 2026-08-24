@@ -6,6 +6,7 @@ import OpeningBadge from '../components/OpeningBadge';
 import GoogleRating from '../components/GoogleRating';
 import BusinessHours from '../components/BusinessHours';
 import FeatureIcon from '../components/FeatureIcon';
+import HeroGoogleGallery from '../components/HeroGoogleGallery';
 import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
 import styles from '../styles/Home.module.css';
@@ -38,7 +39,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.hero} data-version="1.2.4">
+        <section className={styles.hero} data-version="1.2.5">
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroInner}>
             <div className={styles.heroMain}>
@@ -57,12 +58,17 @@ export default function Home() {
                 </div>
 
                 <div className={styles.heroDetails}>
-                  <div className={styles.intro}>{introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-                  <div className={styles.actions}>
-                    <Link href={href('/menu')} className="button buttonPrimary">{c.menuCta}</Link>
-                    <a href={site.mapsUrl} target="_blank" rel="noreferrer" className="button buttonSecondary">{c.directionsCta}</a>
+                  <div className={styles.heroDetailsCopy}>
+                    <div className={styles.intro}>{introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+                    <div className={styles.actions}>
+                      <Link href={href('/menu')} className="button buttonPrimary">{c.menuCta}</Link>
+                      <a href={site.mapsUrl} target="_blank" rel="noreferrer" className="button buttonSecondary">{c.directionsCta}</a>
+                    </div>
+                    <GoogleRating text={text.rating} lang={lang} />
                   </div>
-                  <GoogleRating text={text.rating} lang={lang} />
+                  <div className={styles.heroGallerySlot}>
+                    <HeroGoogleGallery lang={lang} />
+                  </div>
                 </div>
               </div>
 

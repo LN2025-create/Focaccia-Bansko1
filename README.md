@@ -2,7 +2,7 @@
 
 > **Before editing:** read [`PROJECT_STATE.json`](./PROJECT_STATE.json), [`PROJECT_HISTORY.md`](./PROJECT_HISTORY.md) and [`CHANGELOG.md`](./CHANGELOG.md). The active application is the Next.js project in the repository root. An obsolete nested project copy was removed on 2026-07-13 so only one application remains.
 
-Next.js website for Focaccia Bansko. Current repository release: **1.2.4**.
+Next.js website for Focaccia Bansko. Current repository release: **1.2.5**.
 
 ## Local development
 
@@ -26,6 +26,8 @@ After Google approves the Cloud project, add these variables in Vercel:
 The site requests `accounts.locations.reviews.list` for `averageRating` and `totalReviewCount`, and Business Information `locations.get` for `regularHours` and `specialHours`. Browser widgets refresh on every visit, every 30 minutes and whenever the tab becomes active. The server may reuse a successful response for five minutes to protect quota.
 
 When live access is unavailable, the site does not display a fixed review count and does not claim that the shop is open or closed. It links visitors directly to Google instead.
+
+Version 1.2.5 also reads the location media feed from the same Google Business Profile connection. The homepage shows the current profile photos in an automatic looping slideshow, and opens them in an on-site circular swipe gallery. No additional Vercel environment variables are required.
 
 ## Business details
 

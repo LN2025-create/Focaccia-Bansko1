@@ -355,6 +355,18 @@
     grid-template-columns: 1fr;
   }
 
+  .heroDetails {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  }
+
+  .heroDetailsCopy {
+    max-width: none;
+  }
+
+  .heroGallerySlot {
+    max-width: 300px;
+  }
+
   .heroImageFrame {
     min-height: 440px;
   }
@@ -377,7 +389,14 @@
   }
 
   .heroDetails {
+    grid-template-columns: 1fr;
+    gap: 18px;
     padding-bottom: 12px;
+  }
+
+  .heroGallerySlot {
+    max-width: none;
+    justify-self: stretch;
   }
 }
 
@@ -419,8 +438,25 @@
 }
 
 .heroDetails {
-  max-width: 650px;
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 290px);
+  gap: 22px;
+  align-items: end;
   padding: 2px 0 24px;
+}
+
+.heroDetailsCopy {
+  min-width: 0;
+  max-width: 520px;
+}
+
+.heroGallerySlot {
+  width: 100%;
+  max-width: 290px;
+  justify-self: end;
+  align-self: end;
 }
 
 .quickFacts {

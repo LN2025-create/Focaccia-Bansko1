@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-08-03",
+  "lastUpdated": "2026-08-22",
   "project": {
     "name": "Focaccia Bansko",
     "domain": "focaccia.bg",
@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.2.4",
+    "version": "1.2.5",
     "status": "prepared_for_owner_review",
-    "scope": "Professional domain email, live Google Business Profile rating and hours integration, salumeria icon, sticky menu navigation, allergen notice and mobile control refinements."
+    "scope": "Live Google Business Profile photo slideshow and circular on-site gallery, built on the working V1.2.4 OAuth integration."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -207,17 +207,30 @@
       "refreshOnTabFocus": true,
       "fixedRatingFallbackRemoved": true,
       "localOpenClosedFallbackRemoved": true,
-      "activationPending": "Google API approval and Vercel environment variables"
+      "activationPending": false,
+      "liveVerifiedOnProduction": true,
+      "ratingReviewHoursLive": true
     },
     "businessEmail": "info@focaccia.bg",
     "salumeriaIcon": "dedicated cheese-and-cured-meat SVG",
     "stickyMenuNavigation": true,
     "allergenNotice": true,
-    "mobileSocialDockRefinement": true
+    "mobileSocialDockRefinement": true,
+    "googleBusinessProfileGallery": {
+      "mediaEndpoint": "accounts.locations.media.list",
+      "photosOnly": true,
+      "newestFirst": true,
+      "heroSlideshow": true,
+      "automaticIntervalSeconds": 4.5,
+      "lightboxOnSite": true,
+      "mobileSwipe": true,
+      "keyboardNavigation": true,
+      "circularLoop": true,
+      "serverCacheSeconds": 300,
+      "newEnvironmentVariablesRequired": false
+    }
   },
-  "activeTasks": [
-    "Complete Google Business Profile OAuth setup after Google approves API access and add the five GBP environment variables in Vercel."
-  ],
+  "activeTasks": [],
   "doNotRepeatAsNewTasks": [
     "Remove the visible PDF menu",
     "Add Negroni",
@@ -249,9 +262,9 @@
     "cleanZipRequired": false,
     "visualChecks": false,
     "visualChecksSummary": [
-      "Source-level responsive rules reviewed for the new sticky menu navigation and mobile social dock.",
-      "A browser visual review could not be completed without a successful dependency installation.",
-      "Google live data cannot be exercised until API approval and OAuth secrets are available."
+      "Source-level responsive rules reviewed for the new hero slideshow and lightbox gallery.",
+      "Owner previously verified the V1.2.4 Google Business Profile integration and Node.js 24.x production runtime before V1.2.5 preparation.",
+      "Final V1.2.5 desktop/mobile visual confirmation remains required after Vercel deployment."
     ],
     "localAssetReferencesChecked": true,
     "cleanZipCreated": true,
@@ -259,11 +272,11 @@
     "cssModuleReferenceCheck": true,
     "custom404Checked": true,
     "javascriptSyntaxCheck": true,
-    "validationLimitation": "npm ci could not complete because the execution registry returned 404 for dependency tarballs; Vercel build remains required before production deployment.",
+    "validationLimitation": "Local npm dependency installation did not complete in this execution environment; Vercel production build is required after upload.",
     "businessHoursLogicCheck": true
   },
-  "version": "1.2.4",
-  "updated": "2026-08-03",
+  "version": "1.2.5",
+  "updated": "2026-08-22",
   "completed": [
     "Completed Stage 1 technical recovery",
     "Completed Stage 2 home-page and menu refinement",
@@ -280,19 +293,20 @@
     "Prepared Version 1.2.1 with a cohesive single-image home hero and post-audit UI/content corrections",
     "Prepared Version 1.2.2 with corrected hero spacing and fully linked home-page cards",
     "Prepared Version 1.2.3 with Salumeria menu, croissant variants, beer photography and 30-minute Google rating refresh",
-    "Prepared Version 1.2.4 with info@focaccia.bg, Google Business Profile OAuth integration, exact review count with no fixed fallback, Google-sourced regular and special hours, a new Salumeria icon, sticky menu navigation, allergen notice and mobile refinements"
+    "Prepared Version 1.2.4 with info@focaccia.bg, Google Business Profile OAuth integration, exact review count with no fixed fallback, Google-sourced regular and special hours, a new Salumeria icon, sticky menu navigation, allergen notice and mobile refinements",
+    "Prepared Version 1.2.5 with a live Google Business Profile photo slideshow in the homepage hero and a circular swipe/keyboard lightbox gallery."
   ],
-  "status": "Version 1.2.4 prepared for owner review; Google live synchronization activates after API approval and Vercel secret configuration.",
+  "status": "Version 1.2.5 prepared for owner review with the live Google photo slideshow and circular on-site gallery.",
   "active_project_root": "repository root",
   "nested_duplicate_present": false,
   "technical_validation": {
-    "npm_ci": "attempted; blocked by package-registry 404 in this execution environment",
-    "eslint": "not run because dependencies could not be installed",
-    "next_build": "not run because dependencies could not be installed",
+    "npm_ci": "attempted; did not complete in this execution environment",
+    "eslint": "not run because the dependency installation did not complete",
+    "next_build": "not run locally; Vercel build required after upload",
     "javascript_jsx_parse": "passed for all components, hooks, libraries and pages using the TypeScript parser",
     "business_hours_unit_checks": "passed for standard daily hours, special closed day and next opening calculation",
-    "source_review": "completed",
-    "asset_review": "no new binary assets required"
+    "source_review": "completed for the new media API, hook, slideshow/lightbox component and responsive CSS",
+    "asset_review": "no new binary assets required; gallery media is loaded live from Google Business Profile"
   },
   "pending_stages": []
 }

@@ -46,7 +46,7 @@ export default function TasteLanding() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.landingHero} data-version="1.2.4">
+        <section className={styles.landingHero} data-version="1.2.5">
           <div className="container narrow">
             <p className="sectionEyebrow">{c.eyebrow}</p>
             <h1>{c.title}</h1>

@@ -1,3 +1,21 @@
+# V1.2.7 — Hero typography and mobile-safe layout
+
+- Refined the homepage hero typography: smaller upright serif headline and non-italic coral accent line.
+- Removed the dash and removed the duplicate “Bansko” from the main headline.
+- Added “Авторски сандвичи” / “Signature sandwiches” badge.
+- Moved Menu and Directions into compact pill controls beside the live opening-hours badge.
+- Renamed the live Google photo card to “Арт галерия „Фокача“”.
+- Reworked the gallery preview into a horizontal card while preserving slideshow, fullscreen gallery, swipe and infinite loop.
+- Added mobile breakpoints that preserve whole words and prevent narrow-column text fragmentation.
+
+# V1.2.6 — Mobile hero/gallery layout fix
+
+- Fixed the mobile hero text collapsing into an extremely narrow column after the Google gallery was added.
+- Ensured the hero details switch to a single-column layout at 760px and below.
+- Made the Google photo gallery full-width on mobile and placed it naturally below the rating/actions.
+- Stacked hero action buttons on very narrow screens (430px and below) for better touch usability.
+- No changes to Google Business Profile credentials or API configuration are required.
+
 # Changelog
 
 ## Version 1.2.5 — live Google photo gallery (2026-08-22)

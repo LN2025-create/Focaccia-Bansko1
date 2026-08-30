@@ -91,7 +91,7 @@ export default function HeroGoogleGallery({ lang = 'bg' }) {
     else previous();
   };
 
-  const title = lang === 'en' ? 'Focaccia in photos' : 'Focaccia в снимки';
+  const title = lang === 'en' ? 'Focaccia Art Gallery' : 'Арт галерия „Фокача“';
   const openLabel = lang === 'en' ? 'Open gallery' : 'Отвори галерията';
   const loadingLabel = lang === 'en' ? 'Loading current photos…' : 'Зареждам актуални снимки…';
   const emptyLabel = lang === 'en'
@@ -118,17 +118,20 @@ export default function HeroGoogleGallery({ lang = 'bg' }) {
   return (
     <>
       <button type="button" className={styles.card} onClick={() => setOpen(true)} aria-label={openLabel}>
-        <img
-          key={item.id}
-          src={item.thumbnailUrl || item.imageUrl}
-          alt={itemAlt}
-          className={styles.previewImage}
-        />
-        <span className={styles.previewShade} aria-hidden="true" />
+        <span className={styles.previewMedia}>
+          <img
+            key={item.id}
+            src={item.thumbnailUrl || item.imageUrl}
+            alt={itemAlt}
+            className={styles.previewImage}
+          />
+          <span className={styles.previewShade} aria-hidden="true" />
+        </span>
         <span className={styles.caption}>
           <strong>{title}</strong>
           <span>{items.length} {photoWord} · {openLabel}</span>
         </span>
+        <span className={styles.openArrow} aria-hidden="true">›</span>
         <span className={styles.progress} aria-hidden="true">
           <span style={{ width: `${((safeIndex + 1) / items.length) * 100}%` }} />
         </span>

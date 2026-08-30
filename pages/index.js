@@ -11,10 +11,27 @@ import { useLanguage } from '../hooks/useLanguage';
 import { site } from '../lib/content';
 import styles from '../styles/Home.module.css';
 
-function VeganIcon() {
+function MenuIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M19.7 4.3C13.2 4.5 8.4 6.7 6 10.2c-2.3 3.4-1.5 7.1.6 9.2 2.5-4.3 5.9-7.5 10.1-9.8-3.5 2.7-6.2 6-8.1 9.9 3.6.6 7.2-.7 9.2-3.8 2-3 2.6-7.2 1.9-11.4Z" fill="currentColor" />
+      <path d="M4 6.5h16M4 12h16M4 17.5h10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Z" fill="none" stroke="currentColor" strokeWidth="1.7" />
+      <circle cx="12" cy="10" r="2.2" fill="currentColor" />
+    </svg>
+  );
+}
+
+function SignatureIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.8l1.55 4.7 4.7 1.55-4.7 1.55L12 15.3l-1.55-4.7-4.7-1.55 4.7-1.55L12 2.8Zm6 11.7.85 2.55 2.55.85-2.55.85L18 21.3l-.85-2.55-2.55-.85 2.55-.85L18 14.5Z" fill="currentColor" />
     </svg>
   );
 }
@@ -39,36 +56,43 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.hero} data-version="1.2.5">
+        <section className={styles.hero} data-version="1.2.7">
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroInner}>
             <div className={styles.heroMain}>
               <div className={styles.heroTextColumn}>
-                <div className={styles.heroCopy}>
+                <div className={styles.heroTopActions}>
                   <OpeningBadge text={text.open} lang={lang} />
+                  <Link href={href('/menu')} className={styles.heroPillAction}>
+                    <MenuIcon />
+                    <span>{c.menuCta}</span>
+                  </Link>
+                  <a href={site.mapsUrl} target="_blank" rel="noreferrer" className={styles.heroPillAction}>
+                    <PinIcon />
+                    <span>{c.directionsCta}</span>
+                  </a>
+                </div>
+
+                <div className={styles.heroCopy}>
                   <p className={styles.eyebrow}>{c.eyebrow}</p>
                   <h1 aria-label={titleLabel}>
                     <span>{c.title}</span>
                     <em>{c.titleAccent}</em>
                   </h1>
-                  <Link href={href('/menu#vegano')} className={styles.veganBadge} aria-label={c.veganFriendly}>
-                    <VeganIcon />
-                    <span>{c.veganFriendly}</span>
+                  <Link href={href('/menu')} className={styles.signatureBadge}>
+                    <SignatureIcon />
+                    <span>{c.signatureLabel}</span>
                   </Link>
                 </div>
 
                 <div className={styles.heroDetails}>
-                  <div className={styles.heroDetailsCopy}>
-                    <div className={styles.intro}>{introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-                    <div className={styles.actions}>
-                      <Link href={href('/menu')} className="button buttonPrimary">{c.menuCta}</Link>
-                      <a href={site.mapsUrl} target="_blank" rel="noreferrer" className="button buttonSecondary">{c.directionsCta}</a>
-                    </div>
-                    <GoogleRating text={text.rating} lang={lang} />
+                  <div className={styles.intro}>
+                    {introParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   </div>
                   <div className={styles.heroGallerySlot}>
                     <HeroGoogleGallery lang={lang} />
                   </div>
+                  <GoogleRating text={text.rating} lang={lang} />
                 </div>
               </div>
 

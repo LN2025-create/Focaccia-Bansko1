@@ -1,14 +1,18 @@
 .card {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.13 / 1;
-  padding: 0;
+  min-height: 132px;
+  display: grid;
+  grid-template-columns: minmax(132px, 34%) minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 14px 10px 10px;
   overflow: hidden;
-  border: 1px solid rgba(244, 235, 221, .18);
-  border-radius: 28px;
+  border: 1px solid rgba(198, 164, 106, .34);
+  border-radius: 24px;
   color: var(--cream);
-  background: #171a15;
-  box-shadow: 0 22px 56px rgba(0, 0, 0, .28);
+  background: linear-gradient(120deg, rgba(18, 21, 17, .94), rgba(38, 40, 32, .90));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .22);
   cursor: pointer;
   text-align: left;
   isolation: isolate;
@@ -17,6 +21,15 @@
 .card:focus-visible {
   outline: 3px solid #d7bd7e;
   outline-offset: 4px;
+}
+
+.previewMedia {
+  position: relative;
+  align-self: stretch;
+  min-height: 108px;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #171a15;
 }
 
 .previewImage {
@@ -32,42 +45,61 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top, rgba(11, 13, 10, .86) 0%, rgba(11, 13, 10, .10) 58%, rgba(11, 13, 10, .02) 100%);
+  background: linear-gradient(to top, rgba(11, 13, 10, .34), transparent 66%);
 }
 
 .caption {
-  position: absolute;
-  z-index: 2;
-  left: 17px;
-  right: 17px;
-  bottom: 17px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .caption strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.08rem;
+  color: var(--cream);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-size: clamp(1.02rem, 1.8vw, 1.3rem);
   font-weight: 500;
+  line-height: 1.12;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .caption span {
-  color: rgba(244, 235, 221, .78);
-  font-size: .76rem;
+  color: rgba(244, 235, 221, .72);
+  font-size: .78rem;
   line-height: 1.35;
+  overflow-wrap: normal;
+  word-break: normal;
 }
+
+.openArrow {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(244, 235, 221, .18);
+  border-radius: 50%;
+  color: rgba(244, 235, 221, .92);
+  font-family: Arial, sans-serif;
+  font-size: 1.55rem;
+  line-height: 1;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.card:hover .openArrow { transform: translateX(3px); background: rgba(244, 235, 221, .07); }
 
 .progress {
   position: absolute;
   z-index: 3;
-  left: 17px;
-  right: 17px;
-  bottom: 8px;
+  left: calc(34% + 28px);
+  right: 66px;
+  bottom: 10px;
   height: 2px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(244, 235, 221, .18);
+  background: rgba(244, 235, 221, .14);
 }
 
 .progress span {
@@ -79,10 +111,10 @@
 }
 
 .placeholder {
-  min-height: 230px;
+  min-height: 132px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 7px;
   padding: 22px;
   cursor: default;
@@ -90,7 +122,7 @@
 }
 
 .placeholder strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   font-size: 1.08rem;
   font-weight: 500;
 }
@@ -179,9 +211,7 @@
 .next { right: 16px; }
 
 .closeButton:hover,
-.navButton:hover {
-  background: rgba(45, 53, 39, .92);
-}
+.navButton:hover { background: rgba(45, 53, 39, .92); }
 
 .closeButton:focus-visible,
 .navButton:focus-visible {
@@ -200,62 +230,46 @@
   background: linear-gradient(90deg, rgba(31, 36, 28, .98), rgba(45, 53, 39, .95));
 }
 
-.modalFooter strong {
-  color: var(--cream);
-  font-size: .92rem;
-}
-
-.modalFooter span {
-  font-size: .82rem;
-}
+.modalFooter strong { color: var(--cream); font-size: .92rem; }
+.modalFooter span { font-size: .82rem; }
 
 @keyframes imageFade {
   from { opacity: 0; transform: scale(1.012); }
   to { opacity: 1; transform: scale(1); }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 560px) {
   .card {
-    aspect-ratio: 1.45 / 1;
-    border-radius: 24px;
-  }
-
-  .modal {
-    padding: 10px;
-  }
-
-  .modalInner {
-    max-height: calc(100vh - 20px);
+    min-height: 118px;
+    grid-template-columns: 112px minmax(0, 1fr) 34px;
+    gap: 12px;
+    padding: 8px 10px 8px 8px;
     border-radius: 20px;
   }
+  .previewMedia { min-height: 100px; border-radius: 14px; }
+  .caption strong { font-size: 1rem; }
+  .caption span { font-size: .72rem; }
+  .openArrow { width: 32px; height: 32px; font-size: 1.35rem; }
+  .progress { left: 132px; right: 54px; bottom: 8px; }
+}
 
-  .modalStage {
-    min-height: 68vh;
-  }
+@media (max-width: 380px) {
+  .card { grid-template-columns: 92px minmax(0, 1fr); }
+  .openArrow { display: none; }
+  .progress { left: 112px; right: 14px; }
+}
 
-  .navButton {
-    width: 44px;
-    height: 44px;
-  }
-
+@media (max-width: 760px) {
+  .modal { padding: 10px; }
+  .modalInner { max-height: calc(100vh - 20px); border-radius: 20px; }
+  .modalStage { min-height: 68vh; }
+  .navButton { width: 44px; height: 44px; }
   .previous { left: 10px; }
   .next { right: 10px; }
-
-  .modalFooter {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 3px;
-    padding: 11px 15px 13px;
-  }
+  .modalFooter { align-items: flex-start; flex-direction: column; gap: 3px; padding: 11px 15px 13px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .previewImage,
-  .modalImage {
-    animation: none;
-  }
-
-  .progress span {
-    transition: none;
-  }
+  .previewImage, .modalImage { animation: none; }
+  .progress span, .openArrow { transition: none; }
 }

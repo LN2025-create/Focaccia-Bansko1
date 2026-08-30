@@ -56,7 +56,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Layout lang={lang} text={text} changeLanguage={changeLanguage} href={href}>
-        <section className={styles.hero} data-version="1.2.7">
+        <section className={styles.hero} data-version="1.2.8">
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroInner}>
             <div className={styles.heroMain}>
@@ -79,10 +79,13 @@ export default function Home() {
                     <span>{c.title}</span>
                     <em>{c.titleAccent}</em>
                   </h1>
-                  <Link href={href('/menu')} className={styles.signatureBadge}>
-                    <SignatureIcon />
-                    <span>{c.signatureLabel}</span>
-                  </Link>
+                  <div className={styles.heroTrustRow}>
+                    <Link href={href('/menu')} className={styles.signatureBadge}>
+                      <SignatureIcon />
+                      <span>{c.signatureLabel}</span>
+                    </Link>
+                    <GoogleRating text={text.rating} lang={lang} className={styles.mobileInlineRating} />
+                  </div>
                 </div>
 
                 <div className={styles.heroDetails}>
@@ -92,7 +95,7 @@ export default function Home() {
                   <div className={styles.heroGallerySlot}>
                     <HeroGoogleGallery lang={lang} />
                   </div>
-                  <GoogleRating text={text.rating} lang={lang} />
+                  <GoogleRating text={text.rating} lang={lang} className={styles.desktopRating} />
                 </div>
               </div>
 
@@ -100,7 +103,7 @@ export default function Home() {
                 <div className={styles.heroImageFrame}>
                   <Image
                     src="/images/home/hero-main.webp"
-                    alt={lang === 'en' ? 'Artisanal focaccia sandwich from Focaccia Bansko' : 'Авторски сандвич с прясно изпечена фокача от Focaccia Bansko'}
+                    alt={lang === 'en' ? 'Artisan focaccia sandwich from Focaccia Bansko' : 'Занаятчийски сандвич с прясно изпечена фокача от Focaccia Bansko'}
                     fill
                     priority
                     sizes="(max-width: 1280px) 100vw, 45vw"

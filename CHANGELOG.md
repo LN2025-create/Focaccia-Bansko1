@@ -1,3 +1,10 @@
+# V1.2.8
+
+- Keeps the full live opening-status text and holds all three desktop hero pills on one row; the status pill may grow vertically instead of pushing “Как да стигна” down.
+- Renames “Авторски сандвичи” to “Занаятчийски сандвичи” / “Artisan sandwiches”.
+- On mobile, places the live Google rating beside the artisan-sandwich badge and removes the lower duplicate rating.
+- Adds narrow-screen safeguards to prevent awkward word breaking and overflow.
+
 # V1.2.7 — Hero typography and mobile-safe layout
 
 - Refined the homepage hero typography: smaller upright serif headline and non-italic coral accent line.

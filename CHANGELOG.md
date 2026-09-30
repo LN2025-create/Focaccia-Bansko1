@@ -1,3 +1,11 @@
+# V1.2.9
+
+- Reads Google Business Profile `openInfo.status` in addition to regular and special hours.
+- When Google marks Focaccia as `CLOSED_TEMPORARILY`, the site shows “ВРЕМЕННО ЗАТВОРЕНО” / “Temporarily closed”.
+- While temporarily closed, the site never calculates or displays a reopening date from the normal weekly schedule.
+- The detailed hours card shows “Очаквайте ни отново скоро.” and links to the live Google status.
+- Normal open/closed and special-hours behaviour remains unchanged when Google reports the business as open.
+
 # V1.2.8
 
 - Keeps the full live opening-status text and holds all three desktop hero pills on one row; the status pill may grow vertically instead of pushing “Как да стигна” down.

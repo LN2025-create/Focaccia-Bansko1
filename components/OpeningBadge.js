@@ -30,6 +30,24 @@ export default function OpeningBadge({ text, lang = 'bg' }) {
     );
   }
 
+  if (hours.status === 'temporarily_closed') {
+    return (
+      <div className={`${styles.badge} ${styles.closed}`}>
+        <span className={styles.dot} aria-hidden="true" />
+        <span>{lang === 'en' ? 'TEMPORARILY CLOSED' : 'ВРЕМЕННО ЗАТВОРЕНО'}</span>
+      </div>
+    );
+  }
+
+  if (hours.status === 'permanently_closed') {
+    return (
+      <div className={`${styles.badge} ${styles.closed}`}>
+        <span className={styles.dot} aria-hidden="true" />
+        <span>{lang === 'en' ? 'CLOSED' : 'ЗАТВОРЕНО'}</span>
+      </div>
+    );
+  }
+
   if (hours.status === 'open') {
     const close = hours.currentPeriod?.close;
     const label = close

@@ -36,6 +36,25 @@ export default function BusinessHours({ lang = 'bg', compact = false }) {
     );
   }
 
+  if (hours.status === 'temporarily_closed') {
+    return (
+      <div className={`${styles.hours} ${compact ? styles.compact : ''}`}>
+        <strong className={styles.closed}>{lang === 'en' ? 'Temporarily closed' : 'Временно затворено'}</strong>
+        <span>{lang === 'en' ? 'We look forward to welcoming you again soon.' : 'Очаквайте ни отново скоро.'}</span>
+        <a href={site.mapsUrl} target="_blank" rel="noreferrer">{lang === 'en' ? 'Status from Google' : 'Статус от Google'}</a>
+      </div>
+    );
+  }
+
+  if (hours.status === 'permanently_closed') {
+    return (
+      <div className={`${styles.hours} ${compact ? styles.compact : ''}`}>
+        <strong className={styles.closed}>{lang === 'en' ? 'Closed' : 'Затворено'}</strong>
+        <a href={site.mapsUrl} target="_blank" rel="noreferrer">{lang === 'en' ? 'Status from Google' : 'Статус от Google'}</a>
+      </div>
+    );
+  }
+
   const isOpen = hours.status === 'open';
   const next = hours.nextOpen;
   const nextText = !isOpen && next

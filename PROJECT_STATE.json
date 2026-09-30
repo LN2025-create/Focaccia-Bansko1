@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-08-22",
+  "lastUpdated": "2026-09-30",
   "project": {
     "name": "Focaccia Bansko",
     "domain": "focaccia.bg",
@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.2.5",
+    "version": "1.2.9",
     "status": "prepared_for_owner_review",
-    "scope": "Live Google Business Profile photo slideshow and circular on-site gallery, built on the working V1.2.4 OAuth integration."
+    "scope": "Google Business Profile temporary-closure status overrides regular hours so the site never invents a reopening date."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -68,7 +68,7 @@
     "salumeria": "The menu contains a bilingual Salumeria section before drinks. Prices are displayed in EUR only; most items are priced per 100 g, while fresh Burrata is 125 g.",
     "croissant": "The freshly baked croissant is served with Corsini espresso or cappuccino and is available plain or filled with chocolate, pistachio cream or apricot.",
     "beerPhotography": "Birra Moretti, Peroni and Peroni Nastro Azzurro use owner-supplied bottle images in dedicated beer cards.",
-    "openingHours": "Use Google Business Profile regularHours and specialHours. If live data is unavailable, link to Google instead of claiming a local open/closed state."
+    "openingHours": "Use Google Business Profile openInfo.status, regularHours and specialHours. CLOSED_TEMPORARILY overrides schedules and must never produce an inferred reopening date. If live data is unavailable, link to Google instead of claiming a local open/closed state."
   },
   "implemented": {
     "corePages": [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-09-30",
+  "lastUpdated": "2026-10-07",
   "project": {
     "name": "Focaccia Bansko",
     "domain": "focaccia.bg",
@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.2.9",
+    "version": "1.2.10",
     "status": "prepared_for_owner_review",
-    "scope": "Google Business Profile temporary-closure status overrides regular hours so the site never invents a reopening date."
+    "scope": "Adds a compact Restaurant Guru Recommended 2026 badge beside the Focaccia header logo, with responsive mobile treatment."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -68,7 +68,8 @@
     "salumeria": "The menu contains a bilingual Salumeria section before drinks. Prices are displayed in EUR only; most items are priced per 100 g, while fresh Burrata is 125 g.",
     "croissant": "The freshly baked croissant is served with Corsini espresso or cappuccino and is available plain or filled with chocolate, pistachio cream or apricot.",
     "beerPhotography": "Birra Moretti, Peroni and Peroni Nastro Azzurro use owner-supplied bottle images in dedicated beer cards.",
-    "openingHours": "Use Google Business Profile openInfo.status, regularHours and specialHours. CLOSED_TEMPORARILY overrides schedules and must never produce an inferred reopening date. If live data is unavailable, link to Google instead of claiming a local open/closed state."
+    "openingHours": "Use Google Business Profile openInfo.status, regularHours and specialHours. CLOSED_TEMPORARILY overrides schedules and must never produce an inferred reopening date. If live data is unavailable, link to Google instead of claiming a local open/closed state.",
+    "restaurantGuruAward": "Show only the Restaurant Guru Recommended 2026 recognition in the header; do not add the Orli Pekarni badge."
   },
   "implemented": {
     "corePages": [
@@ -149,7 +150,8 @@
       "developmentCaptionRemoved": true,
       "quickFactsLinked": true,
       "featureCardsLinked": true,
-      "localizedAnchorLinks": true
+      "localizedAnchorLinks": true,
+      "restaurantGuruRecommended2026": true
     },
     "socialLinks": {
       "persistentLeftRail": true,
@@ -272,7 +274,7 @@
     "cssModuleReferenceCheck": true,
     "custom404Checked": true,
     "javascriptSyntaxCheck": true,
-    "validationLimitation": "Local npm dependency installation did not complete in this execution environment; Vercel production build is required after upload.",
+    "validationLimitation": "npm ci was attempted in offline mode but one dependency was not cached, so lint/build could not run locally. Vercel production build is the final technical check after upload.",
     "businessHoursLogicCheck": true
   },
   "version": "1.2.5",

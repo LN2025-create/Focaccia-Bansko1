@@ -1,3 +1,11 @@
+# V1.2.10
+
+- Adds the official “Recommended on Restaurant Guru 2026” recognition to the main header, immediately to the right of the Focaccia logo.
+- Keeps the award compact and unboxed so it does not compete with the Focaccia brand or navigation.
+- The award links directly to the Focaccia Bansko profile on Restaurant Guru.
+- Adds dedicated mobile sizing, including a narrow-screen safeguard for 350 px and below.
+- No “Орли Пекарни” badge is included.
+
 # V1.2.9
 
 - Reads Google Business Profile `openInfo.status` in addition to regular and special hours.

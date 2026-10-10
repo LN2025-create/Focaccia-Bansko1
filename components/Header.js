@@ -33,6 +33,27 @@ export default function Header({ lang, text, changeLanguage, href }) {
           />
         </Link>
 
+        <a
+          href="https://restaurantguru.com/Focaccia-Bansko"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.restaurantGuruAward}
+          aria-label={lang === 'en' ? 'Recommended on Restaurant Guru 2026' : 'Препоръчано от Restaurant Guru 2026'}
+        >
+          <Image
+            src="/images/restaurant-guru-award-2026.png"
+            alt=""
+            width={858}
+            height={903}
+            className={styles.restaurantGuruIcon}
+          />
+          <span className={styles.restaurantGuruCopy}>
+            <strong>RECOMMENDED</strong>
+            <small>ON RESTAURANT GURU</small>
+            <b>2026</b>
+          </span>
+        </a>
+
         <button
           type="button"
           className={styles.menuButton}

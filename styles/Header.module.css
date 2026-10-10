@@ -2,6 +2,26 @@
 .inner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; min-width: 164px; }
 .brandLogo { display: block; width: 160px; height: auto; filter: drop-shadow(0 8px 20px rgba(0,0,0,.26)); }
+
+.restaurantGuruAward {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: 26px;
+  margin-right: auto;
+  padding-left: 25px;
+  border-left: 1px solid rgba(198,164,106,.32);
+  color: var(--cream);
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.restaurantGuruAward:hover { opacity: .9; transform: translateY(-1px); }
+.restaurantGuruIcon { width: 47px; height: 50px; object-fit: contain; flex: 0 0 auto; }
+.restaurantGuruCopy { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; white-space: nowrap; }
+.restaurantGuruCopy strong { color: rgba(244,235,221,.96); font-size: .70rem; font-weight: 900; letter-spacing: .035em; }
+.restaurantGuruCopy small { color: rgba(244,235,221,.80); font-size: .55rem; font-weight: 800; letter-spacing: .02em; }
+.restaurantGuruCopy b { color: #d7ad5b; font-size: .82rem; font-weight: 900; letter-spacing: .04em; }
 .nav { display: flex; align-items: center; gap: 22px; }
 .nav > a { position: relative; color: rgba(244,235,221,.84); font-size: .88rem; font-weight: 700; white-space: nowrap; }
 .nav > a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--olive-light); transition: right .2s ease; }
@@ -18,6 +38,13 @@
   .inner { width: calc(100% - 28px); }
   .brand { min-width: 0; }
   .brandLogo { width: 138px; }
+  .restaurantGuruAward { gap: 5px; margin: 0 auto 0 8px; padding-left: 8px; border-left-color: rgba(198,164,106,.25); }
+  .restaurantGuruIcon { width: 31px; height: 33px; }
+  .restaurantGuruCopy { gap: 1px; }
+  .restaurantGuruCopy strong { font-size: .48rem; letter-spacing: .015em; }
+  .restaurantGuruCopy small { font-size: .38rem; }
+  .restaurantGuruCopy b { font-size: .58rem; }
+  .menuButton { width: 40px; height: 40px; }
   .menuButton { display: block; }
   .nav { position: absolute; top: calc(100% + 1px); left: 14px; right: 14px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 16px; background: rgba(32,32,30,.99); border: 1px solid rgba(244,235,221,.16); border-radius: 20px; box-shadow: 0 24px 70px rgba(0,0,0,.35); }
   .navOpen { display: flex; }
@@ -31,3 +58,12 @@
 .active { color: var(--cream) !important; }
 .languageActive { color: var(--cream) !important; }
 @media (min-width: 821px) { .navOpen { display: flex; } }
+
+@media (max-width: 350px) {
+  .inner { width: calc(100% - 20px); }
+  .brandLogo { width: 100px; }
+  .restaurantGuruAward { margin-left: 5px; padding-left: 6px; }
+  .restaurantGuruIcon { width: 28px; height: 30px; }
+  .restaurantGuruCopy small { display: none; }
+  .menuButton { width: 38px; height: 38px; padding: 9px; }
+}

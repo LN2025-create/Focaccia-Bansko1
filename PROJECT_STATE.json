@@ -24,9 +24,9 @@
     "forbiddenMixing": "Do not combine files from older ZIP archives or previous working folders."
   },
   "currentRelease": {
-    "version": "1.2.11",
+    "version": "1.2.12",
     "status": "prepared_for_owner_review",
-    "scope": "Date-only reopening countdown in the header for 03 December 2026; Bulgarian/English announcement, Europe/Sofia calendar-day calculation, responsive layout. Reopening hour pending confirmation."
+    "scope": "Sandwich menu prices updated to match the owner-provided menu image of 10 November 2026. Five price changes; other menu data and reopening countdown unchanged."
   },
   "business": {
     "address": "ул. „Пирин“ 93, 2770 Банско",
@@ -298,7 +298,7 @@
     "Prepared Version 1.2.4 with info@focaccia.bg, Google Business Profile OAuth integration, exact review count with no fixed fallback, Google-sourced regular and special hours, a new Salumeria icon, sticky menu navigation, allergen notice and mobile refinements",
     "Prepared Version 1.2.5 with a live Google Business Profile photo slideshow in the homepage hero and a circular swipe/keyboard lightbox gallery."
   ],
-  "status": "Version 1.2.11 prepared for owner review: bilingual reopening countdown for 03 December 2026; hour unconfirmed.",
+  "status": "Version 1.2.12 prepared for owner review: five sandwich price changes from the owner-provided menu; not yet deployed.",
   "active_project_root": "repository root",
   "nested_duplicate_present": false,
   "technical_validation": {

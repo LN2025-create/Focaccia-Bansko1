@@ -1,3 +1,10 @@
+# V1.2.12 — sandwich price update (2026-11-10)
+
+- Updated sandwich prices from the owner-provided printed menu: Mortadella €9 → €10; Tartufo €11 → €12; Caciotta & Cotto €15 → €17; Vegano €8 → €9; Napoli €8 → €9.
+- Confirmed the other seven sandwich prices already match the supplied menu.
+- No changes to names, weights, descriptions, photos, Salumeria, drinks, Google integrations, Restaurant Guru badge or reopening countdown.
+- Archive prepared for GitHub Desktop / Vercel deployment; not published automatically.
+
 # V1.2.11 — reopening countdown (2026-11-10)
 
 - Added a bilingual, responsive countdown strip directly below the existing header navigation, with large “ОТВАРЯМЕ НА 03.12” / “WE REOPEN ON 03.12” announcement.

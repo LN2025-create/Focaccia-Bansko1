@@ -1,2 +1,10 @@
 .siteShell { min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 .main { flex: 1; }
+
+/* Reserve only the additional countdown strip height below the fixed header.
+   The existing page hero paddings already account for the navigation row.
+   :has removes the spacing automatically after 03.12.2026. */
+.siteShell:has(:global(.reopening-banner)) .main { padding-top: 92px; }
+@media (max-width: 820px) {
+  .siteShell:has(:global(.reopening-banner)) .main { padding-top: 96px; }
+}

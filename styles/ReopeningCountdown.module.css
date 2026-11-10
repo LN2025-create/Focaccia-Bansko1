@@ -1,0 +1,49 @@
+.banner {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 14px 12px;
+  border-top: 1px solid rgba(198,164,106,.19);
+  border-bottom: 1px solid rgba(198,164,106,.30);
+  background: linear-gradient(100deg, rgba(41,45,34,.98), rgba(34,35,30,.99) 52%, rgba(57,38,32,.98));
+  color: #f4ebdd;
+  text-align: center;
+}
+.countdown {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-weight: 850;
+  letter-spacing: .095em;
+}
+.countNumber { font-size: 1.65rem; line-height: 1; color: #e1ba71; font-variant-numeric: tabular-nums; }
+.countUnit { font-size: .86rem; color: #e1ba71; }
+.countDescription { font-size: .72rem; color: rgba(244,235,221,.76); }
+.today { font-size: .80rem; color: #e1ba71; }
+.announcement {
+  margin: 0;
+  color: #fff4e5;
+  font-size: clamp(1.22rem, 2.5vw, 1.85rem);
+  font-weight: 900;
+  letter-spacing: .105em;
+  line-height: 1.15;
+}
+.announcement time { color: #e1ba71; white-space: nowrap; }
+@media (max-width: 820px) {
+  .banner { min-height: 96px; padding: 10px 10px 11px; gap: 7px; }
+  .countNumber { font-size: 1.48rem; }
+  .countUnit { font-size: .78rem; }
+  .countDescription { font-size: .65rem; }
+  .announcement { font-size: clamp(1.02rem, 4.4vw, 1.48rem); letter-spacing: .055em; }
+}
+@media (max-width: 360px) {
+  .banner { min-height: 96px; }
+  .countdown { gap: 5px; }
+  .countDescription { font-size: .59rem; }
+  .announcement { font-size: 1rem; }
+}

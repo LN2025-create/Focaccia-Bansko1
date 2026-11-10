@@ -1,3 +1,12 @@
+# V1.2.11 — reopening countdown (2026-11-10)
+
+- Added a bilingual, responsive countdown strip directly below the existing header navigation, with large “ОТВАРЯМЕ НА 03.12” / “WE REOPEN ON 03.12” announcement.
+- Counts calendar days to 3 December 2026 in Europe/Sofia; no invented opening hour or misleading hour/minute/second timer.
+- Countdown refreshes on page visibility and once per minute, shows reopening-day text on 03.12, and disappears after the date.
+- Retained the Restaurant Guru badge, navigation, and existing Google Business Profile status behavior.
+- Added header-height compensation for all pages, including mobile.
+- The exact reopening hour is still awaiting confirmation.
+
 # V1.2.10
 
 - Adds the official “Recommended on Restaurant Guru 2026” recognition to the main header, immediately to the right of the Focaccia logo.

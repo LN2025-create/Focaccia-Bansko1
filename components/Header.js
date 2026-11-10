@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styles from '../styles/Header.module.css';
+import ReopeningCountdown from './ReopeningCountdown';
 
 const routes = [
   ['/', 'home'],
@@ -99,6 +100,7 @@ export default function Header({ lang, text, changeLanguage, href }) {
           </div>
         </nav>
       </div>
+      <ReopeningCountdown lang={lang} />
     </header>
   );
 }
